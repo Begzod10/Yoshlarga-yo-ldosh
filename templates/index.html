@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maqsadga Intiluvchanlik Testi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            color: #00796b; /* Teal color for headings */
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        div.question {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        p {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        label {
+            display: block;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #00796b; /* Matching button color with heading */
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            align-self: center;
+        }
+
+        button:hover {
+            background-color: #004d40; /* Darker shade for button hover */
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #result h2 {
+            color: #00796b; /* Consistent color for result heading */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            div.question {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Maqsadga Intiluvchanlik Testi</h1>
+        <form id="quizForm">
+            {% for question in questions %}
+                <div class="question">
+                    <p>{{ loop.index }}. {{ question }}</p>
+                    <label>
+                        <input type="radio" name="answer{{ loop.index }}" value="+"> Ha
+                    </label>
+                    <label>
+                        <input type="radio" name="answer{{ loop.index }}" value="-"> Yo'q
+                    </label>
+                </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById('quizForm');
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const formData = new FormData(form);
+                const data = [];
+                for (const [key, value] of formData.entries()) {
+                    data.push(value);
+                }
+
+                const response = await fetch('/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ answers: data })
+                });
+
+                const result = await response.json();
+                document.getElementById('result').innerHTML = `
+                    <h2>Test Natijalari</h2>
+                    <p>Sizning ballaringiz: ${result.score}</p>
+                    <p>${result.result}</p>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
