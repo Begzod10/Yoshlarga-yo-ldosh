@@ -8,9 +8,11 @@ db = db_setup(app)
 migrate = Migrate(app, db)
 
 
-@app.route('/', defaults={"test_id": 1})
+@app.route('/', defaults={"test_id": 0})
 @app.route('/<int:test_id>')
 def index(test_id):
+    if test_id == 0:
+        test_id = TestInfo.query.order_by(TestInfo.id).first().id
     for info in test_info:
         test_info_add = TestInfo.query.filter(TestInfo.name == info['name']).first()
         if not test_info_add:
@@ -53,29 +55,34 @@ def submit():
         score += int(answer)
     test_options = TestAnswerOptions.query.filter(TestAnswerOptions.test_info_id == test_info.id).order_by(
         TestAnswerOptions.id).all()
-    for test_option in test_options:
-        if test_info.name == 'Maqsadga intiluvchanlik':
+
+    if test_info.name == 'Maqsadga intiluvchanlik':
+        for test_option in test_options:
             if 6 >= score > 0:
                 option = test_option
             elif 7 <= score <= 11:
                 option = test_option
-            else:
+            elif 11 <= score <= 18:
                 option = test_option
-        elif test_info.name == 'Qat’iyatlilikni baholash testi':
+            break
+    elif test_info.name == 'Qat’iyatlilikni baholash testi':
+        for test_option in test_options:
             if 6 >= score > 0:
                 option = test_option
             elif 7 <= score <= 11:
                 option = test_option
-            else:
+            elif 11 <= score <= 18:
                 option = test_option
-        elif test_info.name == 'Siz qanchalik sabrlisiz':
+            break
+    elif test_info.name == 'Siz qanchalik sabrlisiz':
+        for test_option in test_options:
             if 4 >= score > 0:
                 option = test_option
             elif 4 <= score <= 14:
                 option = test_option
-            else:
+            elif 14 <= score <= 18:
                 option = test_option
-
+            break
     test = Test(test_info_id=test_info.id, answer_id=option.id, user_id=user.id)
     test.add()
     return jsonify(score=score, result=option.desc)
