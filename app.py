@@ -6,6 +6,7 @@ app.config.from_object('backend.models.config')
 db = db_setup(app)
 migrate = Migrate(app, db)
 
+
 questions = [
     "Kelajakdagi maqsadimni belgilab oldim va unga erishishga hozirlik ko'ryapman",
     "Qanchalik uzoq bo'lishidan qat'i nazar, men ko'zlangan maqsad sari intilaman",
