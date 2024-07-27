@@ -1,10 +1,189 @@
+questions_initiative = [
+    {'question': "Odatda, men barcha muhim qarorlarni tashqi yordamlariz qabul qilaman.", 'answers': [
+        {'name': "Bunday bo’lmaydi", 'value': 2},
+        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+        {'name': "Bo’lishi mumkin", 'value': 0},
+        {'name': "Ehtimol, ha", 'value': -1},
+        {'name': "Aniq ha", 'value': -2},
+    ], 'index': 1},
+    {'question': "Men osongina tortinchoqligimni engib, avval notanish odam bilan suhbatni boshlay olaman.",
+     'answers': [
+         {'name': "Bunday bo’lmaydi", 'value': 2},
+         {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+         {'name': "Bo’lishi mumkin", 'value': 0},
+         {'name': "Ehtimol, ha", 'value': -1},
+         {'name': "Aniq ha", 'value': -2},
+     ], 'index': 2},
+    {'question': "Men hech qachon o’z tashabbusim bilan jamoat topshiriqlarini o’z bo’ynimga olmayman.", 'answers': [
+        {'name': "Bunday bo’lmaydi", 'value': 2},
+        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+        {'name': "Bo’lishi mumkin", 'value': 0},
+        {'name': "Ehtimol, ha", 'value': -1},
+        {'name': "Aniq ha", 'value': -2},
+    ], 'index': 3},
+    {
+        'question': "Akademik darslarga tayyorgarlik ko’rayotganda men ko’picha ma’ruza yoki darslik bilan cheklanib qolmasdan qo’shimcha adabiyotlarni o’qiyman.",
+        'answers': [
+            {'name': "Bunday bo’lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+            {'name': "Bo’lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ], 'index': 4},
+    {
+        'question': "Men uchun muhim bo’lgan insonlarning yonimda yo’qligi (uning maslahat, qo’llab-quvvatlashi va boshqalar) kelgusi natijalarimni sezilarli darajada kamaytiradi.",
+        'answers': [
+            {'name': "Bunday bo’lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+            {'name': "Bo’lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ], 'index': 5},
+    {'question': "Eng ko’p o’zimni ijodiy sohada sinab ko’rigishni yaxshi ko’raman.", 'answers': [
+        {'name': "Bunday bo’lmaydi", 'value': 2},
+        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+        {'name': "Bo’lishi mumkin", 'value': 0},
+        {'name': "Ehtimol, ha", 'value': -1},
+        {'name': "Aniq ha", 'value': -2},
+    ], 'index': 6},
+    {'question': "Ma’lum bir faoliyat bilan shug’ullanish paytida yangi g’oyalarni o’ylab topishga harakat qilaman.",
+     'answers': [
+         {'name': "Bunday bo’lmaydi", 'value': 2},
+         {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+         {'name': "Bo’lishi mumkin", 'value': 0},
+         {'name': "Ehtimol, ha", 'value': -1},
+         {'name': "Aniq ha", 'value': -2},
+     ], 'index': 7},
+    {'question': "Agar kimdir meni boshqarса, o’zimni xotirjam va ishonchli his qilaman.", 'answers': [
+        {'name': "Bunday bo’lmaydi", 'value': 2},
+        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+        {'name': "Bo’lishi mumkin", 'value': 0},
+        {'name': "Ehtimol, ha", 'value': -1},
+        {'name': "Aniq ha", 'value': -2},
+    ], 'index': 8},
+    {'question': "Biror narsa qilishdan oldin, men doimo tanigan odamlarim bilan maslahatlashaman.", 'answers': [
+        {'name': "Bunday bo’lmaydi", 'value': 2},
+        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+        {'name': "Bo’lishi mumkin", 'value': 0},
+        {'name': "Ehtimol, ha", 'value': -1},
+        {'name': "Aniq ha", 'value': -2},
+    ], 'index': 9},
+    {'question': "Suhbat yoki tanishuvlar paytida men tashabbusni boshqasiга berishga intilaman.", 'answers': [
+        {'name': "Bunday bo’lmaydi", 'value': 2},
+        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+        {'name': "Bo’lishi mumkin", 'value': 0},
+        {'name': "Ehtimol, ha", 'value': -1},
+        {'name': "Aniq ha", 'value': -2},
+    ], 'index': 10},
+    {'question': "Ishni aniq ma’lum bo’lgan namuna bo’yicha bajarish men uchun eng qulaydir.", 'answers': [
+        {'name': "Bunday bo’lmaydi", 'value': 2},
+        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+        {'name': "Bo’lishi mumkin", 'value': 0},
+        {'name': "Ehtimol, ha", 'value': -1},
+        {'name': "Aniq ha", 'value': -2},
+    ], 'index': 11},
+    {
+        'question': "Odatda agar boshqalar mening rejalarim va g’oyalarimni muvaffaqiyatsiz deb hisoblashsa men ulardan voz kechaman.",
+        'answers': [
+            {'name': "Bunday bo’lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+            {'name': "Bo’lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ], 'index': 12},
+    {
+        'question': "Men ijtimoiy ishlarga norasmiy munosabatda bo’laman, uni nafaqat foydali, balki qiziqarli qilishga harakat qilaman.",
+        'answers': [
+            {'name': "Bunday bo’lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+            {'name': "Bo’lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ], 'index': 13},
+    {
+        'question': "Har qanday ilmiy mavzuni o’rganayotganda, men test yoki imtihondan o’tish uchun talab qilinadiganidan ko’proq narsani bilishga intilmayman.",
+        'answers': [
+            {'name': "Bunday bo’lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+            {'name': "Bo’lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ], 'index': 14},
+    {
+        'question': "Men odatda biror bir faoliyatning mazmuni haqida o'ylamayman, kattalar taklif qilgan narsani aniq bajaraman.",
+        'answers': [
+            {'name': "Bunday bo'lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto'g'ri", 'value': 1},
+            {'name': "Bo'lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ],
+        'index': 15
+    },
+    {
+        'question': "Men jamoada yangi narsalarning tashkilotchisi bo'lishga intilaman.",
+        'answers': [
+            {'name': "Bunday bo'lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto'g'ri", 'value': 1},
+            {'name': "Bo'lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ],
+        'index': 16
+    },
+    {
+        'question': "Agar men haq ekanligimga amin bo'lsam, men har doim o'zim bilgan usuldan foydalanaman.",
+        'answers': [
+            {'name': "Bunday bo'lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto'g'ri", 'value': 1},
+            {'name': "Bo'lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ],
+        'index': 17
+    },
+    {
+        'question': "Ijodiy jarayonlar meni o'ziga jalb qilmaydi.",
+        'answers': [
+            {'name': "Bunday bo'lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto'g'ri", 'value': 1},
+            {'name': "Bo'lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ],
+        'index': 18
+    },
+    {
+        'question': "Muvaffaqiyatdagi chiqishlarimning natijalari deyarli yaqinlarimning ishtirokiga bog'liq emas.",
+        'answers': [
+            {'name': "Bunday bo'lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto'g'ri", 'value': 1},
+            {'name': "Bo'lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ],
+        'index': 19
+    },
+    {
+        'question': "Men har qanday ishga yangi narsa qo'shishga intilaman, aks holda meni bu ishlar qiziqtirmaydi.",
+        'answers': [
+            {'name': "Bunday bo'lmaydi", 'value': 2},
+            {'name': "Ehtimol, bu noto'g'ri", 'value': 1},
+            {'name': "Bo'lishi mumkin", 'value': 0},
+            {'name': "Ehtimol, ha", 'value': -1},
+            {'name': "Aniq ha", 'value': -2},
+        ],
+        'index': 20
+    },
+]
+
 questions_patience = [
     {'question': "Siz uchun yoqimsiz bo'lgan yangilikni xotirjamlik bilan qabul qilasizmi?", 'answers': [
         {'name': "ha", 'value': 0},
         {'name': "yo'q", 'value': 2},
     ], 'index': 1},
     {
-        'question': "Tasavvur qiling siz do'stlaringiz bilan ko'rgandingiz va kimdir o'yin o'ynashni taklif qiladi. Siz nimani afzal ko'rasiz?",
+        'question': "Tasavvur qiling siz do'stlaringiz bilan ko'rishdingiz va kimdir o'yin o'ynashni taklif qiladi. Siz nimani afzal ko'rasiz?",
         'answers': [
             {'name': "faqat yaxshi o'ynaganlar ishtirok etishi", 'value': 0},
             {'name': "o'ynash qoidalarini bilmaganlar o'ynashini", 'value': 2},
@@ -151,7 +330,9 @@ questions_persistence = [
         {'name': 'Ha', 'value': 0},
         {'name': "Yo'q", 'value': 1},
     ], 'index': 2},
-    {'question': "Men uzoq navbatda turishni yomon ko’raman va ko’pincha navbatning oxirigacha turmasdan ketib qolaman",
+    {'question': "Men uzoq navbatda turishni yomon ko’raman va ko’pincha navbatning oxirigacha "
+                 ""
+                 "turmasdan ketib qolaman",
      'answers': [
          {'name': 'Ha', 'value': 0},
          {'name': "Yo'q", 'value': 1},
@@ -282,4 +463,22 @@ test_info = [
             }
         ]
     },
+    {
+        "name": "Siz qanchalik tashabbuskor va mustaqilsiz",
+        "desc": "",
+        "variants": [
+            {
+                "name": 19,
+                "desc": "Sizda tashabbuskorlik va mustaqillikning quyi darajasi. Bu degani, sizda mustaqillik va tashabbuskorlik xislatlarini namoyish qilishda qiyinalasiz. Bu esa, qandaydir muvaffaqiyatga erishishda qiyinchilikka duch kelishingiz mumkin."
+            },
+            {
+                "name": 30,
+                "desc": "Sizda tashabbuskorlik va mustaqillikning o'rta darajasi. Bu, sizda o'z maqsadlaringizga erishishingizga unchalik qiyinchilik tug'dirmasligi mumkin. Lekin, o'zingizdagi tashabbuskorlik va mustaqillikni rivojlantirish orqali, unga erishishingizda kamroq qiyinchiliklarga duch kelishingiz mumkin."
+            },
+            {
+                "name": 40,
+                "desc": "Sizda tashabbuskorlik va mustaqillikning yuqori darajasi. Bu degani, siz kelgusida muvaffaqiyatga erishishda duch kelishi mumkin bo'lgan har qanday qiyinchilikni engib o'ta olasiz."
+            }
+        ]
+    }
 ]

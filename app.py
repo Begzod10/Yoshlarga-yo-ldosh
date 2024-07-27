@@ -32,6 +32,8 @@ def index(test_id):
         questions = questions_persistence
     elif test.name == 'Siz qanchalik sabrlisiz':
         questions = questions_patience
+    elif test.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
+        questions = questions_initiative
     else:
         questions = []
     return render_template('index.html', questions=questions, selected_test=test,
@@ -55,37 +57,62 @@ def submit():
         score += int(answer)
     test_options = TestAnswerOptions.query.filter(TestAnswerOptions.test_info_id == test_info.id).order_by(
         TestAnswerOptions.id).all()
-
     if test_info.name == 'Maqsadga intiluvchanlik':
-        for test_option in test_options:
-            if 6 >= score > 0:
-                option = test_option
-            elif 7 <= score <= 11:
-                option = test_option
-            elif 11 <= score <= 18:
-                option = test_option
-            break
+        if 6 >= score > 0:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 6, TestAnswerOptions.name > 0),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 7 <= score <= 11:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 11, TestAnswerOptions.name > 7),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 11 <= score <= 18:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
+                TestAnswerOptions.test_info_id == test_info.id).first()
     elif test_info.name == 'Qat’iyatlilikni baholash testi':
-        for test_option in test_options:
-            if 6 >= score > 0:
-                option = test_option
-            elif 7 <= score <= 11:
-                option = test_option
-            elif 11 <= score <= 18:
-                option = test_option
-            break
+        if 6 >= score > 0:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 6, TestAnswerOptions.name > 0),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 7 <= score <= 11:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 11, TestAnswerOptions.name > 7),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 11 <= score <= 18:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
+                TestAnswerOptions.test_info_id == test_info.id).first()
     elif test_info.name == 'Siz qanchalik sabrlisiz':
-        for test_option in test_options:
-            if 4 >= score > 0:
-                option = test_option
-            elif 4 <= score <= 14:
-                option = test_option
-            elif 14 <= score <= 18:
-                option = test_option
-            break
-    test = Test(test_info_id=test_info.id, answer_id=option.id, user_id=user.id)
+        if 4 >= score > 0:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 4, TestAnswerOptions.name > 0),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 4 <= score <= 14:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 14, TestAnswerOptions.name > 4),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 14 <= score <= 18:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 14),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+    elif test_info.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
+        score += 20
+        if 19 >= score > 0:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 19, TestAnswerOptions.name > 0),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 19 <= score <= 30:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 30, TestAnswerOptions.name > 19),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 30 <= score:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name > 30),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+    test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
     test.add()
-    return jsonify(score=score, result=option.desc)
+    return jsonify(score=score, result=test_option.desc)
 
 
 if __name__ == '__main__':
