@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maqsadga Intiluvchanlik Testi</title>
+    <title>{{ selected_test.name }}</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -113,22 +113,29 @@
 </head>
 <body>
 <div class="container">
-    <h1>Maqsadga Intiluvchanlik Testi</h1>
+    <h1>{{ selected_test.name }}</h1>
     <input type="text" placeholder="Yoshingizni kiriting" name="age" class="age">
     <select name="gender" class="gender">
         <option value="Erkak">Erkak</option>
         <option value="Ayol">Ayol</option>
     </select>
+    <select name="test" class="tests" onchange="redirectToTest()">
+        {% for test in tests %}
+            <option value="{{ test.id }}" {% if selected_test and selected_test.id == test.id %}selected{% endif %}>
+                {{ test.name }}
+            </option>
+        {% endfor %}
+    </select>
     <form id="quizForm">
         {% for question in questions %}
             <div class="question">
-                <p>{{ loop.index }}. {{ question }}</p>
-                <label>
-                    <input type="radio" name="answer{{ loop.index }}" value="+"> Ha
-                </label>
-                <label>
-                    <input type="radio" name="answer{{ loop.index }}" value="-"> Yo'q
-                </label>
+                <p>{{ question['index'] }}. {{ question['question'] }}</p>
+                {% for answers in question['answers'] %}
+                    <label>
+                        <input type="radio" name="answer{{ question['index'] }}"
+                               value="{{ answers['value'] }}"> {{ answers['name'] }}
+                    </label>
+                {% endfor %}
             </div>
         {% endfor %}
         <button type="submit">Submit</button>
@@ -137,6 +144,14 @@
 </div>
 
 <script>
+    const test = document.querySelector('.tests');
+
+    function redirectToTest() {
+        const testId = test.value;
+        window.location.href = '/' + testId;
+    }
+
+    console.log(test)
     document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById('quizForm'),
             age = document.querySelector('.age'),
@@ -158,7 +173,8 @@
                 body: JSON.stringify({
                     answers: data,
                     gender: gender.value,
-                    age: age.value
+                    age: age.value,
+                    test: test.value,
                 })
             });
 
