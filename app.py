@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-from backend.models.models import *
+
 from backend.functions.infos import *
+from backend.models.models import *
 
 app = Flask(__name__)
 app.config.from_object('backend.models.config')
@@ -19,12 +20,23 @@ def index(test_id):
             test_info_add = TestInfo(name=info['name'], desc=info['desc'])
             test_info_add.add()
         for test_options in info['variants']:
-            test_options_add = TestAnswerOptions.query.filter(TestAnswerOptions.name == test_options['name'],
-                                                              TestAnswerOptions.test_info_id == test_info_add.id).first()
-            if not test_options_add:
-                test_options_add = TestAnswerOptions(name=test_options['name'], test_info_id=test_info_add.id,
-                                                     desc=test_options['desc'])
-                test_options_add.add()
+            if isinstance(test_options['name'], str):
+                for test_options1 in test_options['variants']:
+                    test_options_add1 = TestAnswerOptions.query.filter(TestAnswerOptions.desc == test_options1['desc'],
+                                                                       TestAnswerOptions.test_info_id == test_info_add.id).first()
+                    if not test_options_add1:
+                        test_options_add1 = TestAnswerOptions(name=test_options1['name'], test_info_id=test_info_add.id,
+                                                              desc=test_options1['desc'])
+                    test_options_add1.add()
+
+            else:
+                test_options_add = TestAnswerOptions.query.filter(TestAnswerOptions.name == test_options['name'],
+                                                                  TestAnswerOptions.test_info_id == test_info_add.id).first()
+                if not test_options_add:
+                    test_options_add = TestAnswerOptions(name=test_options['name'], test_info_id=test_info_add.id,
+                                                         desc=test_options['desc'])
+                    test_options_add.add()
+
     test = TestInfo.query.filter(TestInfo.id == test_id).first()
     if test.name == 'Maqsadga intiluvchanlik':
         questions = questions_purpose
@@ -34,6 +46,8 @@ def index(test_id):
         questions = questions_patience
     elif test.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
         questions = questions_initiative
+    elif test.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
+        questions = questions_emotion
     elif test.name == 'Oʻquv faoliyat motivi':
         questions = questions_educational_activity
     elif test.name == 'Oiladagi psixologik iqlim':
@@ -59,6 +73,19 @@ def calculate_section_scores(questions, sections):
     return section_scores
 
 
+def get_test_option(score, desc, test_info_id):
+    return TestAnswerOptions.query.filter(
+        and_(
+            TestAnswerOptions.test_info_id == test_info_id,
+            TestAnswerOptions.desc == desc
+        )
+    ).first()
+
+
+def calculate_score(answers, start_index, end_index):
+    return sum(int(answer) for answer in answers[start_index:end_index])
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
@@ -70,8 +97,12 @@ def submit():
     user = User(age=age, gender=gender)
     user.add()
     score = 0
+    question_count = 0
     for answer in answers:
-        score += int(answer['value'])
+        question_count += 1
+        score += int(answer)
+
+    test_option = None
     results = []
     if test_info.name == 'Maqsadga intiluvchanlik':
         if 6 >= score > 0:
@@ -135,6 +166,52 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name > 30),
                 TestAnswerOptions.test_info_id == test_info.id).first()
+    if test_info.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
+        for i in range(0, len(answers), 10):
+            segment_score = calculate_score(answers, i, i + 10)
+
+            desc = ""
+
+            if i == 0:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda xavotirlanish darajasi past chiqdi. Xavotirlilik past bo’lganda siz oldinga dadil qadam tashlay olasiz va qiyinchiliklardan qo’rqmaysiz. Omadsizlikka duch kelishingiz mumkinligidan xavotirga tushmaysiz;"
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda xavotirlanishning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda uning yakuni haqida xavotirga tushasiz. Bu esa sizning faoliyatingiz unumdorligini pasayishiga olib kelishi mumkin;"
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
+            elif i == 10:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda umidsizlikning o’rta darajasi aniqlandi. Siz biror bir faoliyatni amalga oshirayotganda uning yakuni siz kutgan natijani bermasligi mumkinligidan ba’zan umidsizlikka tushasiz. Bu esa o’z o’zidan xavotirlik, tashvish hissini yuzaga keltirishi mumkin."
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda umidsizlikning yuqori darajasi mavjud. Umidsizlik darajasi yuqori bo’lsa, siz o'zingizni past baholaysiz, qiyinchiliklardan qochasiz, muvaffaqiyatsizliklardan qo'rqasiz va umidsizlikka tushasiz."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
+            elif i == 20:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda agressiyaning darajasi past ekanligi aniqlandi. Agar agressiya (tajavuzkorlik) darajasi past bo’lsa siz insonlar bilan muloqotga kirishishda, o’zingizni boshqarishda hech qanday qiyinchiliklarga duch kelmaysiz."
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda agressiyaning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, odamlar bilan muloqotga kirishayotganda qiyinchiliklarga duch kelasiz. Arzimasa-dek tuyilgan narsalarga tez asabiylashasiz. Bu esa sizning faoliyatingizni bir me’yorda kechishiga xalaqit berishi mumkin."
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda agressiyaning yuqori darajasi mavjud. Agressiya darajasi yuqori bo’lsa, siz atrofingizdagilar bilan doimiy nizolashasiz, o’z hissiyotlaringizni boshqarishga qiynalasiz. Bu esa o’zidan atrofdagilan bilan munosabatlaringizni yomonlashishiga olib keladi. Ushbu holatdan chiqish uchun o’z hissiyotlaringizni, g’azabingizni boshqarishga harakat qiling."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
+            elif i == 30:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda qat’iyatlilikning darajasi past. Agar qat’iyatlilik darajasi past bo’lsa siz o’z oldingizga qo’ygan maqsadlaringiz, rejalaringizga erishishda qiynalishingiz mumkin."
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda qat’iyatlilikning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, ko’plab ikkilanishlarga, qo’rquvlarga duch kelasiz. Bularning barchasi sizda qilayotgan ishingizga nisbatan qat’iyat bilan yondasholmasligingiz sabab. Agar o’z qat’iyatliligingiz ustida ishlasangiz bunday muammolarga yechim topgan bo’lasiz."
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda qat’iyatlilikning yuqori darajasi mavjud. Qat’iyatlilik darajasi yuqori bo’lsa, siz barcha maqsadlaringiz, o’z qarorlaringizni amalga oshirishda qiyinchiliklarga duch kelish ehtimoli keskin past bo’ladi. Bu esa sizni muvaffaqiyatga erishishingizga zamin yaratadi."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
         test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
@@ -178,6 +255,8 @@ def submit():
                                 71, 73, 76, 77, 83, 84, 86, 90, 95, 99, 100],
             'O‘z-o‘zini qabul qilish': [33, 35, 55, 67, 72, 74, 75, 80, 88, 94, 96],
             'O‘z-o‘zini qabul qilmaslik': [7, 59, 62, 65, 90, 95, 99],
+            'Сохталик +': [34, 45, 48, 81, 89],
+            'Сохталик -': [8, 82, 92, 101],
             'Boshqalarni qabul qilish': [9, 14, 22, 26, 53, 97],
             'Boshqalarni qabul qilmaslik': [2, 10, 21, 28, 40, 60, 76],
             'Hissiy qulaylik': [23, 29, 30, 41, 44, 47, 78],
@@ -189,8 +268,35 @@ def submit():
             'Eskalizm': [17, 18, 54, 64, 86]
         }
         scores = calculate_section_scores(answers, sections)
-        if 0 < scores['Moslashganlik'] <= 170:
-            pass
+        if 68 < scores['Moslashganlik'] <= 170:
+            results.append(f'Moslashganlik')
+        if 68 < scores['Moslashmaganlik'] <= 170:
+            results.append(f'Moslashmaganlik')
+        if 22 < scores['O‘z-o‘zini qabul qilish'] <= 52:
+            results.append(f'O‘z-o‘zini qabul qilish')
+        if 14 < scores['O‘z-o‘zini qabul qilmaslik'] <= 35:
+            results.append(f'O‘z-o‘zini qabul qilmaslik')
+        if 12 < scores['Boshqalarni qabul qilish'] <= 30:
+            results.append(f'Boshqalarni qabul qilish')
+        if 14 < scores['Boshqalarni qabul qilmaslik'] <= 35:
+            results.append(f'Boshqalarni qabul qilmaslik')
+        if 14 < scores['Hissiy qulaylik'] <= 35:
+            results.append(f'Hissiy qulaylik')
+        if 14 < scores['Hissiy noqulaylik'] <= 35:
+            results.append(f'Hissiy noqulaylik')
+        if 26 < scores['Ichki nazorat'] <= 65:
+            results.append(f'Ichki nazorat')
+        if 18 < scores['Tashqi nazorat'] <= 45:
+            results.append(f'Tashqi nazorat')
+        if 6 < scores['Ustuvorlik'] <= 15:
+            results.append(f'Ustuvorlik')
+        if 12 < scores['Ergashuvchanlik'] <= 30:
+            results.append(f'Ergashuvchanlik')
+        if 10 < scores['Eskalizm'] <= 25:
+            results.append(f'Eskalizm (muammodan qochish)')
+        sohtalik = scores['Сохталик +'] - scores['Сохталик -']
+        if 18 < sohtalik <= 45:
+            results.append(f'Sohtalik')
     return jsonify(score=score, results=results)
 
 
