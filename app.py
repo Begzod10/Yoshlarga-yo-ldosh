@@ -58,7 +58,8 @@ def index(test_id):
         questions = questions_communication
     elif test.name == "Deviant xulq-atvor tashhisi metodikasi":
         questions = questions_deviant
-
+    elif test.name == "DIFFERENSIAL DIAGNOSTIK":
+        questions = question_job
 
     else:
         questions = []
@@ -402,8 +403,51 @@ def submit():
                 results.append("Hissiy reaksiyalarni ixtiyoriy nazorat qilish")
             elif scale == "delinkvent_axloqqa_moyillik" and score == 20:
                 results.append("Delinkvent axloqqa moyillik")
+    if test_info.name == "DIFFERENSIAL DIAGNOSTIK":
+        scoring_key = {
+            "odam_tabiat": {
+                "question_index": [1, 3, 6, 10, 11, 13, 16, 20],
+                "answers": [1, 0, 1, 1, 1, 0, 1, 1]
+            },
+            "odam_texnika": {
+                "question_index": [1, 4, 7, 9, 11, 14, 17, 19],
+                "answers": [0, 1, 0, 1, 0, 1, 0, 1]
+            },
+            "odam_odam": {
+                "question_index": [2, 4, 6, 8, 12, 14, 16, 18],
+                "answers": [1, 0, 0, 1, 1, 0, 0, 1]
+            },
+            "odam_belgilar": {
+                "question_index": [2, 5, 9, 10, 12, 15, 19, 20],
+                "answers": [0, 1, 0, 0, 0, 1, 0, 0]
+            },
+            "odam_badiy": {
+                "question_index": [3, 5, 7, 8, 13, 15, 17, 18],
+                "answers": [1, 0, 1, 0, 1, 0, 1, 0]
+            }
+        }
 
+
+        def calculate_scores(responses, scoring_key):
+            scores = {key: 0 for key in scoring_key}
+
+            for response in responses:
+                question_index = int(response['question'])
+                answer_value = int(response['value'])
+
+                for key, criteria in scoring_key.items():
+                    if question_index in criteria['question_index']:
+                        answer_index = criteria['question_index'].index(question_index)
+                        if criteria['answers'][answer_index] == answer_value:
+                            scores[key] += 1
+
+            return scores
+
+        scores = calculate_scores(answers, scoring_key)
+        results.append( max(scores, key=scores.get))
+        score = scores[results[0]]
     return jsonify(score=score, results=results)
+
 
 if __name__ == '__main__':
     app.run()

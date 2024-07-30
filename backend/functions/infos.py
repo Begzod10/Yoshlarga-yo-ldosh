@@ -939,7 +939,11 @@ test_info = [
         "desc": "",
         "variants": []
     },
-
+    {
+        "name": "DIFFERENSIAL DIAGNOSTIK",
+        "desc": "",
+        "variants": []
+    },
 ]
 questions_IPM = [
     {'question': "Kim bilandir suhbatga kirishayotib, o'zini noqulay his etadi.",
@@ -2971,4 +2975,88 @@ questions_deviant = [
      'index': 98
     },
 
+]
+question_job =[
+
+    {
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name': " Hayvonlarga qarash (ularni boqish, parvarish qilish)",'value':1}, {'name': "Mashina priborlari ga xizmat qilish","value":0}],
+     'index': 1
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name': "Bemor kishilarga yordam berish, ularni davolash",'value':1}, {'name': ". Jadvallar, sxemalar, hisoblash mashinalari uchun dasturlar tuzish.","value":0}],
+     'index': 2
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name': "Kitob bezaklari, plakatlar, badiiy otkritkalar, gramplastinkalar sifatini kuzatib borish.",'value':1}, {'name': "Oʻsimliklar holatini, oʻsishini kuzatish.","value":0}],
+     'index': 3
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name': "Materiallarni (yogʻoch, gazlama, metall, plastmassa va h.k.) karta ishlash.",'value':1}, {'name': "Mahsulotlarni (is teʼmolchilarga yetkazish, reklama qilish, sotish)","value":0}],
+     'index': 4
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name': "Ilmiy — ommabop kitob, maqolalarni muhokama qilish",'value':1}, {'name': "Badiiy kitoblarni (yoki pesa, konsert larni muhokama qilish.","value":0}],
+     'index': 5
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name': "Biron — bir zotli kichik hayvonni boqish, parvaris",'value':1}, {'name': "Oʻrtoqlaringiz (yoki oʻzingizdan kichik bolalarni) biron-bir faoliyat (mehnat, oʻqish, sport)ni   bajarish uchun shugʻullantirish.","value":0}],
+     'index': 6
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name': "Rasm, tasvirlardan nusxalar koʻchirish (yoki musiqa asboblarini sozlash, tuzatish)",'value':1}, {'name': " Biron-bir yuk tashuvchi (koʻtaruvchi) vositalarni (kran, traktor, teplovoz va boshqa) boshqarish","value":0}],
+     'index': 7
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':". Odamlarga (maʼlumot byurolarida, sayohatlarda va boshqa) ularga kerakli maʼlumotlarni berish, tushuntirish.",'value':1},{'name': "Koʻrgazmalarni, peshtaxtalarni bezashda (yoki pesa, konsertlarni   tayyorlashda) ishtirok etish.","value":0}],
+     'index': 8
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Buyumlar,narsalar (kiyim, texnika)ni, uy — joyni taʼmirlash, tuzatish.",'value':1},{'name': "Jadvallar, tekstlar, rasmlardan xatolarini qidirib topish va tuzatish.","value":0}],
+     'index': 9
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Hayvonlarni daʼvolash.",'value':1},{'name': "Hisob — kitob ishlarini bajarish.","value":0}],
+     'index': 10
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Oʻsimliklarni yangi navlarini yaratish",'value':1},{'name': "Sanoat mahsulot lari (mashinalar, kiyim lar, uy, oziq-ovqat mahsulotlari va h.) ning yangi turlarini loyihalashtirish,yaratish.","value":0}],
+     'index': 11
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Odamlar oʻrtasidagi nizo, janjallarni hal qilish (ishontirish, tushuntirish, ragʻbatlantirish)",'value':1},{'name': " Chizmalar, sxemalar, jadvallarni   oʻrganish (tekshirish, aniqlash, tartibga keltirish)","value":0}],
+     'index': 12
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':" Badiiy havaskorlik  toʻgaraklari ishlarini oʻrganish,   kuzatish.",'value':1},{'name': "Mikroblar hayotini oʻrganish.","value":0}],
+     'index': 13
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Meditsina priborlari, yoki apparatlarni ishlatish, ularga xizmat qilish.",'value':1},{'name': "Odamlarga yaralan ganda,  shikastlanganda, kuyganda tibbiy yordam koʻrsatish.","value":0}],
+     'index': 14
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Kuzatilayotgan voqealar, yoki hodisalar, oʻlchanayotgan obyektlar va boshqalar haqida aniq hisobotlar yozib borish.",'value':1},{'name': "Voqealar (kuzatilayotgan yoki ular haqida oʻqigan)ni badiiy ifodalash.","value":0}],
+     'index': 15
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Kasalxonada laboratoriya  analizlarini qilish.",'value':1},{'name': "Bemorlarni qabul qilish, ularni tekshirish, ular bilan suhbatlashish va ularni daʼvolashga yoʻllash.","value":0}],
+     'index': 16
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Xona devorlarini, narsalar yoki sirtini boʻyash va bezash.",'value':1},{'name':"Binolarni taʼmir lash yoki mashina priborlarini yigʻish","value":0}],
+     'index': 17
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Tengdoshlaringiz yoki kichik yoshdagi bolalarni (teatr, muzeylarga) madaniy sayohatlarini, ekskursiyalarini) tashkil etish.",'value':1},{'name':"Sahnada oʻynash, konsertlarda  ishtirok etish.","value":0}],
+     'index': 18
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Chizmalar boʻyicha detallarni buyumlar (mashina, kiyimlar)ni tayyor lash, binolarni qurish.",'value':1},{'name':" Chizmachilik bilan   shugʻullanish, chizmalar, kartalardan nusxalar koʻchirish.","value":0}],
+     'index': 19
+    },{
+'question': "Variantlardan birini tanlang",
+     'answers': [{'name':"Oʻsimliklar kasalliklari va bogʻ — oʻrmon zararkunan dalariga qarshi kurashish.",'value':1},{'name':" Klavishli mashina larda (kompyuter, teletayp va boshqalar)da ishlash.","value":0}],
+     'index': 20
+    },
 ]
