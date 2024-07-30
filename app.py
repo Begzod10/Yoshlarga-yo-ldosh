@@ -83,7 +83,7 @@ def get_test_option(score, desc, test_info_id):
 
 
 def calculate_score(answers, start_index, end_index):
-    return sum(int(answer) for answer in answers[start_index:end_index])
+    return sum(int(answer['value']) for answer in answers[start_index:end_index])
 
 
 @app.route('/submit', methods=['POST'])
@@ -100,8 +100,7 @@ def submit():
     question_count = 0
     for answer in answers:
         question_count += 1
-        score += int(answer)
-
+        score += int(answer['value'])
     test_option = None
     results = []
     if test_info.name == 'Maqsadga intiluvchanlik':
@@ -269,34 +268,34 @@ def submit():
         }
         scores = calculate_section_scores(answers, sections)
         if 68 < scores['Moslashganlik'] <= 170:
-            results.append(f'Moslashganlik')
+            results.append(f"Moslashganlik - {scores['Moslashganlik']} ball")
         if 68 < scores['Moslashmaganlik'] <= 170:
-            results.append(f'Moslashmaganlik')
+            results.append(f"Moslashmaganlik - {scores['Moslashmaganlik']} ball")
         if 22 < scores['O‘z-o‘zini qabul qilish'] <= 52:
-            results.append(f'O‘z-o‘zini qabul qilish')
+            results.append(f"O‘z-o‘zini qabul qilish - {scores['O‘z-o‘zini qabul qilish']} ball")
         if 14 < scores['O‘z-o‘zini qabul qilmaslik'] <= 35:
-            results.append(f'O‘z-o‘zini qabul qilmaslik')
+            results.append(f"O‘z-o‘zini qabul qilmaslik - {scores['O‘z-o‘zini qabul qilmaslik']} ball")
         if 12 < scores['Boshqalarni qabul qilish'] <= 30:
-            results.append(f'Boshqalarni qabul qilish')
+            results.append(f"Boshqalarni qabul qilish - {scores['Boshqalarni qabul qilish']} ball")
         if 14 < scores['Boshqalarni qabul qilmaslik'] <= 35:
-            results.append(f'Boshqalarni qabul qilmaslik')
+            results.append(f"Boshqalarni qabul qilmaslik - {scores['Boshqalarni qabul qilmaslik']} ball")
         if 14 < scores['Hissiy qulaylik'] <= 35:
-            results.append(f'Hissiy qulaylik')
+            results.append(f"Hissiy qulaylik - {scores['Hissiy qulaylik']} ball")
         if 14 < scores['Hissiy noqulaylik'] <= 35:
-            results.append(f'Hissiy noqulaylik')
+            results.append(f"Hissiy noqulaylik - {scores['Hissiy noqulaylik']} ball")
         if 26 < scores['Ichki nazorat'] <= 65:
-            results.append(f'Ichki nazorat')
+            results.append(f"Ichki nazorat - {scores['Ichki nazorat']} ball")
         if 18 < scores['Tashqi nazorat'] <= 45:
-            results.append(f'Tashqi nazorat')
+            results.append(f"Tashqi nazorat - {scores['Tashqi nazorat']} ball")
         if 6 < scores['Ustuvorlik'] <= 15:
-            results.append(f'Ustuvorlik')
+            results.append(f"Ustuvorlik - {scores['Ustuvorlik']} ball")
         if 12 < scores['Ergashuvchanlik'] <= 30:
-            results.append(f'Ergashuvchanlik')
+            results.append(f"Ergashuvchanlik - {scores['Ergashuvchanlik']} ball")
         if 10 < scores['Eskalizm'] <= 25:
-            results.append(f'Eskalizm (muammodan qochish)')
+            results.append(f"Eskalizm - {scores['Eskalizm']} ball")
         sohtalik = scores['Сохталик +'] - scores['Сохталик -']
         if 18 < sohtalik <= 45:
-            results.append(f'Sohtalik')
+            results.append(f"Sohtalik - {sohtalik} ball")
     return jsonify(score=score, results=results)
 
 

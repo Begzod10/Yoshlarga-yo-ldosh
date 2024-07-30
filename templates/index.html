@@ -133,7 +133,7 @@
                 <p>{{ question['index'] }}. {{ question['question'] }}</p>
                 {% for answers in question['answers'] %}
                     <label>
-                        <input type="radio" name="answer{{ question['index'] }}"
+                        <input type="radio" name="{{ question['index'] }}"
                                value="{{ answers['value'] }}"> {{ answers['name'] }}
                     </label>
                 {% endfor %}
@@ -166,7 +166,11 @@
                 const formData = new FormData(form);
                 const data = [];
                 for (const [key, value] of formData.entries()) {
-                    data.push(value);
+                    let info = {
+                        'question': key,
+                        'value': value
+                    }
+                    data.push(info);
                 }
 
                 try {
