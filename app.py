@@ -156,7 +156,6 @@ def submit():
     def calculate_score(answers, start_index, end_index):
         return sum(int(answer) for answer in answers[start_index:end_index])
 
-    results = []
     if test_info.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
 
         for i in range(0, len(answers), 10):
