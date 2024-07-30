@@ -899,7 +899,42 @@ test_info = [
                 ]
             }
         ]
-    }
+    },
+{
+    "name": "Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi",
+    "variants": [
+        {
+            "name": 30,
+            "desc": "Muloqotchanlik darajasi ancha past. Bu sizdagi jiddiy muammo. Chunki bundan avvalo oʻzingiz aziyat chekasiz. Biroq yaqinlaringizga ham oson tutib boʻlmaydi. Hamkorlikdagi faoliyatni talab qiluvchi ishni sizga ishonib topshirib boʻlmaydi. Muloqotchanroq boʻlishga, oʻzingizni boshqarishga harakat qiling."
+        },
+        {
+            "name": 25,
+            "desc": "Siz yolgʻizlanishni yaxshi koʻrasiz, shuning uchun doʻstlaringiz kam. Notanish odamlar bilan tanishish, notanish joylarga borish zarurati halovatingizni buzadi. Siz oʻzingizning bu xususiyatlaringizni bilasiz va oʻzingizdan norozi ham boʻlasiz. Lekin faqat norozilik bilan cheklanmang - xarakterni oʻzgartirish oʻz qoʻlingizda. Eslab koʻring: birorta ishga qiziqib ketganingizda ancha muloqotchang boʻlib qolasiz-ku!"
+        },
+        {
+            "name": 19,
+            "desc": "Siz maʼlum darajada muloqotchansiz va notanish vaziyatda oʻzingizni yoʻqotib qoʻymaysiz. Yangi muammolar sizni qoʻrqitmaydi, ammo notanish odamlar bilan muloqot qilishda ancha ehtiyotkorsiz, bahs-munozaralarga bajonidil qoʻshilmaysiz. Baʼzida gaplaringizda zaruratsiz kinoya - kesatiq koʻpayib ketadi. Biroq bu kamchilikni tuzatsa boʻladi."
+        },
+        {
+            "name": 14,
+            "desc": "Siz yetarlicha muloqotchansiz, qiziquvchansiz, suhbatdosh qiziq narsalar haqida gapirganda, uni diqqat bilan tinglaysiz. Muloqotda ancha sabrlisiz, oʻz nuqtayi nazaringizni hissiyotga berilmay himoya qilasiz. Notanish odamlar bilan suhbatlashishga toʻgʻri kelganda, bezovta boʻlmaysiz, ayni paytda shovqin suron davralarni yoqtirmaysiz, birovning bachkana qiliqlari va koʻp gapirishi gʻashingizga tegadi."
+        },
+        {
+            "name": 9,
+            "desc": "Siz juda muloqotchansiz (baʼzida meʼyoridan ortiq), qiziquvchan, gapdonsiz, har xil masalalar boʻyicha oʻz fikringizni bildirishni yaxshi koʻrasiz, bu esa baʼzida atrofdagilarni gʻashiga tegadi. Notanish odamlar bilan bajonidil tanishasiz, odamlarning diqqat markazida boʻlishni yoqtirasiz. Hech kimning iltimosini yerda qoldirmaysiz, lekin berilgan hamma vaʼdalarni bajara olmasligingiz mumkin. Baʼzida jahl ustida qattiq gapirib yuborasiz, biroq tezda jahlingizdan tushasiz. Jiddiy muammolar bilan toʻqnashganda sizga sabr - toqat yetishmaydi. Ammo xohlasangiz hech qanday muammo oldida taslim boʻlmasligingiz mumkin."
+        },
+        {
+            "name": 4,
+            "desc": "Siz juda muloqotchansiz, gapingiz ichingizga sigʻmaydi. Doim hamma voqealardan xabardorsiz, har xil bahs munozara, tortishuvlarda qatnashishni xush koʻrasiz, lekin jiddiy mavzular sizni zeriktirib yuborishi mumkin. Biror masala boʻyicha toʻliq tasavvurga ega boʻlmasangiz ham, bu masala yuzasidan soʻzga chiqishga doim tayyorsiz. Hamma joyda oʻzingizni erkin his etasiz, har qanday ishga kirishib ketaverasiz, ammo har doim ham uni oxirigacha yetkazmaysiz. Shuning uchun rahbariyat va hamkasblar sizga biroz xavotir va shubha bilan qaraydilar. Bu xususiyatlaringiz haqida bosh qotirib koʻring."
+        },
+        {
+            "name": 3,
+            "desc": "Sizning muloqotchanlik darajangiz meʼyordan ortiq darajada yuqori. Juda sergapsiz, sizga aloqasi boʻlmagan ishlarga aralashaverasiz, hal etishga qurbingiz yetmaydigan muammolarni bartaraf etishga kirishaverasiz, ixtiyoriy yoki ixtiyorsiz ravishda har xil nizolarning kelib chiqishiga sababchi boʻlib qolasiz. Ancha xafalanuvchan, jazavaga moyilsiz, jiddiy ishni sizga topshirmagan maʼqul. Oʻzingizning ustingizda, xarakteringiz ustida ishlang. Avvalo oʻzingizda sabr – toqatni, vazminlik va bosiqlikni tarbiyalang, boshqalarga hurmat koʻzi bilan qarashni oʻrganing. Eng muhimi, oʻz sogʻligingiz haqida qaygʻuring. Ishoning bunday hayot tarzining oqibatlari jiddiy boʻlishi mumkin."
+        }
+    ],
+    "desc": ""
+}
+
 ]
 questions_IPM = [
     {'question': "Kim bilandir suhbatga kirishayotib, o'zini noqulay his etadi.",
@@ -2395,4 +2430,145 @@ questions_emotion = [
          {'name': "Vaqti-vaqti bilan sodir bo'lsa", 'value': 1},
          {'name': "hech qachon sodir bo'lmasa", 'value': 0}
      ], 'index': 40}
+]
+questions_communication = [
+    {
+        'question': "Sizni oddiy yoki ish bilan bogʻliq uchrashuv kutib turibdi. Uchrashuv vaqtini kutish sizni asabiylashtiradimi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 1},
+
+    {
+        'question': "Sizga biror majlis, anjuman yoki shu kabi boshqa tadbirda nutq soʻzlash, maʼruza oʻqish, axborot yetkazish topshirilsa, bunda halovatingizni yoʻqotib, bevosita boʻlib koʻrasizmi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 2},
+
+    {'question': "Shifokor qabuliga borishni kasal zoʻrayib ketguncha choʻzib yuradigan odatingiz bormi?",
+     'answers': [
+         {'name': "Ha", 'value': 2},
+         {'name': "Ba'zida", 'value': 1},
+         {'name': "Yo'q", 'value': 1},
+     ],
+     'index': 3},
+
+    {
+        'question': "Sizni boshqa shaharga mehnat safariga joʻnatishmoqda. Siz avvallari hech qachon bu shaharda boʻlmagansiz. Siz bor imkoniyatingizni ishga solib, ushbu mehnat safaridan qutilib qolishga urinasizmi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 4},
+
+    {'question': "Oʻz kechinmalaringizni birovga u kim boʻlishidan qatʼiy nazar gapirib berishni yoqtirasizmi?",
+     'answers': [
+         {'name': "Ha", 'value': 2},
+         {'name': "Ba'zida", 'value': 1},
+         {'name': "Yo'q", 'value': 1},
+     ],
+     'index': 5},
+
+    {
+        'question': "Koʻchada notanish odam sizga iltimos bilan (yoʻlni koʻrsatib yuborish, vaqtni aytib yuborish va boshqa iltimoslar) murojaat qilishi joningizga tegadimi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 6},
+
+    {'question': "Har xil avlod vakillari, haqiqatdan ham, bir — birini tushunishi qiyin, deb oʻylaysizmi?",
+     'answers': [
+         {'name': "Ha", 'value': 2},
+         {'name': "Ba'zida", 'value': 1},
+         {'name': "Yo'q", 'value': 1},
+     ],
+     'index': 7},
+
+    {
+        'question': "Tanishingiz bir necha oy avval sizdan qarz olgan boʻlsa, unga pulni qaytarish iltimosi bilan murojaat qilishga uyalasizmi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 8},
+
+    {
+        'question': "Restoran yoki kafeda sizga sifatsiz taom keltirildi. Siz indamay likopchani jahl bilan bir chetga surib qoʻyasizmi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 9},
+
+    {
+        'question': "Notanish odam bilan yolgʻiz qolganda, siz suhbatga kirishmaysiz, oʻzingiz gap boshlamaysiz. Shundaymi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 10},
+
+    {
+        'question': "Siz borgan joyda odamlar uzun navbat hosil qilib turishgan boʻlsa (masalan, doʻkonda, kutubxonada, kassada) niyatingizdan qaytmay qator oxiriga kelib turarmidingiz?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 11},
+
+    {
+        'question': "Nizoli vaziyatlarni hal etish bilan shugʻullanuvchi biror komissiya ishida qatnashish sizni choʻchitadimi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 12},
+
+    {
+        'question': "Siz sanʼat asarlariga, badiiy asarlarga baho berishda boshqalarning fikr — mulohazalarini eʼtiborga olmaysiz. Shundaymi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 13},
+
+    {
+        'question': "Siz yaxshi bilgan biror masala boʻyicha birov aniq xato gapirayotgan boʻlsa, bu odam bilan bahslashmasdan indamay qoʻya qolasizmi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 14},
+
+    {
+        'question': "Ish yoki oʻqish yuzasidan birov muayyan muammoni hal etishda yordam berishingizni iltimos qilganda, ensangiz qotadimi?",
+        'answers': [
+            {'name': "Ha", 'value': 2},
+            {'name': "Ba'zida", 'value': 1},
+            {'name': "Yo'q", 'value': 1},
+        ],
+        'index': 15},
+
+    {'question': "Fikringizni ogʻzaki aytgandan koʻra yozma tarzda bildirishni maʼqul koʻrasizmi?",
+     'answers': [
+         {'name': "Ha", 'value': 2},
+         {'name': "Ba'zida", 'value': 1},
+         {'name': "Yo'q", 'value': 1},
+     ],
+     'index': 16},
 ]

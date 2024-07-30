@@ -54,6 +54,8 @@ def index(test_id):
         questions = questions_family
     elif test.name == "IPM / ijtimoiy – psixologik maslashganlik / so‘rovnomasi":
         questions = questions_IPM
+    elif test.name == "Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi":
+        questions = questions_communication
     else:
         questions = []
     return render_template('index.html', questions=questions, selected_test=test,
@@ -130,6 +132,48 @@ def submit():
         test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
+    elif test_info.name == 'Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi':
+        if score >= 30 and score <= 32:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name == "30"),
+                TestAnswerOptions.test_info_id == test_info.id
+            ).first()
+        elif score >= 25 and score <= 29:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name == "25"),
+                TestAnswerOptions.test_info_id == test_info.id
+            ).first()
+        elif score >= 19 and score <= 24:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name == "19"),
+                TestAnswerOptions.test_info_id == test_info.id
+            ).first()
+        elif score >= 14 and score <= 18:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name == "14"),
+                TestAnswerOptions.test_info_id == test_info.id
+            ).first()
+        elif score >= 9 and score <= 13:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name == "9"),
+                TestAnswerOptions.test_info_id == test_info.id
+            ).first()
+        elif score >= 4 and score <= 8:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name == "4"),
+                TestAnswerOptions.test_info_id == test_info.id
+            ).first()
+        elif score <= 3:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name == "3"),
+                TestAnswerOptions.test_info_id == test_info.id
+            ).first()
+
+        if test_option:
+            test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
+            test.add()
+            results.append(test_option.desc)
+
     elif test_info.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
         score += 20
         if 19 >= score > 0:
