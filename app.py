@@ -34,6 +34,10 @@ def index(test_id):
         questions = questions_patience
     elif test.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
         questions = questions_initiative
+    elif test.name == 'Oʻquv faoliyat motivi':
+        questions = questions_educational_activity
+    elif test.name == 'Oiladagi psixologik iqlim':
+        questions = questions_family
     else:
         questions = []
     return render_template('index.html', questions=questions, selected_test=test,
@@ -55,8 +59,6 @@ def submit():
     score = 0
     for answer in answers:
         score += int(answer)
-    test_options = TestAnswerOptions.query.filter(TestAnswerOptions.test_info_id == test_info.id).order_by(
-        TestAnswerOptions.id).all()
     if test_info.name == 'Maqsadga intiluvchanlik':
         if 6 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -109,6 +111,32 @@ def submit():
         elif 30 <= score:
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name > 30),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+    elif test_info.name == 'Oʻquv faoliyat motivi':
+        if 10 >= score > 0:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 10, TestAnswerOptions.name > 0),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 10 <= score <= 20:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 20, TestAnswerOptions.name > 10),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+    elif test_info.name == 'Oiladagi psixologik iqlim':
+        if 8 >= score > 0:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 8, TestAnswerOptions.name > 0),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 8 <= score <= 15:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 15, TestAnswerOptions.name > 8),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 15 <= score <= 22:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 22, TestAnswerOptions.name > 15),
+                TestAnswerOptions.test_info_id == test_info.id).first()
+        elif 22 <= score <= 35:
+            test_option = TestAnswerOptions.query.filter(
+                and_(TestAnswerOptions.name <= 35, TestAnswerOptions.name > 22),
                 TestAnswerOptions.test_info_id == test_info.id).first()
     test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
     test.add()
