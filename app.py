@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 
 from backend.functions.infos import *
+from backend.functions.infos2 import *
 from backend.models.models import *
 
 app = Flask(__name__)
@@ -131,117 +132,67 @@ def submit():
     def get_test_option(score, desc, test_info_id):
         return TestAnswerOptions.query.filter(
             and_(
-                TestAnswerOptions.name <= score,
                 TestAnswerOptions.test_info_id == test_info_id,
                 TestAnswerOptions.desc == desc
             )
         ).first()
 
+    def calculate_score(answers, start_index, end_index):
+        return sum(int(answer) for answer in answers[start_index:end_index])
+
+    results = []
     if test_info.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
-        print(question_count)
-        print(score)
 
-        if question_count <= 10:
-            if 1 <= score <= 7:
-                desc = "Sizda xavotirlanish darajasi past chiqdi. Xavotirlilik past bo’lganda siz oldinga dadil qadam tashlay olasiz va qiyinchiliklardan qo’rqmaysiz. Omadsizlikka duch kelishingiz mumkinligidan xavotirga tushmaysiz;"
-                test_option = get_test_option(7, desc, test_info.id)
+        for i in range(0, len(answers), 10):
+            segment_score = calculate_score(answers, i, i + 10)
 
-            elif 8 <= score <= 14:
-                desc = "Sizda xavotirlanishning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda uning yakuni haqida xavotirga tushasiz. Bu esa sizning faoliyatingiz unumdorligini pasayishiga olib kelishi mumkin;"
-                test_option = get_test_option(14, desc, test_info.id)
 
-            elif 15 <= score <= 20:
-                desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
-                test_option = get_test_option(20, desc, test_info.id)
+            desc = ""
 
-            else:
-                test_option = TestAnswerOptions.query.filter(
-                    and_(
-                        TestAnswerOptions.name > 20,
-                        TestAnswerOptions.test_info_id == test_info.id
-                    )
-                ).first()
+            if i == 0:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda xavotirlanish darajasi past chiqdi. Xavotirlilik past bo’lganda siz oldinga dadil qadam tashlay olasiz va qiyinchiliklardan qo’rqmaysiz. Omadsizlikka duch kelishingiz mumkinligidan xavotirga tushmaysiz;"
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda xavotirlanishning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda uning yakuni haqida xavotirga tushasiz. Bu esa sizning faoliyatingiz unumdorligini pasayishiga olib kelishi mumkin;"
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
 
-            print(test_option.desc)
-            score = 0
 
-        elif 11 <= question_count <= 20:
-            if 1 <= score <= 7:
-                desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
-                test_option = get_test_option(7, desc, test_info.id)
+            elif i == 10:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda umidsizlikning o’rta darajasi aniqlandi. Siz biror bir faoliyatni amalga oshirayotganda uning yakuni siz kutgan natijani bermasligi mumkinligidan ba’zan umidsizlikka tushasiz. Bu esa o’z o’zidan xavotirlik, tashvish hissini yuzaga keltirishi mumkin."
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda umidsizlikning yuqori darajasi mavjud. Umidsizlik darajasi yuqori bo’lsa, siz o'zingizni past baholaysiz, qiyinchiliklardan qochasiz, muvaffaqiyatsizliklardan qo'rqasiz va umidsizlikka tushasiz."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
 
-            elif 8 <= score <= 14:
-                desc = "Sizda umidsizlikning o’rta darajasi aniqlandi. Siz biror bir faoliyatni amalga oshirayotganda uning yakuni siz kutgan natijani bermasligi mumkinligidan ba’zan umidsizlikka tushasiz. Bu esa o’z o’zidan xavotirlik, tashvish hissini yuzaga keltirishi mumkin."
-                test_option = get_test_option(14, desc, test_info.id)
-
-            elif 15 <= score <= 20:
-                desc = "Sizda umidsizlikning yuqori darajasi mavjud. Umidsizlik darajasi yuqori bo’lsa, siz o'zingizni past baholaysiz, qiyinchiliklardan qochasiz, muvaffaqiyatsizliklardan qo'rqasiz va umidsizlikka tushasiz."
-                test_option = get_test_option(20, desc, test_info.id)
-
-            else:
-                test_option = TestAnswerOptions.query.filter(
-                    and_(
-                        TestAnswerOptions.name > 20,
-                        TestAnswerOptions.test_info_id == test_info.id
-                    )
-                ).first()
-
-            print(test_option.desc)
-
-        elif question_count == 21:
-            if 1 <= score <= 7:
-                desc = "Sizda agressiyaning darajasi past ekanligi aniqlandi. Agar agressiya (tajavuzkorlik) darajasi past bo’lsa siz insonlar bilan muloqotga kirishishda, o’zingizni boshqarishda hech qanday qiyinchiliklarga duch kelmaysiz."
-                test_option = get_test_option(7, desc, test_info.id)
-
-            elif 8 <= score <= 14:
-                desc = "Sizda agressiyaning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, odamlar bilan muloqotga kirishayotganda qiyinchiliklarga duch kelasiz. Arzimasa-dek tuyilgan narsalarga tez asabiylashasiz. Bu esa sizning faoliyatingizni bir me’yorda kechishiga xalaqit berishi mumkin."
-                test_option = get_test_option(14, desc, test_info.id)
-
-            elif 15 <= score <= 20:
-                desc = "Sizda agressiyaning yuqori darajasi mavjud. Agressiya darajasi yuqori bo’lsa, siz atrofingizdagilar bilan doimiy nizolashasiz, o’z hissiyotlaringizni boshqarishga qiynalasiz. Bu esa o’zidan atrofdagilan bilan munosabatlaringizni yomonlashishiga olib keladi. Ushbu holatdan chiqish uchun o’z hissiyotlaringizni, g’azabingizni boshqarishga harakat qiling."
-                test_option = get_test_option(20, desc, test_info.id)
-
-            else:
-                test_option = TestAnswerOptions.query.filter(
-                    and_(
-                        TestAnswerOptions.name > 20,
-                        TestAnswerOptions.test_info_id == test_info.id
-                    )
-                ).first()
-
-            print(test_option.desc)
-
-        elif question_count == 31:
-            if 1 <= score <= 7:
-                desc = "Sizda qat’iyatlilikning darajasi past. Agar qat’iyatlilik darajasi past bo’lsa siz o’z oldingizga qo’ygan maqsadlaringiz, rejalaringizga erishishda qiynalishingiz mumkin."
-                test_option = get_test_option(7, desc, test_info.id)
-
-            elif 8 <= score <= 14:
-                desc = "Sizda qat’iyatlilikning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, ko’plab ikkilanishlarga, qo’rquvlarga duch kelasiz. Bularning barchasi sizda qilayotgan ishingizga nisbatan qat’iyat bilan yondasholmasligingiz sabab. Agar o’z qat’iyatliligingiz ustida ishlasangiz bunday muammolarga yechim topgan bo’lasiz."
-                test_option = get_test_option(14, desc, test_info.id)
-
-            elif 15 <= score <= 20:
-                desc = "Sizda qat’iyatlilikning yuqori darajasi mavjud. Qat’iyatlilik darajasi yuqori bo’lsa, siz barcha maqsadlaringiz, o’z qarorlaringizni amalga oshirishda qiyinchiliklarga duch kelish ehtimoli keskin past bo’ladi. Bu esa sizni muvaffaqiyatga erishishingizga zamin yaratadi."
-                test_option = get_test_option(20, desc, test_info.id)
-
-            else:
-                test_option = TestAnswerOptions.query.filter(
-                    and_(
-                        TestAnswerOptions.name > 20,
-                        TestAnswerOptions.test_info_id == test_info.id
-                    )
-                ).first()
-
-            print(test_option.desc)
-
-    if test_option:
-        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
-        test.add()
-        result = test_option.desc
-    else:
-        result = "No matching test option found."
-
-    return jsonify(score=score, result=result)
+            elif i == 20:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda agressiyaning darajasi past ekanligi aniqlandi. Agar agressiya (tajavuzkorlik) darajasi past bo’lsa siz insonlar bilan muloqotga kirishishda, o’zingizni boshqarishda hech qanday qiyinchiliklarga duch kelmaysiz."
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda agressiyaning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, odamlar bilan muloqotga kirishayotganda qiyinchiliklarga duch kelasiz. Arzimasa-dek tuyilgan narsalarga tez asabiylashasiz. Bu esa sizning faoliyatingizni bir me’yorda kechishiga xalaqit berishi mumkin."
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda agressiyaning yuqori darajasi mavjud. Agressiya darajasi yuqori bo’lsa, siz atrofingizdagilar bilan doimiy nizolashasiz, o’z hissiyotlaringizni boshqarishga qiynalasiz. Bu esa o’zidan atrofdagilan bilan munosabatlaringizni yomonlashishiga olib keladi. Ushbu holatdan chiqish uchun o’z hissiyotlaringizni, g’azabingizni boshqarishga harakat qiling."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
+            elif i == 30:
+                if 1 <= segment_score <= 7:
+                    desc = "Sizda qat’iyatlilikning darajasi past. Agar qat’iyatlilik darajasi past bo’lsa siz o’z oldingizga qo’ygan maqsadlaringiz, rejalaringizga erishishda qiynalishingiz mumkin."
+                elif 8 <= segment_score <= 14:
+                    desc = "Sizda qat’iyatlilikning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, ko’plab ikkilanishlarga, qo’rquvlarga duch kelasiz. Bularning barchasi sizda qilayotgan ishingizga nisbatan qat’iyat bilan yondasholmasligingiz sabab. Agar o’z qat’iyatliligingiz ustida ishlasangiz bunday muammolarga yechim topgan bo’lasiz."
+                elif 15 <= segment_score <= 20:
+                    desc = "Sizda qat’iyatlilikning yuqori darajasi mavjud. Qat’iyatlilik darajasi yuqori bo’lsa, siz barcha maqsadlaringiz, o’z qarorlaringizni amalga oshirishda qiyinchiliklarga duch kelish ehtimoli keskin past bo’ladi. Bu esa sizni muvaffaqiyatga erishishingizga zamin yaratadi."
+                test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
+                if test_option:
+                    results.append(test_option.desc)
+        return jsonify(score=score, results=results)
 
 
 if __name__ == '__main__':
