@@ -933,7 +933,12 @@ test_info = [
         }
     ],
     "desc": ""
-}
+},
+    {
+        "name": "Deviant xulq-atvor tashhisi metodikasi",
+        "desc": "",
+        "variants": []
+    },
 
 ]
 questions_IPM = [
@@ -2571,4 +2576,399 @@ questions_communication = [
          {'name': "Yo'q", 'value': 1},
      ],
      'index': 16},
+]
+questions_deviant = [
+    {'question': "Sizni oddiy yoki ish bilan bogʻliq uchrashuv kutib turibdi. Uchrashuv vaqtini kutish sizni asabiylashtiradimi?",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 1
+    },
+    {'question': "Men ko‘zga tashlanmaydigan, bo‘g‘iq rangdagi kiyimlarni afzal ko‘raman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 2
+    },
+    {'question': "Shunday hollar bo‘ladiki, men bugun qilinishi kerak bo‘lgan ishni ertaga qoldiraman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 3
+    },
+    {'question': "Men bajonidil qandaydir harbiy harakatlarda ishtirok etish uchun ko‘ngilli bo‘lib yozilardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 4
+    },
+    {'question': "Shunday damlar bo‘ladiki, men otaonam bilan janjallashib qolaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 5
+    },
+    {'question': "Kimki bolaligida mushtlashmasa, “onasining bolasi” bo‘ladi va hayotda hech narsaga erishmaydi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 6
+    },
+    {'question': "Men hayot uchun xavfli bo‘lgan ishga ham qo‘l urardim, agar unga yaxshi haq to‘lasalar.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 7
+    },
+    {'question': "Ba’zida men shunday kuchli xavotirni his qilamanki, shunchaki joyimda o‘tira olmay qolaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 8
+    },
+    {'question': "Ba’zan shunday bo‘ladiki, ozgina maqtanchoqlik qilaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 9
+    },
+    {'question': "Agar menga harbiy bo‘lishga to‘g‘ri kelsa, men uchuvchi bo‘lgan bo‘lardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 10
+    },
+    {'question': "Men odamlarda ehtiyotkorlik va oqibatini o‘ylab ish tutishni qadrlayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 11
+    },
+    {'question': "Faqat zaif va qo‘rqoq odamlargina barcha qoida va qonunlarni bajaradilar.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 12
+    },
+    {'question': "Men hayot uchun xavfli bo‘lsada, o‘zgarishlar va sayohatlar bilan bog‘liq ishni afzal ko‘rardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 13
+    },
+    {'question': "Men doimo faqat haqiqatni gapiraman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 14
+    },
+    {'question': "Agar inson qo‘zg‘atuvchi va psixikaga ta’sir qiluvchi moddalarni me’yorda va zararli oqibatlarsiz iste’mol qilsa – bu butunlay tabiiy.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 15
+    },
+    {'question': "Men hatto g‘azablansam ham so‘kinishgacha bormaslikka harakat qilaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 16
+    },
+    {'question': "O‘ylaymanki, menga sherlarni ovlash yoqqan bo‘lardi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 17
+    },
+    {'question': "Agar meni xafa qilsalar, unda men, albatta, o‘ch olishim kerak.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 18
+    },
+    {'question': "Inson o‘zi qancha va qaerda ichishni xohlasa, shuncha ichishga haqli.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 19
+    },
+    {'question': "Agar mening og‘aynim belgilangan uchrashuvga kechiksa, unda men, odatda, sokinlikni saqlayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 20
+    },
+    {'question': "Meni, odatda, ishni belgilangan muddatda tugatish haqidagi talab qiynaydi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 21
+    },
+    {'question': "Ba’zida men ko‘chani belgilangan joydan emas, o‘zimga qulay bo‘lgan joydan kesib o‘taman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 22
+    },
+    {'question': "Agar kuchli jinsiy maylni his qilsang, ba’zi qoida va taqiqlarni uloqtirib tashlash mumkin.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 23
+    },
+    {'question': "Men hech qachon otaonamning gaplariga quloq solmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 24
+    },
+    {'question': "Agar avtomobil sotib olishda menga tezlik va xavfsizlik o‘rtasida tanlash zarurati tug‘ilib qolsa, men xavfsizlikni tanlayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 25
+    },
+    {'question': "O‘ylaymanki, menga boks bilan shug‘ullanish yoqadi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 26
+    },
+    {'question': "Agar men kasb tanlashda erkin bo‘lsam edi, vinolarni sinab ko‘ruvchi bo‘lardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 27
+    },
+    {'question': "Men teztez kuchli tuyg‘ularga ehtiyoj sezaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 28
+    },
+    {'question': "Ba’zida o‘zimga o‘zim azob bergim keladi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 29
+    },
+    {'question': "Mening hayotga munosabatim “Etti marta o‘lchab, bir kes” maqolini ifodalaydi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 30
+    },
+    {'question': "Men jamoatchilik transportida doim bilet xarid qilaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 31
+    },
+    {'question': "Tanishlarim orasida gangitadigan, toksik moddalarni tatib ko‘rgan odamlar bor.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 32
+    },
+    {'question': "Men garchi bu menga foyda keltirmasada, doim va’damni bajaraman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 33
+    },
+    {'question': "Shunday paytlar bo‘ladiki, so‘kinishni istayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 34
+    },
+    {'question': "“Agar mumkin bo‘lmasayu, juda istasang, unda mumkin” maqoliga amal qiluvchi odamlar haqdirlar.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 35
+    },
+    {'question': "Shunday bo‘ladiki, spirtli ichimlik ichganimdan keyin tasodifan mushtlashuvga yo‘liqaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 36
+    },
+    {'question': "Qator kundalik omadsizliklardan keyin ishni davom ettirishga o‘zimni majburlashni ko‘pincha uddalay olmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 37
+    },
+    {'question': "Agar bizning davrimizda gladiatorlar jangi olib borilganida, men, albatta, unda ishtirok etgan bo‘lardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 38
+    },
+    {'question': "Shunday vaqtlar bo‘ladiki, men yolg‘on gapiraman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 39
+    },
+    {'question': "Barchaga qasdmaqasd og‘riqqa chidash hatto yoqimli bo‘ladi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 40
+    },
+    {'question': "Men odamlar bilan bahslashishdan ko‘ra kelishishni xush ko‘raman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 41
+    },
+    {'question': "Agar men qadimgi davrda tug‘ilganimda olijanob qaroqchi bo‘lardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 42
+    },
+    {'question': "Agar boshqa yo‘li bo‘lmasa, bahsni mushtlashish bilan ham hal qilish mumkin.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 43
+    },
+    {'question': "Shunday hollar bo‘ladiki, mening otaonam, boshqa kattalar mening biroz ichganim uchun xavotirlanardilar.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 44
+    },
+    {'question': "Kiyim insonni olomon ichida boshqalardan birinchi qarashdayoq ajratib turishi kerak.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 45
+    },
+    {'question': "Agar kinofilmda bitta durustroq mushtlashuv bo‘lmasa – u yomon kino.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 46
+    },
+    {'question': "Odamlar qachonki yangi, noodatiy tuyg‘u va kechinmalarga intilsalar – bu me’yoriy hol.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 47
+    },
+    {'question': "Ba’zida men darslarda zerikaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 48
+    },
+    {'question': "Agar olomon ichida kimdir meni tasodifan turtib yuborsa, men, albatta, undan kechirim so‘rashini talab qilaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 49
+    },
+    {'question': "Agar kimdir mening g‘ashimni keltirsa, men u haqida nimani o‘ylasam, shularni aytishga tayyorman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 50
+    },
+    {'question': "Sayohat va safarlarda men odatiy marshrutdan og‘ishni yoqtiraman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 51
+    },
+    {'question': "Menga yirtqich hayvonlarni o‘rgatish kasbi yoqqan bo‘lardi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 52
+    },
+    {'question': "Agar sen mototsikl ruliga o‘tirgan bo‘lsang, unda faqat juda tez yur.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 53
+    },
+    {'question': "Detektiv asar o‘qiganimda, men ko‘pincha jinoyatchining ta’qibdan qochib ketishini istayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 54
+    },
+    {'question': "Ba’zida odobsiz hazil eshitganimda o‘zimni kulgudan to‘xtata olmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 55
+    },
+    {'question': "Men suhbatda atrofdagilarni ultirishi mumkin bo‘lgan iboralardan qochishga intilaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 56
+    },
+    {'question': "Men ko‘pincha mayda narsalardan xafa bo‘laman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 57
+    },
+    {'question': "Menga e’tiroz bildirganlarida portlab ketaman va keskin javob qaytaraman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 58
+    },
+    {'question': "Menga muhabbat tarixidan ko‘ra sarguzashtlarni o‘qish ko‘proq yoqadi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 59
+    },
+    {'question': "Lazzat olish uchun ba’zi qoidalar va taqiqlarni buzish mumkin.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 60
+    },
+    {'question': "Menga me’yorda ichuvchi va xushchaqchaqlik qiluvchi kompaniyada bo‘lish yoqadi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 61
+    },
+    {'question': "Qizlarning chekishi g‘ashimni keltiradi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 62
+    },
+    {'question': "Menga yaxshi kompaniyada me’yorida ichgandan keyingi holat yoqadi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 63
+    },
+    {'question': "Shunday vaqtlar bo‘ladiki, garchi buning mavridi va joyi bo‘lmasada, ichish istagi tug‘iladi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 64
+    },
+    {'question': "Og‘ir daqiqalarda tamaki meni tinchlantiradi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 65
+    },
+    {'question': "Menga bolshqa odamlarning mendan qo‘rqishga majbur qilish oson va men buni ba’zida vaqtichog‘lik uchun qilaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 66
+    },
+    {'question': "Men oliy jazoga odilona hukm qilingan jinoyatchini o‘z qo‘llarim bilan qatl qila olardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 67
+    },
+    {'question': "Lazzatlanish – bu hayotda intilishga arzirli muhim narsa.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 68
+    },
+    {'question': "Men avtomobil musobaqasida ishtirok etishni xohlardim.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 69
+    },
+    {'question': "Mening kayfiyatim yomon bo‘lganida, yaxshisi yaqinlashmaganingiz ma’qul.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 70
+    },
+    {'question': "Ba’zida menda shunday kayfiyat bo‘ladiki, qiyin vaziyatlardan yo‘lini topolmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 71
+    },
+    {'question': "Men faqat xohlagan sohada o‘z bilimimni oshirishni ma’qul ko‘raman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 72
+    },
+    {'question': "Men, odatda, zo‘ravonlik yoki tajovuz yo‘li bilan muammoni hal qilishni qiziqtiradigan insonlarga befarq qarayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 73
+    },
+    {'question': "Ba’zida o‘zimga xavf tug‘diradigan ishlarni amalga oshirish xohishi yuzaga keladi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 74
+    },
+    {'question': "Ba’zida men buni yaxshi qilish uchun maqsadga muvofiq bo‘lmagan vaqtda ishlayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 75
+    },
+    {'question': "Menga ko‘proq hayotda ta’sirchanlik va harakatlarni xush ko‘raman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 76
+    },
+    {'question': "Ba’zida odamlarning xushmuomalaligi va yaxshi niyatlarini yomonlik deb o‘ylayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 77
+    },
+    {'question': "Menga ko‘proq xavfli vaziyatlarda halollikni saqlashni qiyinlashtiruvchi odamlar yoqadi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 78
+    },
+    {'question': "Men o‘z qarorlarim va harakatlarimni doimo o‘zgartiraman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 79
+    },
+    {'question': "Menga katta muammolarni hal qilishda murakkabliklarni to‘g‘ri va maqsadga muvofiq tarzda hal qilish yaxshiroq yo‘ldir.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 80
+    },
+    {'question': "Men yuqori darajadagi sportchi bo‘lishni o‘ylayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 81
+    },
+    {'question': "Men boshqalarning menda kutilmagan ishlar qilishlari mumkinligi bilan qiziqaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 82
+    },
+    {'question': "Shunday bo‘ladiki, men boshqa odamlarning ehtiyojlarini o‘z ehtiyojlarimdan yuqori qo‘yamanki.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 83
+    },
+    {'question': "Men o‘z intilishlarimni qoniqtirmaslikka harakat qilaman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 84
+    },
+    {'question': "Ba’zida menda asabiy holat paydo bo‘ladi va men undan to‘g‘ri chiqish yo‘lini topolmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 85
+    },
+    {'question': "Men hech qachon ko‘zga tashlanishni yoqtirmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 86
+    },
+    {'question': "Menga ko‘proq sarguzasht va yangi tajribalarni qidirish yoqadi.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 87
+    },
+    {'question': "Ba’zida men o‘z muammolarimni o‘z vaqtida hal qila olmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 88
+    },
+    {'question': "Agar men charchagan bo‘lsam, men boshqa odamlarning salomatligi haqida qayg‘urmayman.",
+         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 89
+    },
+    {'question': "Men faqat o‘zim xohlagan ishlarni bajarishni ma’qul ko‘raman.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 90
+    },
+    {'question': "Agar biror narsa men uchun qiziqarli bo‘lsa, men birinchi bo‘lib uni o‘rganaman.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 91
+    },
+    {'question': "Menga biror ishni o‘rganish uchun vaqt ajratish va uni mukammal o‘rganish yoqadi.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 92
+    },
+    {'question': "Men tezda xafa bo‘lishim va shuningdek boshqa odamlar tomonidan asabiylashtirilishim mumkin.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 93
+    },
+    {'question': "Men ba’zan o‘z asabiy holatimni boshqa odamlar bilan baham ko‘rishga tayyorman.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 94
+    },
+    {'question': "Agar men qiyin holatda bo‘lsam, o‘z vaqtida yordam so‘rashdan voz kechaman.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 95
+    },
+    {'question': "Men shaxsiy vaqtimni boshqa odamlar uchun ish joyida ishlashda sarflashni xush ko‘raman.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 96
+    },
+    {'question': "Agar men muhim qarorlar qabul qilishim kerak bo‘lsa, men o‘zimni qo‘rquv va xavotirdan yiroq his qilaman.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 97
+    },
+    {'question': "Men o‘z rejamni yaxshi amalga oshirish uchun har doim maxfiylikni saqlashga harakat qilaman.",
+     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'index': 98
+    },
+
 ]

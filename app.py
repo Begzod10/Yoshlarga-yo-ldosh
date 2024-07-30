@@ -56,6 +56,10 @@ def index(test_id):
         questions = questions_IPM
     elif test.name == "Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi":
         questions = questions_communication
+    elif test.name == "Deviant xulq-atvor tashhisi metodikasi":
+        questions = questions_deviant
+
+
     else:
         questions = []
     return render_template('index.html', questions=questions, selected_test=test,
@@ -85,7 +89,7 @@ def get_test_option(score, desc, test_info_id):
 
 
 def calculate_score(answers, start_index, end_index):
-    return sum(int(answer) for answer in answers[start_index:end_index])
+    return sum(int(answer['value']) for answer in answers[start_index:end_index])
 
 
 @app.route('/submit', methods=['POST'])
@@ -102,8 +106,7 @@ def submit():
     question_count = 0
     for answer in answers:
         question_count += 1
-        score += int(answer)
-
+        score += int(answer['value'])
     test_option = None
     results = []
     if test_info.name == 'Maqsadga intiluvchanlik':
@@ -258,7 +261,6 @@ def submit():
                     results.append(test_option.desc)
         test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
-        results.append(test_option.desc)
     elif test_info.name == 'Oʻquv faoliyat motivi':
         if 10 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -313,36 +315,95 @@ def submit():
         }
         scores = calculate_section_scores(answers, sections)
         if 68 < scores['Moslashganlik'] <= 170:
-            results.append(f'Moslashganlik')
+            results.append(f"Moslashganlik - {scores['Moslashganlik']} ball")
         if 68 < scores['Moslashmaganlik'] <= 170:
-            results.append(f'Moslashmaganlik')
+            results.append(f"Moslashmaganlik - {scores['Moslashmaganlik']} ball")
         if 22 < scores['O‘z-o‘zini qabul qilish'] <= 52:
-            results.append(f'O‘z-o‘zini qabul qilish')
+            results.append(f"O‘z-o‘zini qabul qilish - {scores['O‘z-o‘zini qabul qilish']} ball")
         if 14 < scores['O‘z-o‘zini qabul qilmaslik'] <= 35:
-            results.append(f'O‘z-o‘zini qabul qilmaslik')
+            results.append(f"O‘z-o‘zini qabul qilmaslik - {scores['O‘z-o‘zini qabul qilmaslik']} ball")
         if 12 < scores['Boshqalarni qabul qilish'] <= 30:
-            results.append(f'Boshqalarni qabul qilish')
+            results.append(f"Boshqalarni qabul qilish - {scores['Boshqalarni qabul qilish']} ball")
         if 14 < scores['Boshqalarni qabul qilmaslik'] <= 35:
-            results.append(f'Boshqalarni qabul qilmaslik')
+            results.append(f"Boshqalarni qabul qilmaslik - {scores['Boshqalarni qabul qilmaslik']} ball")
         if 14 < scores['Hissiy qulaylik'] <= 35:
-            results.append(f'Hissiy qulaylik')
+            results.append(f"Hissiy qulaylik - {scores['Hissiy qulaylik']} ball")
         if 14 < scores['Hissiy noqulaylik'] <= 35:
-            results.append(f'Hissiy noqulaylik')
+            results.append(f"Hissiy noqulaylik - {scores['Hissiy noqulaylik']} ball")
         if 26 < scores['Ichki nazorat'] <= 65:
-            results.append(f'Ichki nazorat')
+            results.append(f"Ichki nazorat - {scores['Ichki nazorat']} ball")
         if 18 < scores['Tashqi nazorat'] <= 45:
-            results.append(f'Tashqi nazorat')
+            results.append(f"Tashqi nazorat - {scores['Tashqi nazorat']} ball")
         if 6 < scores['Ustuvorlik'] <= 15:
-            results.append(f'Ustuvorlik')
+            results.append(f"Ustuvorlik - {scores['Ustuvorlik']} ball")
         if 12 < scores['Ergashuvchanlik'] <= 30:
-            results.append(f'Ergashuvchanlik')
+            results.append(f"Ergashuvchanlik - {scores['Ergashuvchanlik']} ball")
         if 10 < scores['Eskalizm'] <= 25:
-            results.append(f'Eskalizm (muammodan qochish)')
+            results.append(f"Eskalizm - {scores['Eskalizm']} ball")
         sohtalik = scores['Сохталик +'] - scores['Сохталик -']
         if 18 < sohtalik <= 45:
-            results.append(f'Sohtalik')
-    return jsonify(score=score, results=results)
+            results.append(f"Sohtalik - {sohtalik} ball")
+    if test_info.name == 'Deviant xulq-atvor tashhisi metodikasi':
+        scoring_key = {
+            "ijtimoiy_xohishga_yo'nalganlik": {
+                "yes": [13, 30, 38],
+                "no": [2, 4, 6, 21, 23, 33, 47, 54, 79, 83, 87]
+            },
+            "me'yor_va_qoidalarni_buzishga_moyillik": {
+                "yes": [11, 22, 34, 44, 50, 53, 59, 80, 88, 91],
+                "no": [1, 10, 55, 61, 86, 93]
+            },
+            "addiktiv_axloqqa_moyillik": {
+                "yes": [14, 18, 22, 26, 27, 31, 34, 35, 43, 46, 59, 60, 62, 63, 64, 67, 74, 81, 91],
+                "no": [95]
+            },
+            "oz_oziga_zarar_keltiruvchi_axloqqa_moyillik": {
+                "yes": [6, 9, 12, 16, 24, 27, 28, 37, 39, 51, 52, 58, 68, 73, 90, 91, 92, 96, 98],
+                "no": [76]
+            },
+            "tajovuzkorlik_va_zo'ravonlikka_moyillik": {
+                "yes": [3, 5, 16, 17, 25, 37, 42, 45, 48, 49, 51, 65, 66, 70, 71, 72, 82, 89, 94, 97],
+                "no": [15, 40, 75, 85]
+            },
+            "hissiy_reaksiyalarni_ixtiyoriy_nazorat_qilish": {
+                "yes": [7, 19, 20, 29, 36, 49, 56, 57, 69, 70, 71, 78, 84, 89, 94],
+                "no": []
+            },
+            "delinkvent_axloqqa_moyillik": {
+                "yes": [18, 26, 31, 34, 35, 42, 43, 44, 48, 52, 62, 63, 64, 67, 74, 91, 94],
+                "no": [55, 61, 86]
+            }
+        }
 
+        scores = {scale: 0 for scale in scoring_key}
+        results = []
+
+        for answer in answers:
+            question_number = int(answer['question'])
+            answer_value = answer['value']
+            for scale, criteria in scoring_key.items():
+                if question_number in criteria['yes'] and answer_value == '1':
+                    scores[scale] += 1
+                elif question_number in criteria['no'] and answer_value == '0':
+                    scores[scale] += 1
+
+        for scale, score in scores.items():
+            if scale == "ijtimoiy_xohishga_yo'nalganlik" and score == 14:
+                results.append("Ijtimoiy xohishga yo‘nalganlik")
+            elif scale == "me'yor_va_qoidalarni_buzishga_moyillik" and score == 16:
+                results.append("Me’oyr va qoidalarni buzishga moyillik")
+            elif scale == "addiktiv_axloqqa_moyillik" and score == 20:
+                results.append("Addiktiv axloqqa moyillik")
+            elif scale == "oz_oziga_zarar_keltiruvchi_axloqqa_moyillik" and score == 20:
+                results.append("O‘z o‘ziga zarar keltiruvchi axloqqa moyillik")
+            elif scale == "tajovuzkorlik_va_zo'ravonlikka_moyillik" and score == 24:
+                results.append("Tajovuzkorlik va zo‘ravonlikka moyillik")
+            elif scale == "hissiy_reaksiyalarni_ixtiyoriy_nazorat_qilish" and score == 15:
+                results.append("Hissiy reaksiyalarni ixtiyoriy nazorat qilish")
+            elif scale == "delinkvent_axloqqa_moyillik" and score == 20:
+                results.append("Delinkvent axloqqa moyillik")
+
+    return jsonify(score=score, results=results)
 
 if __name__ == '__main__':
     app.run()
