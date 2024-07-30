@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-from backend.models.models import *
+
 from backend.functions.infos import *
+from backend.models.models import *
 
 app = Flask(__name__)
 app.config.from_object('backend.models.config')
@@ -19,11 +20,22 @@ def index(test_id):
             test_info_add = TestInfo(name=info['name'], desc=info['desc'])
             test_info_add.add()
         for test_options in info['variants']:
-            test_options_add = TestAnswerOptions.query.filter(TestAnswerOptions.name == test_options['name'],
-                                                              TestAnswerOptions.test_info_id == test_info_add.id).first()
-            if not test_options_add:
-                test_options_add = TestAnswerOptions(name=test_options['name'], test_info_id=test_info_add.id,
-                                                     desc=test_options['desc'])
+            if isinstance(test_options['name'], str):
+                for test_options1 in test_options['variants']:
+                    test_options_add1 = TestAnswerOptions.query.filter(TestAnswerOptions.desc == test_options1['desc'],
+                                                                       TestAnswerOptions.test_info_id == test_info_add.id).first()
+                    if not test_options_add1:
+                        test_options_add1 = TestAnswerOptions(name=test_options1['name'], test_info_id=test_info_add.id,
+                                                              desc=test_options1['desc'])
+                    test_options_add1.add()
+
+            else:
+                test_options_add = TestAnswerOptions.query.filter(TestAnswerOptions.name == test_options['name'],
+                                                                  TestAnswerOptions.test_info_id == test_info_add.id).first()
+                if not test_options_add:
+                    test_options_add = TestAnswerOptions(name=test_options['name'], test_info_id=test_info_add.id,
+                                                         desc=test_options['desc'])
+
                 test_options_add.add()
     test = TestInfo.query.filter(TestInfo.id == test_id).first()
     if test.name == 'Maqsadga intiluvchanlik':
@@ -34,6 +46,8 @@ def index(test_id):
         questions = questions_patience
     elif test.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
         questions = questions_initiative
+    elif test.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
+        questions = questions_emotion
     else:
         questions = []
     return render_template('index.html', questions=questions, selected_test=test,
@@ -53,10 +67,13 @@ def submit():
     user = User(age=age, gender=gender)
     user.add()
     score = 0
+    question_count = 0
     for answer in answers:
+        question_count += 1
         score += int(answer)
-    test_options = TestAnswerOptions.query.filter(TestAnswerOptions.test_info_id == test_info.id).order_by(
-        TestAnswerOptions.id).all()
+
+    test_option = None
+
     if test_info.name == 'Maqsadga intiluvchanlik':
         if 6 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -110,9 +127,121 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name > 30),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-    test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
-    test.add()
-    return jsonify(score=score, result=test_option.desc)
+
+    def get_test_option(score, desc, test_info_id):
+        return TestAnswerOptions.query.filter(
+            and_(
+                TestAnswerOptions.name <= score,
+                TestAnswerOptions.test_info_id == test_info_id,
+                TestAnswerOptions.desc == desc
+            )
+        ).first()
+
+    if test_info.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
+        print(question_count)
+        print(score)
+
+        if question_count <= 10:
+            if 1 <= score <= 7:
+                desc = "Sizda xavotirlanish darajasi past chiqdi. Xavotirlilik past bo’lganda siz oldinga dadil qadam tashlay olasiz va qiyinchiliklardan qo’rqmaysiz. Omadsizlikka duch kelishingiz mumkinligidan xavotirga tushmaysiz;"
+                test_option = get_test_option(7, desc, test_info.id)
+
+            elif 8 <= score <= 14:
+                desc = "Sizda xavotirlanishning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda uning yakuni haqida xavotirga tushasiz. Bu esa sizning faoliyatingiz unumdorligini pasayishiga olib kelishi mumkin;"
+                test_option = get_test_option(14, desc, test_info.id)
+
+            elif 15 <= score <= 20:
+                desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
+                test_option = get_test_option(20, desc, test_info.id)
+
+            else:
+                test_option = TestAnswerOptions.query.filter(
+                    and_(
+                        TestAnswerOptions.name > 20,
+                        TestAnswerOptions.test_info_id == test_info.id
+                    )
+                ).first()
+
+            print(test_option.desc)
+            score = 0
+
+        elif 11 <= question_count <= 20:
+            if 1 <= score <= 7:
+                desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
+                test_option = get_test_option(7, desc, test_info.id)
+
+            elif 8 <= score <= 14:
+                desc = "Sizda umidsizlikning o’rta darajasi aniqlandi. Siz biror bir faoliyatni amalga oshirayotganda uning yakuni siz kutgan natijani bermasligi mumkinligidan ba’zan umidsizlikka tushasiz. Bu esa o’z o’zidan xavotirlik, tashvish hissini yuzaga keltirishi mumkin."
+                test_option = get_test_option(14, desc, test_info.id)
+
+            elif 15 <= score <= 20:
+                desc = "Sizda umidsizlikning yuqori darajasi mavjud. Umidsizlik darajasi yuqori bo’lsa, siz o'zingizni past baholaysiz, qiyinchiliklardan qochasiz, muvaffaqiyatsizliklardan qo'rqasiz va umidsizlikka tushasiz."
+                test_option = get_test_option(20, desc, test_info.id)
+
+            else:
+                test_option = TestAnswerOptions.query.filter(
+                    and_(
+                        TestAnswerOptions.name > 20,
+                        TestAnswerOptions.test_info_id == test_info.id
+                    )
+                ).first()
+
+            print(test_option.desc)
+
+        elif question_count == 21:
+            if 1 <= score <= 7:
+                desc = "Sizda agressiyaning darajasi past ekanligi aniqlandi. Agar agressiya (tajavuzkorlik) darajasi past bo’lsa siz insonlar bilan muloqotga kirishishda, o’zingizni boshqarishda hech qanday qiyinchiliklarga duch kelmaysiz."
+                test_option = get_test_option(7, desc, test_info.id)
+
+            elif 8 <= score <= 14:
+                desc = "Sizda agressiyaning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, odamlar bilan muloqotga kirishayotganda qiyinchiliklarga duch kelasiz. Arzimasa-dek tuyilgan narsalarga tez asabiylashasiz. Bu esa sizning faoliyatingizni bir me’yorda kechishiga xalaqit berishi mumkin."
+                test_option = get_test_option(14, desc, test_info.id)
+
+            elif 15 <= score <= 20:
+                desc = "Sizda agressiyaning yuqori darajasi mavjud. Agressiya darajasi yuqori bo’lsa, siz atrofingizdagilar bilan doimiy nizolashasiz, o’z hissiyotlaringizni boshqarishga qiynalasiz. Bu esa o’zidan atrofdagilan bilan munosabatlaringizni yomonlashishiga olib keladi. Ushbu holatdan chiqish uchun o’z hissiyotlaringizni, g’azabingizni boshqarishga harakat qiling."
+                test_option = get_test_option(20, desc, test_info.id)
+
+            else:
+                test_option = TestAnswerOptions.query.filter(
+                    and_(
+                        TestAnswerOptions.name > 20,
+                        TestAnswerOptions.test_info_id == test_info.id
+                    )
+                ).first()
+
+            print(test_option.desc)
+
+        elif question_count == 31:
+            if 1 <= score <= 7:
+                desc = "Sizda qat’iyatlilikning darajasi past. Agar qat’iyatlilik darajasi past bo’lsa siz o’z oldingizga qo’ygan maqsadlaringiz, rejalaringizga erishishda qiynalishingiz mumkin."
+                test_option = get_test_option(7, desc, test_info.id)
+
+            elif 8 <= score <= 14:
+                desc = "Sizda qat’iyatlilikning o’rta darajasi aniqlandi. Siz ba’zan biror bir faoliyatni amalga oshirayotganda, ko’plab ikkilanishlarga, qo’rquvlarga duch kelasiz. Bularning barchasi sizda qilayotgan ishingizga nisbatan qat’iyat bilan yondasholmasligingiz sabab. Agar o’z qat’iyatliligingiz ustida ishlasangiz bunday muammolarga yechim topgan bo’lasiz."
+                test_option = get_test_option(14, desc, test_info.id)
+
+            elif 15 <= score <= 20:
+                desc = "Sizda qat’iyatlilikning yuqori darajasi mavjud. Qat’iyatlilik darajasi yuqori bo’lsa, siz barcha maqsadlaringiz, o’z qarorlaringizni amalga oshirishda qiyinchiliklarga duch kelish ehtimoli keskin past bo’ladi. Bu esa sizni muvaffaqiyatga erishishingizga zamin yaratadi."
+                test_option = get_test_option(20, desc, test_info.id)
+
+            else:
+                test_option = TestAnswerOptions.query.filter(
+                    and_(
+                        TestAnswerOptions.name > 20,
+                        TestAnswerOptions.test_info_id == test_info.id
+                    )
+                ).first()
+
+            print(test_option.desc)
+
+    if test_option:
+        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test.add()
+        result = test_option.desc
+    else:
+        result = "No matching test option found."
+
+    return jsonify(score=score, result=result)
 
 
 if __name__ == '__main__':
