@@ -38,6 +38,8 @@ def index(test_id):
         questions = questions_educational_activity
     elif test.name == 'Oiladagi psixologik iqlim':
         questions = questions_family
+    elif test.name == "IPM / ijtimoiy – psixologik maslashganlik / so‘rovnomasi":
+        questions = questions_IPM
     else:
         questions = []
     return render_template('index.html', questions=questions, selected_test=test,
@@ -58,7 +60,8 @@ def submit():
     user.add()
     score = 0
     for answer in answers:
-        score += int(answer)
+        score += int(answer['value'])
+    results = []
     if test_info.name == 'Maqsadga intiluvchanlik':
         if 6 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -72,6 +75,9 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
                 TestAnswerOptions.test_info_id == test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test.add()
+        results.append(test_option.desc)
     elif test_info.name == 'Qat’iyatlilikni baholash testi':
         if 6 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -85,6 +91,9 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
                 TestAnswerOptions.test_info_id == test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test.add()
+        results.append(test_option.desc)
     elif test_info.name == 'Siz qanchalik sabrlisiz':
         if 4 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -98,6 +107,9 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 14),
                 TestAnswerOptions.test_info_id == test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test.add()
+        results.append(test_option.desc)
     elif test_info.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
         score += 20
         if 19 >= score > 0:
@@ -112,6 +124,9 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name > 30),
                 TestAnswerOptions.test_info_id == test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test.add()
+        results.append(test_option.desc)
     elif test_info.name == 'Oʻquv faoliyat motivi':
         if 10 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -121,6 +136,9 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 20, TestAnswerOptions.name > 10),
                 TestAnswerOptions.test_info_id == test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test.add()
+        results.append(test_option.desc)
     elif test_info.name == 'Oiladagi psixologik iqlim':
         if 8 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -138,9 +156,12 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 35, TestAnswerOptions.name > 22),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-    test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
-    test.add()
-    return jsonify(score=score, result=test_option.desc)
+        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test.add()
+        results.append(test_option.desc)
+    elif test_info.name == "IPM / ijtimoiy – psixologik maslashganlik ":
+        pass
+    return jsonify(score=score, results=results)
 
 
 if __name__ == '__main__':
