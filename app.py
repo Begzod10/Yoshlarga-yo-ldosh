@@ -126,5 +126,8 @@ def submit():
     return jsonify(score=score, result=result)
 
 
+from test2 import *
+from confirm_self_assesment import *
+
 if __name__ == '__main__':
     app.run()
