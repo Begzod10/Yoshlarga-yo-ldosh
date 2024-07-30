@@ -64,6 +64,30 @@ def index(test_id):
                            )
 
 
+def calculate_section_scores(questions, sections):
+    section_scores = {section: 0 for section in sections}
+    for q in questions:
+        question_number = int(q['question'])
+        value = int(q['value'])
+        for section, numbers in sections.items():
+            if question_number in numbers:
+                section_scores[section] += value
+    return section_scores
+
+
+def get_test_option(score, desc, test_info_id):
+    return TestAnswerOptions.query.filter(
+        and_(
+            TestAnswerOptions.test_info_id == test_info_id,
+            TestAnswerOptions.desc == desc
+        )
+    ).first()
+
+
+def calculate_score(answers, start_index, end_index):
+    return sum(int(answer) for answer in answers[start_index:end_index])
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     data = request.get_json()
@@ -81,9 +105,7 @@ def submit():
         score += int(answer)
 
     test_option = None
-
     results = []
-
     if test_info.name == 'Maqsadga intiluvchanlik':
         if 6 >= score > 0:
             test_option = TestAnswerOptions.query.filter(
@@ -188,20 +210,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name > 30),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-
-    def get_test_option(score, desc, test_info_id):
-        return TestAnswerOptions.query.filter(
-            and_(
-                TestAnswerOptions.test_info_id == test_info_id,
-                TestAnswerOptions.desc == desc
-            )
-        ).first()
-
-    def calculate_score(answers, start_index, end_index):
-        return sum(int(answer) for answer in answers[start_index:end_index])
-
     if test_info.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
-
         for i in range(0, len(answers), 10):
             segment_score = calculate_score(answers, i, i + 10)
 
@@ -217,8 +226,6 @@ def submit():
                 test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
                 if test_option:
                     results.append(test_option.desc)
-
-
             elif i == 10:
                 if 1 <= segment_score <= 7:
                     desc = "Sizda xavotirlanishning yuqori darajasi mavjud. Xavotirlik darajasi yuqori bo’lsa, sizning shaxsiy va mehnat faoliyatingizda bir qancha qiyinchiliklar yuzaga kelishi mumkin. Doimiy xavotir ostida yashash esa doimiy stressga, shaxslararo munosabatlarning buzilishiga olib kelishi mumkin."
@@ -229,7 +236,6 @@ def submit():
                 test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
                 if test_option:
                     results.append(test_option.desc)
-
             elif i == 20:
                 if 1 <= segment_score <= 7:
                     desc = "Sizda agressiyaning darajasi past ekanligi aniqlandi. Agar agressiya (tajavuzkorlik) darajasi past bo’lsa siz insonlar bilan muloqotga kirishishda, o’zingizni boshqarishda hech qanday qiyinchiliklarga duch kelmaysiz."
@@ -250,7 +256,6 @@ def submit():
                 test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
                 if test_option:
                     results.append(test_option.desc)
-        return jsonify(score=score, results=results)
         test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
@@ -286,8 +291,56 @@ def submit():
         test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
-    elif test_info.name == "IPM / ijtimoiy – psixologik maslashganlik ":
-        pass
+    elif test_info.name == "IPM / ijtimoiy – psixologik maslashganlik / so‘rovnomasi":
+        sections = {
+            'Moslashganlik': [4, 5, 9, 12, 15, 19, 22, 23, 26, 27, 29, 33, 35, 37, 41, 44, 47, 51, 53, 55, 61, 63, 67,
+                              72, 74, 75, 78, 80, 88, 91, 94, 96, 97, 98],
+            'Moslashmaganlik': [2, 6, 8, 13, 16, 18, 25, 28, 32, 36, 38, 40, 42, 43, 49, 50, 54, 56, 59, 60, 62, 64, 69,
+                                71, 73, 76, 77, 83, 84, 86, 90, 95, 99, 100],
+            'O‘z-o‘zini qabul qilish': [33, 35, 55, 67, 72, 74, 75, 80, 88, 94, 96],
+            'O‘z-o‘zini qabul qilmaslik': [7, 59, 62, 65, 90, 95, 99],
+            'Сохталик +': [34, 45, 48, 81, 89],
+            'Сохталик -': [8, 82, 92, 101],
+            'Boshqalarni qabul qilish': [9, 14, 22, 26, 53, 97],
+            'Boshqalarni qabul qilmaslik': [2, 10, 21, 28, 40, 60, 76],
+            'Hissiy qulaylik': [23, 29, 30, 41, 44, 47, 78],
+            'Hissiy noqulaylik': [6, 42, 43, 49, 50, 83, 85],
+            'Ichki nazorat': [4, 5, 11, 12, 19, 29, 37, 51, 63, 68, 79, 91, 98],
+            'Tashqi nazorat': [13, 25, 36, 52, 57, 70, 71, 73, 77],
+            'Ustuvorlik': [58, 61, 66],
+            'Ergashuvchanlik': [16, 32, 38, 69, 84, 87],
+            'Eskalizm': [17, 18, 54, 64, 86]
+        }
+        scores = calculate_section_scores(answers, sections)
+        if 68 < scores['Moslashganlik'] <= 170:
+            results.append(f'Moslashganlik')
+        if 68 < scores['Moslashmaganlik'] <= 170:
+            results.append(f'Moslashmaganlik')
+        if 22 < scores['O‘z-o‘zini qabul qilish'] <= 52:
+            results.append(f'O‘z-o‘zini qabul qilish')
+        if 14 < scores['O‘z-o‘zini qabul qilmaslik'] <= 35:
+            results.append(f'O‘z-o‘zini qabul qilmaslik')
+        if 12 < scores['Boshqalarni qabul qilish'] <= 30:
+            results.append(f'Boshqalarni qabul qilish')
+        if 14 < scores['Boshqalarni qabul qilmaslik'] <= 35:
+            results.append(f'Boshqalarni qabul qilmaslik')
+        if 14 < scores['Hissiy qulaylik'] <= 35:
+            results.append(f'Hissiy qulaylik')
+        if 14 < scores['Hissiy noqulaylik'] <= 35:
+            results.append(f'Hissiy noqulaylik')
+        if 26 < scores['Ichki nazorat'] <= 65:
+            results.append(f'Ichki nazorat')
+        if 18 < scores['Tashqi nazorat'] <= 45:
+            results.append(f'Tashqi nazorat')
+        if 6 < scores['Ustuvorlik'] <= 15:
+            results.append(f'Ustuvorlik')
+        if 12 < scores['Ergashuvchanlik'] <= 30:
+            results.append(f'Ergashuvchanlik')
+        if 10 < scores['Eskalizm'] <= 25:
+            results.append(f'Eskalizm (muammodan qochish)')
+        sohtalik = scores['Сохталик +'] - scores['Сохталик -']
+        if 18 < sohtalik <= 45:
+            results.append(f'Sohtalik')
     return jsonify(score=score, results=results)
 
 
