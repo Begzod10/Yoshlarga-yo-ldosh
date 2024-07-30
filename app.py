@@ -75,7 +75,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Qat’iyatlilikni baholash testi':
@@ -91,7 +91,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Siz qanchalik sabrlisiz':
@@ -107,7 +107,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 14),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
@@ -124,7 +124,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name > 30),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Oʻquv faoliyat motivi':
@@ -133,10 +133,10 @@ def submit():
                 and_(TestAnswerOptions.name <= 10, TestAnswerOptions.name > 0),
                 TestAnswerOptions.test_info_id == test_info.id).first()
         elif 10 <= score <= 20:
-            test_option = TestAnswerOptions.query.filter(
+             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 20, TestAnswerOptions.name > 10),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Oiladagi psixologik iqlim':
@@ -156,7 +156,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 35, TestAnswerOptions.name > 22),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer_id=test_option.id, user_id=user.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == "IPM / ijtimoiy – psixologik maslashganlik ":
