@@ -128,6 +128,8 @@ def submit():
 
 from test2 import *
 from confirm_self_assesment import *
+from motivation_to_achieve_success import *
+from the_motivation_of_helping_others import *
 
 if __name__ == '__main__':
     app.run()

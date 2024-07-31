@@ -1,0 +1,19 @@
+{% extends "motivation_to_achieve_success/layout.html" %}
+
+{% block title %}Natijalar{% endblock %}
+
+{% block content %}
+<div class="result">
+  <h1>Test Natijasi</h1>
+  <p>Sizning bali: {{ score }}</p>
+  {% if score <= 10 %}
+    <p>Muvaffaqiyatga nisbatan juda past motivatsiya.</p>
+  {% elif score <= 16 %}
+    <p>O'rta darajadagi motivatsiya.</p>
+  {% elif score <= 20 %}
+    <p>Anchagina yuqori motivatsiya.</p>
+  {% else %}
+    <p>Muvaffaqiyatga nisbatan o'ta yuqori motivatsiya.</p>
+  {% endif %}
+</div>
+{% endblock %}
