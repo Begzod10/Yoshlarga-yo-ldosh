@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Psixologik Test</title>
+    <link rel="stylesheet" href="/static/confirmSelfAssesment/style.css">
+</head>
+<body>
+<h1>Psixologik Test</h1>
+<form method="POST">
+    {% for i, question in enumerate(questions) %}
+        <div>
+            <label>{{ question }}</label><br>
+            <input type="radio" name="question{{ i+1 }}" value="0" required> Hech qachon<br>
+            <input type="radio" name="question{{ i+1 }}" value="1"> Vaqti-vaqti bilan<br>
+            <input type="radio" name="question{{ i+1 }}" value="2"> Tez-tez<br>
+        </div>
+        <br>
+    {% endfor %}
+    <button type="submit">Natijani ko'rish</button>
+</form>
+</body>
+</html>

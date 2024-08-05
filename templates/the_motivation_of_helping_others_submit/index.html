@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Psixologik Test</title>
+    <link rel="stylesheet" href="/static/the_motivation_of_helping_others_submit/">
+</head>
+<body>
+<h1>O'zgalarga Yordam Berish Motivi</h1>
+<form action="/the_motivation_of_helping_others_submit" method="POST">
+    {% for i in range(questions|length) %}
+        <label for="question_{{ i }}">{{ questions[i] }}</label>
+        <select name="question_{{ i }}" id="question_{{ i }}">
+            <option value="Ha bu to'g'ri">Ha bu to'g'ri</option>
+            <option value="Balki shundaydir">Balki shundaydir</option>
+            <option value="Bu to'g'ri yolg'on emas">Bu to'g'ri yolg'on emas</option>
+            <option value="Aniq javob berish qiyin">Aniq javob berish qiyin</option>
+            <option value="Bu haqiqatdan ko'ra noto'g'riroq">Bu haqiqatdan ko'ra noto'g'riroq</option>
+            <option value="Balki unday emasdir">Balki unday emasdir</option>
+            <option value="Yo'q unday emas">Yo'q unday emas</option>
+        </select>
+        <br>
+    {% endfor %}
+    <button type="submit">Natijani ko'rish</button>
+</form>
+</body>
+</html>
