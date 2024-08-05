@@ -59,7 +59,7 @@ class Test(db.Model):
     __tablename__ = "test"
     id = Column(Integer, primary_key=True)
     test_info_id = Column(Integer, ForeignKey('test_info.id'))
-    answer_id = Column(Integer, ForeignKey('test_answer_option.id'))
+    answer = Column(String)
     day = Column(DateTime, default=datetime.now())
     user_id = Column(Integer, ForeignKey('user.id'))
 

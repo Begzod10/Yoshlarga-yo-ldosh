@@ -92,6 +92,7 @@
             }
 
             p {
+                padding: 10px;
                 font-size: 16px;
             }
 
@@ -132,7 +133,7 @@
                 <p>{{ question['index'] }}. {{ question['question'] }}</p>
                 {% for answers in question['answers'] %}
                     <label>
-                        <input type="radio" name="answer{{ question['index'] }}"
+                        <input type="radio" name="{{ question['index'] }}"
                                value="{{ answers['value'] }}"> {{ answers['name'] }}
                     </label>
                 {% endfor %}
@@ -144,48 +145,74 @@
 </div>
 
 <script>
+    // Select the relevant elements
     const test = document.querySelector('.tests');
+    const age = document.querySelector('.age');
+    const gender = document.querySelector('.gender');
+    const form = document.getElementById('quizForm');
+    const resultContainer = document.getElementById('result');
 
     function redirectToTest() {
         const testId = test.value;
         window.location.href = '/' + testId;
     }
 
-    console.log(test)
+    // Wait for the DOM to fully load
     document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById('quizForm'),
-            age = document.querySelector('.age'),
-            gender = document.querySelector('.gender');
-        form.addEventListener('submit', async function (event) {
-            event.preventDefault(); // Prevent default form submission
+        if (form) {
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault(); // Prevent default form submission
 
-            const formData = new FormData(form);
-            const data = [];
-            for (const [key, value] of formData.entries()) {
-                data.push(value);
-            }
+                const formData = new FormData(form);
+                const data = [];
+                for (const [key, value] of formData.entries()) {
+                    let info = {
+                        'question': key,
+                        'value': value
+                    }
+                    data.push(info);
+                }
 
-            const response = await fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    answers: data,
-                    gender: gender.value,
-                    age: age.value,
-                    test: test.value,
-                })
+                try {
+                    const response = await fetch('/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            answers: data,
+                            gender: gender.value,
+                            age: age.value,
+                            test: test.value,
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    const result = await response.json();
+
+                    if (Array.isArray(result.results) && result.results.length > 0) {
+                        let resultsHtml = '<h2>Test Natijalari</h2>';
+                        resultsHtml += `<p>Sizning ballaringiz: ${result.score}</p>`;
+
+                        result.results.forEach(item => {
+                            resultsHtml += `<p>${item}</p>`;
+                        });
+
+                        resultContainer.innerHTML = resultsHtml;
+                    } else {
+                        resultContainer.innerHTML = '<p>No matching test option found.</p>';
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    resultContainer.innerHTML = '<p>There was an error processing your request.</p>';
+                }
             });
-
-            const result = await response.json();
-            document.getElementById('result').innerHTML = `
-                    <h2>Test Natijalari</h2>
-                    <p>Sizning ballaringiz: ${result.score}</p>
-                    <p>${result.result}</p>
-                `;
-        });
+        }
     });
 </script>
+
 </body>
 </html>
