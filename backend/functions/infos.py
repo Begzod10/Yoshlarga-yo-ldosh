@@ -16,12 +16,12 @@ questions_initiative = [
      ], 'index': 2},
     {'question': "Men hech qachon o’z tashabbusim bilan jamoat topshiriqlarini o’z bo’ynimga olmayman.",
      'answers': [
-        {'name': "Bunday bo’lmaydi", 'value': 2},
-        {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
-        {'name': "Bo’lishi mumkin", 'value': 0},
-        {'name': "Ehtimol, ha", 'value': -1},
-        {'name': "Aniq ha", 'value': -2},
-    ], 'index': 3},
+         {'name': "Bunday bo’lmaydi", 'value': 2},
+         {'name': "Ehtimol, bu noto’g’ri", 'value': 1},
+         {'name': "Bo’lishi mumkin", 'value': 0},
+         {'name': "Ehtimol, ha", 'value': -1},
+         {'name': "Aniq ha", 'value': -2},
+     ], 'index': 3},
     {
         'question': "Akademik darslarga tayyorgarlik ko’rayotganda men ko’picha ma’ruza yoki darslik bilan cheklanib qolmasdan qo’shimcha adabiyotlarni o’qiyman.",
         'answers': [
@@ -901,40 +901,40 @@ test_info = [
             }
         ]
     },
-{
-    "name": "Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi",
-    "variants": [
-        {
-            "name": 30,
-            "desc": "Muloqotchanlik darajasi ancha past. Bu sizdagi jiddiy muammo. Chunki bundan avvalo oʻzingiz aziyat chekasiz. Biroq yaqinlaringizga ham oson tutib boʻlmaydi. Hamkorlikdagi faoliyatni talab qiluvchi ishni sizga ishonib topshirib boʻlmaydi. Muloqotchanroq boʻlishga, oʻzingizni boshqarishga harakat qiling."
-        },
-        {
-            "name": 25,
-            "desc": "Siz yolgʻizlanishni yaxshi koʻrasiz, shuning uchun doʻstlaringiz kam. Notanish odamlar bilan tanishish, notanish joylarga borish zarurati halovatingizni buzadi. Siz oʻzingizning bu xususiyatlaringizni bilasiz va oʻzingizdan norozi ham boʻlasiz. Lekin faqat norozilik bilan cheklanmang - xarakterni oʻzgartirish oʻz qoʻlingizda. Eslab koʻring: birorta ishga qiziqib ketganingizda ancha muloqotchang boʻlib qolasiz-ku!"
-        },
-        {
-            "name": 19,
-            "desc": "Siz maʼlum darajada muloqotchansiz va notanish vaziyatda oʻzingizni yoʻqotib qoʻymaysiz. Yangi muammolar sizni qoʻrqitmaydi, ammo notanish odamlar bilan muloqot qilishda ancha ehtiyotkorsiz, bahs-munozaralarga bajonidil qoʻshilmaysiz. Baʼzida gaplaringizda zaruratsiz kinoya - kesatiq koʻpayib ketadi. Biroq bu kamchilikni tuzatsa boʻladi."
-        },
-        {
-            "name": 14,
-            "desc": "Siz yetarlicha muloqotchansiz, qiziquvchansiz, suhbatdosh qiziq narsalar haqida gapirganda, uni diqqat bilan tinglaysiz. Muloqotda ancha sabrlisiz, oʻz nuqtayi nazaringizni hissiyotga berilmay himoya qilasiz. Notanish odamlar bilan suhbatlashishga toʻgʻri kelganda, bezovta boʻlmaysiz, ayni paytda shovqin suron davralarni yoqtirmaysiz, birovning bachkana qiliqlari va koʻp gapirishi gʻashingizga tegadi."
-        },
-        {
-            "name": 9,
-            "desc": "Siz juda muloqotchansiz (baʼzida meʼyoridan ortiq), qiziquvchan, gapdonsiz, har xil masalalar boʻyicha oʻz fikringizni bildirishni yaxshi koʻrasiz, bu esa baʼzida atrofdagilarni gʻashiga tegadi. Notanish odamlar bilan bajonidil tanishasiz, odamlarning diqqat markazida boʻlishni yoqtirasiz. Hech kimning iltimosini yerda qoldirmaysiz, lekin berilgan hamma vaʼdalarni bajara olmasligingiz mumkin. Baʼzida jahl ustida qattiq gapirib yuborasiz, biroq tezda jahlingizdan tushasiz. Jiddiy muammolar bilan toʻqnashganda sizga sabr - toqat yetishmaydi. Ammo xohlasangiz hech qanday muammo oldida taslim boʻlmasligingiz mumkin."
-        },
-        {
-            "name": 4,
-            "desc": "Siz juda muloqotchansiz, gapingiz ichingizga sigʻmaydi. Doim hamma voqealardan xabardorsiz, har xil bahs munozara, tortishuvlarda qatnashishni xush koʻrasiz, lekin jiddiy mavzular sizni zeriktirib yuborishi mumkin. Biror masala boʻyicha toʻliq tasavvurga ega boʻlmasangiz ham, bu masala yuzasidan soʻzga chiqishga doim tayyorsiz. Hamma joyda oʻzingizni erkin his etasiz, har qanday ishga kirishib ketaverasiz, ammo har doim ham uni oxirigacha yetkazmaysiz. Shuning uchun rahbariyat va hamkasblar sizga biroz xavotir va shubha bilan qaraydilar. Bu xususiyatlaringiz haqida bosh qotirib koʻring."
-        },
-        {
-            "name": 3,
-            "desc": "Sizning muloqotchanlik darajangiz meʼyordan ortiq darajada yuqori. Juda sergapsiz, sizga aloqasi boʻlmagan ishlarga aralashaverasiz, hal etishga qurbingiz yetmaydigan muammolarni bartaraf etishga kirishaverasiz, ixtiyoriy yoki ixtiyorsiz ravishda har xil nizolarning kelib chiqishiga sababchi boʻlib qolasiz. Ancha xafalanuvchan, jazavaga moyilsiz, jiddiy ishni sizga topshirmagan maʼqul. Oʻzingizning ustingizda, xarakteringiz ustida ishlang. Avvalo oʻzingizda sabr – toqatni, vazminlik va bosiqlikni tarbiyalang, boshqalarga hurmat koʻzi bilan qarashni oʻrganing. Eng muhimi, oʻz sogʻligingiz haqida qaygʻuring. Ishoning bunday hayot tarzining oqibatlari jiddiy boʻlishi mumkin."
-        }
-    ],
-    "desc": ""
-},
+    {
+        "name": "Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi",
+        "variants": [
+            {
+                "name": 30,
+                "desc": "Muloqotchanlik darajasi ancha past. Bu sizdagi jiddiy muammo. Chunki bundan avvalo oʻzingiz aziyat chekasiz. Biroq yaqinlaringizga ham oson tutib boʻlmaydi. Hamkorlikdagi faoliyatni talab qiluvchi ishni sizga ishonib topshirib boʻlmaydi. Muloqotchanroq boʻlishga, oʻzingizni boshqarishga harakat qiling."
+            },
+            {
+                "name": 25,
+                "desc": "Siz yolgʻizlanishni yaxshi koʻrasiz, shuning uchun doʻstlaringiz kam. Notanish odamlar bilan tanishish, notanish joylarga borish zarurati halovatingizni buzadi. Siz oʻzingizning bu xususiyatlaringizni bilasiz va oʻzingizdan norozi ham boʻlasiz. Lekin faqat norozilik bilan cheklanmang - xarakterni oʻzgartirish oʻz qoʻlingizda. Eslab koʻring: birorta ishga qiziqib ketganingizda ancha muloqotchang boʻlib qolasiz-ku!"
+            },
+            {
+                "name": 19,
+                "desc": "Siz maʼlum darajada muloqotchansiz va notanish vaziyatda oʻzingizni yoʻqotib qoʻymaysiz. Yangi muammolar sizni qoʻrqitmaydi, ammo notanish odamlar bilan muloqot qilishda ancha ehtiyotkorsiz, bahs-munozaralarga bajonidil qoʻshilmaysiz. Baʼzida gaplaringizda zaruratsiz kinoya - kesatiq koʻpayib ketadi. Biroq bu kamchilikni tuzatsa boʻladi."
+            },
+            {
+                "name": 14,
+                "desc": "Siz yetarlicha muloqotchansiz, qiziquvchansiz, suhbatdosh qiziq narsalar haqida gapirganda, uni diqqat bilan tinglaysiz. Muloqotda ancha sabrlisiz, oʻz nuqtayi nazaringizni hissiyotga berilmay himoya qilasiz. Notanish odamlar bilan suhbatlashishga toʻgʻri kelganda, bezovta boʻlmaysiz, ayni paytda shovqin suron davralarni yoqtirmaysiz, birovning bachkana qiliqlari va koʻp gapirishi gʻashingizga tegadi."
+            },
+            {
+                "name": 9,
+                "desc": "Siz juda muloqotchansiz (baʼzida meʼyoridan ortiq), qiziquvchan, gapdonsiz, har xil masalalar boʻyicha oʻz fikringizni bildirishni yaxshi koʻrasiz, bu esa baʼzida atrofdagilarni gʻashiga tegadi. Notanish odamlar bilan bajonidil tanishasiz, odamlarning diqqat markazida boʻlishni yoqtirasiz. Hech kimning iltimosini yerda qoldirmaysiz, lekin berilgan hamma vaʼdalarni bajara olmasligingiz mumkin. Baʼzida jahl ustida qattiq gapirib yuborasiz, biroq tezda jahlingizdan tushasiz. Jiddiy muammolar bilan toʻqnashganda sizga sabr - toqat yetishmaydi. Ammo xohlasangiz hech qanday muammo oldida taslim boʻlmasligingiz mumkin."
+            },
+            {
+                "name": 4,
+                "desc": "Siz juda muloqotchansiz, gapingiz ichingizga sigʻmaydi. Doim hamma voqealardan xabardorsiz, har xil bahs munozara, tortishuvlarda qatnashishni xush koʻrasiz, lekin jiddiy mavzular sizni zeriktirib yuborishi mumkin. Biror masala boʻyicha toʻliq tasavvurga ega boʻlmasangiz ham, bu masala yuzasidan soʻzga chiqishga doim tayyorsiz. Hamma joyda oʻzingizni erkin his etasiz, har qanday ishga kirishib ketaverasiz, ammo har doim ham uni oxirigacha yetkazmaysiz. Shuning uchun rahbariyat va hamkasblar sizga biroz xavotir va shubha bilan qaraydilar. Bu xususiyatlaringiz haqida bosh qotirib koʻring."
+            },
+            {
+                "name": 3,
+                "desc": "Sizning muloqotchanlik darajangiz meʼyordan ortiq darajada yuqori. Juda sergapsiz, sizga aloqasi boʻlmagan ishlarga aralashaverasiz, hal etishga qurbingiz yetmaydigan muammolarni bartaraf etishga kirishaverasiz, ixtiyoriy yoki ixtiyorsiz ravishda har xil nizolarning kelib chiqishiga sababchi boʻlib qolasiz. Ancha xafalanuvchan, jazavaga moyilsiz, jiddiy ishni sizga topshirmagan maʼqul. Oʻzingizning ustingizda, xarakteringiz ustida ishlang. Avvalo oʻzingizda sabr – toqatni, vazminlik va bosiqlikni tarbiyalang, boshqalarga hurmat koʻzi bilan qarashni oʻrganing. Eng muhimi, oʻz sogʻligingiz haqida qaygʻuring. Ishoning bunday hayot tarzining oqibatlari jiddiy boʻlishi mumkin."
+            }
+        ],
+        "desc": ""
+    },
     {
         "name": "Deviant xulq-atvor tashhisi metodikasi",
         "desc": "",
@@ -945,7 +945,115 @@ test_info = [
         "desc": "",
         "variants": []
     },
+    {
+        "name": "MUVAFFAQIYATGA ERISHISH MOTIVATSIYASINI TASHXIS QILISH METODIKASI",
+        "desc": "MUVAFFAQIYATGA ERISHISH MOTIVATSIYASINI TASHXIS QILISH ",
+        "variants": [
+            {
+                "name": 10,
+                "desc": "Muvaffaqiyatga nisbatan juda past motivatsiya. Bunday insonning muvaffaqiyatga intilish darajasi juda past boʻladi. Aniq maqsad va maqsadga olib borish yoʻli ham mavjud boʻlmaydi muvaffaqiyatga erishish imkoniyatiga ishonmaydi va tanqiddan qoʻrqadi muayyan vazifalarni bajarishda, ayniqsa muvaffaqiyatsizlik boʻlishi mumkin boʻlgan hollarda, ularda salbiy his-tuygʻular uygʻonadi. U bunday faoliyatdan zavqlanmaydi va bu faoliyatni ilgari surmaydi. Oʻzining qobigʻidan chiqishga qoʻrqadi. Intilish darajasi past boʻlgan odamlar oʻzlariga shubha bilan qarashadi va ular qilayotgan ishi yuklaydi. Qiyin vazifalarni bajarish ularni noqulay his qiladi."
+            },
+            {
+                "name": 16,
+                "desc": "Oʻrta darajadagi motivatsiya. Bunday insonlarning muvaffaqiyatga intilish darajalari oʻrta hisoblanadi. Ular tavakkal qilishda qoʻrqishmaydi. Biror ish bajarishda taxminlarga va  boshqa insonlarning fikrlariga tayangan holatda faoliyat koʻrsatishlari mumkin. Muvaffaqiyatsizlikdan qoʻrqqanlar kichik yoki aksincha, juda yuqori darajadagi xavfni afzal koʻradilar."
+            },
+            {
+                "name": 20,
+                "desc": "Anchagina yuqori motivatsiya. Oldindan ishonch bilan shunday ish boshlaydilar, nima qilib boʻlsa ham yutuqqa erishish ular uchun oliy maqsad boʻladi. Ular hali ishni boshlamay turib, yutuqni kutadilar va shunday ishni amalga oshirishsa, odamlar ularning barcha harakatlarini maqullashlarini biladilar. Bu yoʻlda ular nafaqat oʻz kuch va imkoniyatlarini, balki barcha tashqi imkoniyatlar — tanish-bilishlar, mablagʻ kabi omillardan ham foydalanadilar."
+            },
+            {
+                "name": 20,
+                "desc": "Anchagina yuqori motivatsiya. Oldindan ishonch bilan shunday ish boshlaydilar, nima qilib boʻlsa ham yutuqqa erishish ular uchun oliy maqsad boʻladi. Ular hali ishni boshlamay turib, yutuqni kutadilar va shunday ishni amalga oshirishsa, odamlar ularning barcha harakatlarini maqullashlarini biladilar. Bu yoʻlda ular nafaqat oʻz kuch va imkoniyatlarini, balki barcha tashqi imkoniyatlar — tanish-bilishlar, mablagʻ kabi omillardan ham foydalanadilar."
+            },
+            {
+                "name": 21,
+                "desc": "Muvaffaqiyatga nisbatan oʻta yuqori motivatsiya. Bular anchagina yuqori motivatsiyaga ega boʻlgan shaxslardan farqli ravishda muvaffaqiyatsizlikga duchor boʻlmaslik haqida oʻylaydilar. Ushbu odamlarning oʻziga nisbatan qoʻygan talablar darajasi ham yuqori boʻladi. Tavakkal qilishmaydi aniq maqsad yoʻlida harakat olib borishadi. "
+            },
+        ]
+    },
+    {
+        "name": "OʻZGALARGA YORDAM BERISH MOTIVI",
+        "desc": "Ushbu test boshqa odamlarga yordam berish istagi darajasini aniqlaydi. Shaxsning motivatsion tizimida yordam berish istagi va shaxsiy muvaffaqiyatga intilish uning qadriyatlar tizimining mazmuniga, yoʻnalishiga, shuningdek, oʻziga xos vaziyat sharoitlariga qarab turlicha bogʻlanishi mumkin.Sinovni tuzish uchun asos boʻlgan (Sinovni tuzish uchun asos boʻlgan ) tushunchasi bir qutbli sifatida qoʻllaniladi: bu erda odamlarga yordam berish istagi va tajovuzkor, odamni yomon koʻrish tendensiyalari qarshilik koʻrsatmaydi.",
+        "variants": [
+            {
+                "name": 30,
+                "desc": "Sizni boshqa odamlarga yordam berishdan “qochadigan” odam sifatida tavsiflaydi. Agar bunday ehtiyoj paydo boʻlsa, sizning qoʻlingizda har doim koʻplab “asosli” sabablar arsenaliga ega boʻlasiz, ular yordamida siz xayriya tadbirlarida qatnashishdan va muhtojlarga befarq yordam berishdan qochishingiz mumkin. Sizning boshqalarga yordam berish motivingiz juda zaif. Oʻzgalarga, oʻzizdan zaif insonlarga doimo yordam berishga harakat qiling. "
+            },
+            {
+                "name": 44,
+                "desc": "Boshqa odamning qiyinchiliklari va qiyinchiliklariga befarq (neytral, xotirjam) munosabatni tavsiflaydi. Biroq, muhtojlarga yordam berishda tashabbus koʻrsatmaysiz va agar sizdan yordam soʻrashsa, uni rad etmaysiz. Sizda oʻzgalarga yordam berish qobiliyatingizni rivojlantirishingiz lozim. Siz insonlar yordam soʻrasagina yordam bermasdan, undan oldin yordam koʻrsatishga harakat qiling."
+            },
+            {
+                "name": 45,
+                "desc": "Sizni sezgir, hamdard, boshqa, baʼzan hatto notanish odamning qiyinchiliklarini baham koʻrishga tayyor odam sifatida tavsiflaydi.Siz koʻpincha xayriya va fidokorona yordam bilan bogʻliq aksiyalarning tashabbuskori va tashkilotchisi boʻlasiz. Oʻzgalarga yordam berish motivatsiyangiz yuqori. Alturistik xususiyatlar mavjud."
+            }
+        ]
+    },
+    {
+        "name": "MAGʻLUBIYATDAN QOCHISH MOTIVATSIYASINI ANIQLASH METODIKASI",
+        "desc": "MAGʻLUBIYATDAN QOCHISH MOTIVATSIYASINI ANIQLASH",
+        "variants": [
+            {
+                "name": 10,
+                "desc": "Bunday shaxs oʻz-oʻzini himoya qilishi va oʻz-oʻzini boshqara olishi past darajada hisoblanadi. Ular odatda yuqori darajadagi mudofaa va baxtsiz hodisalardan qoʻrqishadi. Ular haddan tashqari katta xavfni afzal koʻradilar. Takroriy muvaffaqiyatsizliklar bunday odamni odatiy depressiya holatiga, oʻziga ishonchning doimiy pasayishiga va muvaffaqiyatsizlikdan surunkali qoʻrquvga olib kelishi mumkin."
+            },
+            {
+                "name": 16,
+                "desc": "Bunday shaxsni oʻz oʻzini himoya qilishi va oʻzini baholash darajasi oʻrta darajada. Ushbu daraja vakillari oʻzlarini aniq anglab yetishmagan va baʼzan tavakkallik bilan ish yuritishni afzal koʻrishadi. "
+            },
+            {
+                "name": 19,
+                "desc": "Bunday odamlar muvaffaqiyatga erishish uchun koʻp mehnat qiladilar va muvaffaqiyatga intiladilar. Oʻz -oʻzini baholash darajasi yuqori va aniqlik bilan ish qilishni yoqtiradi. Tavakkal bilan ish qiladi va uning natijasi kutganidek boʻlishiga ishonadi. "
+            },
+            {
+                "name": 20,
+                "desc": "Bunday odamlar muvaffaqiyatga erishish uchun koʻp mehnat qiladilar va muvaffaqiyatga intiladilar. Oʻz -oʻzini baholash darajasi yuqori va aniqlik bilan ish qilishni yoqtiradi. Tavakkal bilan ish qiladi va uning natijasi kutganidek boʻlishiga ishonadi. "
+            }
+        ]
+    }
 ]
+
+questions_MAG = [
+    ["Dadil", "Hushyor", "Uddaburon"],
+    ["Kamsuqum", "Tortinchoq", "Qaysar"],
+    ["Ehtiyotkor", "Qatiyatli", "Umidsiz pessimist"],
+    ["Oʻzgaruvchan", "Beparvo befahm", "Eʼtiborli"],
+    ["Aqlsiz", "Qoʻrqoq", "Befarosat loqayd"],
+    ["Chaqqon", "Jasur qoʻrqmas", "Oʻylab ish koʻradigan"],
+    ["Sovuqqon", "Ikkilanuvchan", "Epchil shijoatli dovyurak"],
+    ["Intiluvchan", "Yengiltak", "Qoʻrqoq"],
+    ["Oʻylab ish qilmaydigan", "Oʻzini koʻrsatish", "Oldindan koʻra oladi olmaydigan"],
+    ["Optimist", "Vijdonli", "Gʻamxoʻr (odamlarga)"],
+    ["Melanxolik sust", "Shubhali", "Beqaror"],
+    ["Qoʻrqoq", "Pala-partish", "Hayajonlanadigan"],
+    ["Niyatli moʻljalli", "Pismiq indamas", "Qoʻrqoq hadiksiragan"],
+    ["Eʼtiborli", "Befarosat", "Mard dadil"],
+    ["Fahm-farosatli", "Shijoatli", "Mardona"],
+    ["Uddaburon", "Ehtiyotkor", "Oʻylab ish qiladigan"],
+    ["Tez xayajonlanadigan", "Xayol-parishon", "Uyatchan"],
+    ["Kamtar; kamsuqum", "Ehtiyotsiz", "Beeʼtibor"],
+    ["Hadiksiragan", "Qatiyatsiz", "Asabiy"],
+    ["Intizomli ijrochi", "Sadoqatli", "Niyat bilan ish koʻradigan"],
+    ["Oʻylab ish qiladigan", "Dadil qoʻrqmas", "Shijoatli qaytmas"],
+    ["Tobe oʻrgatilgan", "Loqayd beparvo", "Pala-partish"],
+    ["Ehtiyotkor", "Begʻam", "Chidamli"],
+    ["Oqil", "Mehribon gʻamxoʻr", "Jasoratli"],
+    ["Oldindan bashorat qiluvchi", "Choʻchitib boʻlmaydigan", "Vijdonan qaraydigan"],
+    ["Shoshqaloq", "Qoʻrqoq", "Begʻam tashvishsiz"],
+    ["Parishon", "Moʻljalli niyatli", "Umidsiz pessimist"],
+    ["Kuzatuvchan eʼtiborli", "Mulohazali", "Uddaburon"],
+    ["Pismiq indamas", "Betartib", "Qoʻrqoq"],
+    ["Kelajakka ishongan", "Hushyor", "Begʻam betashvish"]
+]
+
+key = [
+    (1, 2), (2, 1), (2, 2), (3, 1), (3, 3), (4, 3), (5, 2), (6, 3), (7, 2), (7, 3),
+    (8, 3), (9, 1), (9, 2), (10, 2), (11, 1), (11, 2), (12, 1), (12, 3), (13, 2),
+    (13, 3), (14, 1), (15, 1), (16, 2), (16, 3), (17, 3), (18, 1), (19, 1), (19, 2),
+    (20, 1), (20, 2), (21, 1), (22, 1), (23, 1), (23, 3), (24, 1), (24, 2), (25, 1),
+    (26, 2), (27, 3), (28, 1), (28, 2), (29, 1), (29, 3), (30, 2)
+]
+
 
 questions_2 = [
     "Odatda, men barcha muhim qarorlarni tashqi yordamlarisiz qabul qilaman.",
@@ -968,6 +1076,496 @@ questions_2 = [
     "Ijodiy jarayonlar meni o'ziga jalb qilmaydi.",
     "Muvaffaqiyatdagi chiqishlarimning natijalari deyarli yaqinlarimning ishtirokiga bog'liq emas.",
     "Men har qanday ishga yangi narsa qo'shishga intilaman, aks holda meni bu ishlar qiziqtirmaydi."
+]
+
+questions_H = [
+    {
+        'question': "Men boshqa odamlarga hamdard boʻlishga tayyorman.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 1
+    },
+    {
+        'question': "Boshqalarga kerak boʻlsa ham, hozir tashvishlarimdan dam olishim qiyin.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 2
+    },
+    {
+        'question': "Men boshqalarga yordam bera olishimni his qilaman.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 3
+    },
+    {
+        'question': "Endi birovning omadini baham koʻra olmayman.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 4
+    },
+    {
+        'question': "Agar boshqa odamni unchalik yoqtirmasa, unga yordam berish men uchun qiyin.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 5
+    },
+    {
+        'question': "Yoʻqotilganlar doimo yordam soʻrashsa, gʻazablanmaslik qiyin.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 6
+    },
+    {
+        'question': "Yangi narsa yaratish shart emas, eng muhimi, odamlar bilan yaxshi munosabatda boʻlishdir.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 7
+    },
+    {
+        'question': "Odamlar meni bezovta qiladilar",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 8
+    },
+    {
+        'question': "Men hayotimdagi eng yaxshi narsalarni odamlar bilan baham koʻrmoqchiman.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 9
+    },
+    {
+        'question': "Koʻp odamlar mening yordamimga muhtojligini his qilaman.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 10
+    },
+    {
+        'question': "Men uchun har qanday odamda hamdardlik uygʻotadigan xususiyatlarni topish oson.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 11
+    },
+    {
+        'question': "Hayotda koʻpincha muhtojlarga yordam berishdan bosh tortishdan qoʻrqmaslik kerak boʻlgan paytlar boʻladi.",
+        'answers': [
+            {'name': "Ha bu to'g'ri", 'value': 6},
+            {'name': "Balki shundaydir", 'value': 5},
+            {'name': "Bu to'g'ri yolg'on emas", 'value': 4},
+            {'name': "Aniq javob berish qiyin", 'value': 3},
+            {'name': "Bu haqiqatdan ko'ra noto'g'riroq", 'value': 2},
+            {'name': "Balki unday emasdir", 'value': 1},
+            {'name': "Yo'q unday emas", 'value': 0},
+        ],
+        'index': 12
+    },
+]
+
+questions_MAS = [
+    {
+        'question': "Ikkita ishdan birini zudlik bilan bajarish yoki ularni tanlash kerak boʻlsa, yaxshisi tezda unga kirishib, bajarib qoʻya qolgan afzal.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 1
+    },
+    {
+        'question': "Berilgan topshiriqni  100% yaxshi bajara olmayotganligimni  sezsam, juda qaygʻuraman.  ",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 2
+    },
+    {
+        'question': "Ishlayotgan vaqtimda shunday berilib ketamanki, goʻyoki hamma narsa shunga bogʻliqday.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 3
+    },
+    {
+        'question': "Muammoli vaziyat paydo boʻlganda, men qaror chiqarishga shoshilmayman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 4
+    },
+    {
+        'question': "Ikki kun surunkali ishsiz qolsam, halovatimni yoʻqotaman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 5
+    },
+    {
+        'question': "Baʼzi kunlari mening muvaffaqiyatlarim oʻrtachadan past boʻladi. ",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 6
+    },
+    {
+        'question': "Men oʻzimga boshqalarga qaraganda ancha talabchanman. ",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 7
+    },
+    {
+        'question': "Men boshqalardan koʻra saxovatli, mehribonroq odamman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 8
+    },
+    {
+        'question': "Qiyin topshiriqni bajarishdan bosh tortgan  paytlarimda, odatda men oʻzimni koyiyman, chunki bilaman oʻzim, agar oʻsha ishga kirishganimda bajargan boʻlardim.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 9
+    },
+    {
+        'question': "Ishlash davomida men tez-tez dam olib turishga ehtiyoj sezaman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 10
+    },
+    {
+        'question': "Tirishqoqlik va tinmaslik — mendagi asosiy sifat emas. ",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 11
+    },
+    {
+        'question': "Mening mehnatdagi yutuqlarim doim xam bir xil emas.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 12
+    },
+    {
+        'question': "Men bevosita oʻzim bajarayotgan ish emas, balki boshqa ishlar koʻproq yoqadi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 13
+    },
+    {
+        'question': "Maqtovdan koʻra tanqid meni koʻproq ishlashga majbur qiladi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 14
+    },
+    {
+        'question': "Meni hamkasblarim ishchan deb hisoblashlarini yaxshi bilaman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 15
+    },
+    {
+        'question': "Ishdagi qiyinchiliklar mening qarorlarimni yanada qatiylashtiradi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 16
+    },
+    {
+        'question': "Mening nafsoniyatimga tegish juda ham oson.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 17
+    },
+    {
+        'question': "Boshqalar mening ilhomsiz, tashabbussiz ishlayotganimni sezishadi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 18
+    },
+    {
+        'question': "Biror ishni bajarayotganimda men boshqalarning koʻmagiga tayanmayman.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 19
+    },
+    {
+        'question': "Men baʼzan hozir qilishim mumkin boʻlgan ishni keyinga qoldiraman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 20
+    },
+    {
+        'question': "Odam faqat oʻziga ishonishi kerak.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 21
+    },
+    {
+        'question': "Hayotda puldan ham muhim boʻlgan narsa deyarli yoʻq.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 22
+    },
+    {
+        'question': "Muhim biror topshiriqni bajarish kerak boʻlganda men doimo boshqa barcha tashvishlarni unutaman.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 23
+    },
+    {
+        'question': "Men koʻpchilikka qaraganda, unchalik izzattalab emasman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 24
+    },
+    {
+        'question': "Taʼtil oxirida men odatda yaqinda ishga chiqishimni oʻylab quvonaman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 25
+    },
+    {
+        'question': "Menga ish yoqsa, uni men boshqalarga nisbatan malakaliroq bajaraman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 26
+    },
+    {
+        'question': "Men ishga kirishib ketadigan insonlar bilan til topishim osonroq boʻladi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 27
+    },
+    {
+        'question': "Ishim yoʻq paytlarda men oʻzimni behalovat his qilaman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 28
+    },
+    {
+        'question': "Men  boshqalarga  nisbatan  masʼuliyatli  ishlarni  tez-tez  bajarishga toʻgʻri keladi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 29
+    },
+    {
+        'question': "Qaror chiqarish masʼuliyati menga yuklansa, yaxshiroq bajarishga intilaman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 30
+    },
+    {
+        'question': "Mening doʻstlarim meni baʼzan dangasa deb hisoblashadi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 31
+    },
+    {
+        'question': "Maʼlum maʼnoda mening yutuqlarimda hamkasablarimning ulushi bor.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 32
+    },
+    {
+        'question': "Rahbarning fikrini qaytarishdan foyda yoʻq.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 33
+    },
+    {
+        'question': "Baʼzan qanday ish bajarish kerakligini ham bilmaysan.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 34
+    },
+    {
+        'question': "Ishim yurishmay qolgan paytlarimda men betoqat boʻlib bezovtalanaman.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 35
+    },
+    {
+        'question': "Men odatda oʻz yutuqlarimga kam eʼtibor beraman. ",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 36
+    },
+    {
+        'question': "Boshqalar bilan ishlayotgan paytlarimda mening yutuqlarim boshqalarnikidan koʻproq va sezilarliroq boʻladi.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 37
+    },
+    {
+        'question': "Oʻz boʻynimga olgan koʻpgina ishlarni men oxiriga yetkaza olmayman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 38
+    },
+    {
+        'question': "Men ishi juda koʻp boʻlmagan odamlarga havas qilaman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 39
+    },
+    {
+        'question': "Men hokimiyatga intilgan va amalparastlarga havas qilmayman.",
+        'answers': [
+            {'name': "ha", 'value': 0},
+            {'name': "yo'q", 'value': 0},
+        ],
+        'index': 40
+    },
+    {
+        'question': "Men oʻz yoʻlimning toʻgʻriligiga shubha qilmasam, uni amalga oshirish yoʻlida hech narsadan toymayman.",
+        'answers': [
+            {'name': "ha", 'value': 1},
+            {'name': "yo'q", 'value': 1},
+        ],
+        'index': 41
+    },
 ]
 
 # Answer options and their scores
@@ -2617,482 +3215,530 @@ questions_communication = [
      'index': 16},
 ]
 questions_deviant = [
-    {'question': "Sizni oddiy yoki ish bilan bogʻliq uchrashuv kutib turibdi. Uchrashuv vaqtini kutish sizni asabiylashtiradimi?",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 1
+    {
+        'question': "Sizni oddiy yoki ish bilan bogʻliq uchrashuv kutib turibdi. Uchrashuv vaqtini kutish sizni asabiylashtiradimi?",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 1
     },
     {'question': "Men ko‘zga tashlanmaydigan, bo‘g‘iq rangdagi kiyimlarni afzal ko‘raman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 2
-    },
+     },
     {'question': "Shunday hollar bo‘ladiki, men bugun qilinishi kerak bo‘lgan ishni ertaga qoldiraman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 3
-    },
+     },
     {'question': "Men bajonidil qandaydir harbiy harakatlarda ishtirok etish uchun ko‘ngilli bo‘lib yozilardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 4
-    },
+     },
     {'question': "Shunday damlar bo‘ladiki, men otaonam bilan janjallashib qolaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 5
-    },
+     },
     {'question': "Kimki bolaligida mushtlashmasa, “onasining bolasi” bo‘ladi va hayotda hech narsaga erishmaydi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 6
-    },
+     },
     {'question': "Men hayot uchun xavfli bo‘lgan ishga ham qo‘l urardim, agar unga yaxshi haq to‘lasalar.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 7
-    },
+     },
     {'question': "Ba’zida men shunday kuchli xavotirni his qilamanki, shunchaki joyimda o‘tira olmay qolaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 8
-    },
+     },
     {'question': "Ba’zan shunday bo‘ladiki, ozgina maqtanchoqlik qilaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 9
-    },
+     },
     {'question': "Agar menga harbiy bo‘lishga to‘g‘ri kelsa, men uchuvchi bo‘lgan bo‘lardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 10
-    },
+     },
     {'question': "Men odamlarda ehtiyotkorlik va oqibatini o‘ylab ish tutishni qadrlayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 11
-    },
+     },
     {'question': "Faqat zaif va qo‘rqoq odamlargina barcha qoida va qonunlarni bajaradilar.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 12
-    },
+     },
     {'question': "Men hayot uchun xavfli bo‘lsada, o‘zgarishlar va sayohatlar bilan bog‘liq ishni afzal ko‘rardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 13
-    },
+     },
     {'question': "Men doimo faqat haqiqatni gapiraman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 14
-    },
-    {'question': "Agar inson qo‘zg‘atuvchi va psixikaga ta’sir qiluvchi moddalarni me’yorda va zararli oqibatlarsiz iste’mol qilsa – bu butunlay tabiiy.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 15
+     },
+    {
+        'question': "Agar inson qo‘zg‘atuvchi va psixikaga ta’sir qiluvchi moddalarni me’yorda va zararli oqibatlarsiz iste’mol qilsa – bu butunlay tabiiy.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 15
     },
     {'question': "Men hatto g‘azablansam ham so‘kinishgacha bormaslikka harakat qilaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 16
-    },
+     },
     {'question': "O‘ylaymanki, menga sherlarni ovlash yoqqan bo‘lardi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 17
-    },
+     },
     {'question': "Agar meni xafa qilsalar, unda men, albatta, o‘ch olishim kerak.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 18
-    },
+     },
     {'question': "Inson o‘zi qancha va qaerda ichishni xohlasa, shuncha ichishga haqli.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 19
-    },
+     },
     {'question': "Agar mening og‘aynim belgilangan uchrashuvga kechiksa, unda men, odatda, sokinlikni saqlayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 20
-    },
+     },
     {'question': "Meni, odatda, ishni belgilangan muddatda tugatish haqidagi talab qiynaydi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 21
-    },
+     },
     {'question': "Ba’zida men ko‘chani belgilangan joydan emas, o‘zimga qulay bo‘lgan joydan kesib o‘taman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 22
-    },
+     },
     {'question': "Agar kuchli jinsiy maylni his qilsang, ba’zi qoida va taqiqlarni uloqtirib tashlash mumkin.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 23
-    },
+     },
     {'question': "Men hech qachon otaonamning gaplariga quloq solmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 24
-    },
-    {'question': "Agar avtomobil sotib olishda menga tezlik va xavfsizlik o‘rtasida tanlash zarurati tug‘ilib qolsa, men xavfsizlikni tanlayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 25
+     },
+    {
+        'question': "Agar avtomobil sotib olishda menga tezlik va xavfsizlik o‘rtasida tanlash zarurati tug‘ilib qolsa, men xavfsizlikni tanlayman.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 25
     },
     {'question': "O‘ylaymanki, menga boks bilan shug‘ullanish yoqadi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 26
-    },
+     },
     {'question': "Agar men kasb tanlashda erkin bo‘lsam edi, vinolarni sinab ko‘ruvchi bo‘lardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 27
-    },
+     },
     {'question': "Men teztez kuchli tuyg‘ularga ehtiyoj sezaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 28
-    },
+     },
     {'question': "Ba’zida o‘zimga o‘zim azob bergim keladi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 29
-    },
+     },
     {'question': "Mening hayotga munosabatim “Etti marta o‘lchab, bir kes” maqolini ifodalaydi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 30
-    },
+     },
     {'question': "Men jamoatchilik transportida doim bilet xarid qilaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 31
-    },
+     },
     {'question': "Tanishlarim orasida gangitadigan, toksik moddalarni tatib ko‘rgan odamlar bor.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 32
-    },
+     },
     {'question': "Men garchi bu menga foyda keltirmasada, doim va’damni bajaraman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 33
-    },
+     },
     {'question': "Shunday paytlar bo‘ladiki, so‘kinishni istayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 34
-    },
+     },
     {'question': "“Agar mumkin bo‘lmasayu, juda istasang, unda mumkin” maqoliga amal qiluvchi odamlar haqdirlar.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 35
-    },
+     },
     {'question': "Shunday bo‘ladiki, spirtli ichimlik ichganimdan keyin tasodifan mushtlashuvga yo‘liqaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 36
+     },
+    {
+        'question': "Qator kundalik omadsizliklardan keyin ishni davom ettirishga o‘zimni majburlashni ko‘pincha uddalay olmayman.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 37
     },
-    {'question': "Qator kundalik omadsizliklardan keyin ishni davom ettirishga o‘zimni majburlashni ko‘pincha uddalay olmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 37
-    },
-    {'question': "Agar bizning davrimizda gladiatorlar jangi olib borilganida, men, albatta, unda ishtirok etgan bo‘lardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 38
+    {
+        'question': "Agar bizning davrimizda gladiatorlar jangi olib borilganida, men, albatta, unda ishtirok etgan bo‘lardim.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 38
     },
     {'question': "Shunday vaqtlar bo‘ladiki, men yolg‘on gapiraman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 39
-    },
+     },
     {'question': "Barchaga qasdmaqasd og‘riqqa chidash hatto yoqimli bo‘ladi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 40
-    },
+     },
     {'question': "Men odamlar bilan bahslashishdan ko‘ra kelishishni xush ko‘raman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 41
-    },
+     },
     {'question': "Agar men qadimgi davrda tug‘ilganimda olijanob qaroqchi bo‘lardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 42
-    },
+     },
     {'question': "Agar boshqa yo‘li bo‘lmasa, bahsni mushtlashish bilan ham hal qilish mumkin.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 43
-    },
-    {'question': "Shunday hollar bo‘ladiki, mening otaonam, boshqa kattalar mening biroz ichganim uchun xavotirlanardilar.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 44
+     },
+    {
+        'question': "Shunday hollar bo‘ladiki, mening otaonam, boshqa kattalar mening biroz ichganim uchun xavotirlanardilar.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 44
     },
     {'question': "Kiyim insonni olomon ichida boshqalardan birinchi qarashdayoq ajratib turishi kerak.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 45
-    },
+     },
     {'question': "Agar kinofilmda bitta durustroq mushtlashuv bo‘lmasa – u yomon kino.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 46
-    },
+     },
     {'question': "Odamlar qachonki yangi, noodatiy tuyg‘u va kechinmalarga intilsalar – bu me’yoriy hol.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 47
-    },
+     },
     {'question': "Ba’zida men darslarda zerikaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 48
-    },
-    {'question': "Agar olomon ichida kimdir meni tasodifan turtib yuborsa, men, albatta, undan kechirim so‘rashini talab qilaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 49
+     },
+    {
+        'question': "Agar olomon ichida kimdir meni tasodifan turtib yuborsa, men, albatta, undan kechirim so‘rashini talab qilaman.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 49
     },
     {'question': "Agar kimdir mening g‘ashimni keltirsa, men u haqida nimani o‘ylasam, shularni aytishga tayyorman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 50
-    },
+     },
     {'question': "Sayohat va safarlarda men odatiy marshrutdan og‘ishni yoqtiraman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 51
-    },
+     },
     {'question': "Menga yirtqich hayvonlarni o‘rgatish kasbi yoqqan bo‘lardi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 52
-    },
+     },
     {'question': "Agar sen mototsikl ruliga o‘tirgan bo‘lsang, unda faqat juda tez yur.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 53
-    },
+     },
     {'question': "Detektiv asar o‘qiganimda, men ko‘pincha jinoyatchining ta’qibdan qochib ketishini istayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 54
-    },
+     },
     {'question': "Ba’zida odobsiz hazil eshitganimda o‘zimni kulgudan to‘xtata olmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 55
-    },
+     },
     {'question': "Men suhbatda atrofdagilarni ultirishi mumkin bo‘lgan iboralardan qochishga intilaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 56
-    },
+     },
     {'question': "Men ko‘pincha mayda narsalardan xafa bo‘laman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 57
-    },
+     },
     {'question': "Menga e’tiroz bildirganlarida portlab ketaman va keskin javob qaytaraman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 58
-    },
+     },
     {'question': "Menga muhabbat tarixidan ko‘ra sarguzashtlarni o‘qish ko‘proq yoqadi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 59
-    },
+     },
     {'question': "Lazzat olish uchun ba’zi qoidalar va taqiqlarni buzish mumkin.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 60
-    },
+     },
     {'question': "Menga me’yorda ichuvchi va xushchaqchaqlik qiluvchi kompaniyada bo‘lish yoqadi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 61
-    },
+     },
     {'question': "Qizlarning chekishi g‘ashimni keltiradi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 62
-    },
+     },
     {'question': "Menga yaxshi kompaniyada me’yorida ichgandan keyingi holat yoqadi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 63
-    },
+     },
     {'question': "Shunday vaqtlar bo‘ladiki, garchi buning mavridi va joyi bo‘lmasada, ichish istagi tug‘iladi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 64
-    },
+     },
     {'question': "Og‘ir daqiqalarda tamaki meni tinchlantiradi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 65
-    },
-    {'question': "Menga bolshqa odamlarning mendan qo‘rqishga majbur qilish oson va men buni ba’zida vaqtichog‘lik uchun qilaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 66
+     },
+    {
+        'question': "Menga bolshqa odamlarning mendan qo‘rqishga majbur qilish oson va men buni ba’zida vaqtichog‘lik uchun qilaman.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 66
     },
     {'question': "Men oliy jazoga odilona hukm qilingan jinoyatchini o‘z qo‘llarim bilan qatl qila olardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 67
-    },
+     },
     {'question': "Lazzatlanish – bu hayotda intilishga arzirli muhim narsa.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 68
-    },
+     },
     {'question': "Men avtomobil musobaqasida ishtirok etishni xohlardim.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 69
-    },
+     },
     {'question': "Mening kayfiyatim yomon bo‘lganida, yaxshisi yaqinlashmaganingiz ma’qul.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 70
-    },
+     },
     {'question': "Ba’zida menda shunday kayfiyat bo‘ladiki, qiyin vaziyatlardan yo‘lini topolmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 71
-    },
+     },
     {'question': "Men faqat xohlagan sohada o‘z bilimimni oshirishni ma’qul ko‘raman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 72
-    },
-    {'question': "Men, odatda, zo‘ravonlik yoki tajovuz yo‘li bilan muammoni hal qilishni qiziqtiradigan insonlarga befarq qarayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 73
+     },
+    {
+        'question': "Men, odatda, zo‘ravonlik yoki tajovuz yo‘li bilan muammoni hal qilishni qiziqtiradigan insonlarga befarq qarayman.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 73
     },
     {'question': "Ba’zida o‘zimga xavf tug‘diradigan ishlarni amalga oshirish xohishi yuzaga keladi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 74
-    },
+     },
     {'question': "Ba’zida men buni yaxshi qilish uchun maqsadga muvofiq bo‘lmagan vaqtda ishlayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 75
-    },
+     },
     {'question': "Menga ko‘proq hayotda ta’sirchanlik va harakatlarni xush ko‘raman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 76
-    },
+     },
     {'question': "Ba’zida odamlarning xushmuomalaligi va yaxshi niyatlarini yomonlik deb o‘ylayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 77
-    },
+     },
     {'question': "Menga ko‘proq xavfli vaziyatlarda halollikni saqlashni qiyinlashtiruvchi odamlar yoqadi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 78
-    },
+     },
     {'question': "Men o‘z qarorlarim va harakatlarimni doimo o‘zgartiraman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 79
-    },
-    {'question': "Menga katta muammolarni hal qilishda murakkabliklarni to‘g‘ri va maqsadga muvofiq tarzda hal qilish yaxshiroq yo‘ldir.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 80
+     },
+    {
+        'question': "Menga katta muammolarni hal qilishda murakkabliklarni to‘g‘ri va maqsadga muvofiq tarzda hal qilish yaxshiroq yo‘ldir.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 80
     },
     {'question': "Men yuqori darajadagi sportchi bo‘lishni o‘ylayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 81
-    },
+     },
     {'question': "Men boshqalarning menda kutilmagan ishlar qilishlari mumkinligi bilan qiziqaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 82
-    },
+     },
     {'question': "Shunday bo‘ladiki, men boshqa odamlarning ehtiyojlarini o‘z ehtiyojlarimdan yuqori qo‘yamanki.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 83
-    },
+     },
     {'question': "Men o‘z intilishlarimni qoniqtirmaslikka harakat qilaman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 84
-    },
+     },
     {'question': "Ba’zida menda asabiy holat paydo bo‘ladi va men undan to‘g‘ri chiqish yo‘lini topolmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 85
-    },
+     },
     {'question': "Men hech qachon ko‘zga tashlanishni yoqtirmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 86
-    },
+     },
     {'question': "Menga ko‘proq sarguzasht va yangi tajribalarni qidirish yoqadi.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 87
-    },
+     },
     {'question': "Ba’zida men o‘z muammolarimni o‘z vaqtida hal qila olmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 88
-    },
+     },
     {'question': "Agar men charchagan bo‘lsam, men boshqa odamlarning salomatligi haqida qayg‘urmayman.",
-         'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 89
-    },
+     },
     {'question': "Men faqat o‘zim xohlagan ishlarni bajarishni ma’qul ko‘raman.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 90
-    },
+     },
     {'question': "Agar biror narsa men uchun qiziqarli bo‘lsa, men birinchi bo‘lib uni o‘rganaman.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 91
-    },
+     },
     {'question': "Menga biror ishni o‘rganish uchun vaqt ajratish va uni mukammal o‘rganish yoqadi.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 92
-    },
+     },
     {'question': "Men tezda xafa bo‘lishim va shuningdek boshqa odamlar tomonidan asabiylashtirilishim mumkin.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 93
-    },
+     },
     {'question': "Men ba’zan o‘z asabiy holatimni boshqa odamlar bilan baham ko‘rishga tayyorman.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 94
-    },
+     },
     {'question': "Agar men qiyin holatda bo‘lsam, o‘z vaqtida yordam so‘rashdan voz kechaman.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 95
-    },
+     },
     {'question': "Men shaxsiy vaqtimni boshqa odamlar uchun ish joyida ishlashda sarflashni xush ko‘raman.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 96
-    },
-    {'question': "Agar men muhim qarorlar qabul qilishim kerak bo‘lsa, men o‘zimni qo‘rquv va xavotirdan yiroq his qilaman.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
-     'index': 97
+     },
+    {
+        'question': "Agar men muhim qarorlar qabul qilishim kerak bo‘lsa, men o‘zimni qo‘rquv va xavotirdan yiroq his qilaman.",
+        'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
+        'index': 97
     },
     {'question': "Men o‘z rejamni yaxshi amalga oshirish uchun har doim maxfiylikni saqlashga harakat qilaman.",
-     'answers': [{'name': "Ha",'value':1}, {'name': "Yo'q","value":0}],
+     'answers': [{'name': "Ha", 'value': 1}, {'name': "Yo'q", "value": 0}],
      'index': 98
-    },
-
+     },
 ]
-question_job =[
-
+question_job = [
     {
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name': " Hayvonlarga qarash (ularni boqish, parvarish qilish)",'value':1}, {'name': "Mashina priborlari ga xizmat qilish","value":0}],
-     'index': 1
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name': "Bemor kishilarga yordam berish, ularni davolash",'value':1}, {'name': ". Jadvallar, sxemalar, hisoblash mashinalari uchun dasturlar tuzish.","value":0}],
-     'index': 2
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name': "Kitob bezaklari, plakatlar, badiiy otkritkalar, gramplastinkalar sifatini kuzatib borish.",'value':1}, {'name': "Oʻsimliklar holatini, oʻsishini kuzatish.","value":0}],
-     'index': 3
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name': "Materiallarni (yogʻoch, gazlama, metall, plastmassa va h.k.) karta ishlash.",'value':1}, {'name': "Mahsulotlarni (is teʼmolchilarga yetkazish, reklama qilish, sotish)","value":0}],
-     'index': 4
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name': "Ilmiy — ommabop kitob, maqolalarni muhokama qilish",'value':1}, {'name': "Badiiy kitoblarni (yoki pesa, konsert larni muhokama qilish.","value":0}],
-     'index': 5
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name': "Biron — bir zotli kichik hayvonni boqish, parvaris",'value':1}, {'name': "Oʻrtoqlaringiz (yoki oʻzingizdan kichik bolalarni) biron-bir faoliyat (mehnat, oʻqish, sport)ni   bajarish uchun shugʻullantirish.","value":0}],
-     'index': 6
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name': "Rasm, tasvirlardan nusxalar koʻchirish (yoki musiqa asboblarini sozlash, tuzatish)",'value':1}, {'name': " Biron-bir yuk tashuvchi (koʻtaruvchi) vositalarni (kran, traktor, teplovoz va boshqa) boshqarish","value":0}],
-     'index': 7
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':". Odamlarga (maʼlumot byurolarida, sayohatlarda va boshqa) ularga kerakli maʼlumotlarni berish, tushuntirish.",'value':1},{'name': "Koʻrgazmalarni, peshtaxtalarni bezashda (yoki pesa, konsertlarni   tayyorlashda) ishtirok etish.","value":0}],
-     'index': 8
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Buyumlar,narsalar (kiyim, texnika)ni, uy — joyni taʼmirlash, tuzatish.",'value':1},{'name': "Jadvallar, tekstlar, rasmlardan xatolarini qidirib topish va tuzatish.","value":0}],
-     'index': 9
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Hayvonlarni daʼvolash.",'value':1},{'name': "Hisob — kitob ishlarini bajarish.","value":0}],
-     'index': 10
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Oʻsimliklarni yangi navlarini yaratish",'value':1},{'name': "Sanoat mahsulot lari (mashinalar, kiyim lar, uy, oziq-ovqat mahsulotlari va h.) ning yangi turlarini loyihalashtirish,yaratish.","value":0}],
-     'index': 11
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Odamlar oʻrtasidagi nizo, janjallarni hal qilish (ishontirish, tushuntirish, ragʻbatlantirish)",'value':1},{'name': " Chizmalar, sxemalar, jadvallarni   oʻrganish (tekshirish, aniqlash, tartibga keltirish)","value":0}],
-     'index': 12
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':" Badiiy havaskorlik  toʻgaraklari ishlarini oʻrganish,   kuzatish.",'value':1},{'name': "Mikroblar hayotini oʻrganish.","value":0}],
-     'index': 13
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Meditsina priborlari, yoki apparatlarni ishlatish, ularga xizmat qilish.",'value':1},{'name': "Odamlarga yaralan ganda,  shikastlanganda, kuyganda tibbiy yordam koʻrsatish.","value":0}],
-     'index': 14
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Kuzatilayotgan voqealar, yoki hodisalar, oʻlchanayotgan obyektlar va boshqalar haqida aniq hisobotlar yozib borish.",'value':1},{'name': "Voqealar (kuzatilayotgan yoki ular haqida oʻqigan)ni badiiy ifodalash.","value":0}],
-     'index': 15
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Kasalxonada laboratoriya  analizlarini qilish.",'value':1},{'name': "Bemorlarni qabul qilish, ularni tekshirish, ular bilan suhbatlashish va ularni daʼvolashga yoʻllash.","value":0}],
-     'index': 16
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Xona devorlarini, narsalar yoki sirtini boʻyash va bezash.",'value':1},{'name':"Binolarni taʼmir lash yoki mashina priborlarini yigʻish","value":0}],
-     'index': 17
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Tengdoshlaringiz yoki kichik yoshdagi bolalarni (teatr, muzeylarga) madaniy sayohatlarini, ekskursiyalarini) tashkil etish.",'value':1},{'name':"Sahnada oʻynash, konsertlarda  ishtirok etish.","value":0}],
-     'index': 18
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Chizmalar boʻyicha detallarni buyumlar (mashina, kiyimlar)ni tayyor lash, binolarni qurish.",'value':1},{'name':" Chizmachilik bilan   shugʻullanish, chizmalar, kartalardan nusxalar koʻchirish.","value":0}],
-     'index': 19
-    },{
-'question': "Variantlardan birini tanlang",
-     'answers': [{'name':"Oʻsimliklar kasalliklari va bogʻ — oʻrmon zararkunan dalariga qarshi kurashish.",'value':1},{'name':" Klavishli mashina larda (kompyuter, teletayp va boshqalar)da ishlash.","value":0}],
-     'index': 20
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': " Hayvonlarga qarash (ularni boqish, parvarish qilish)", 'value': 1},
+                    {'name': "Mashina priborlari ga xizmat qilish", "value": 0}],
+        'index': 1
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Bemor kishilarga yordam berish, ularni davolash", 'value': 1},
+                    {'name': ". Jadvallar, sxemalar, hisoblash mashinalari uchun dasturlar tuzish.", "value": 0}],
+        'index': 2
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [
+            {'name': "Kitob bezaklari, plakatlar, badiiy otkritkalar, gramplastinkalar sifatini kuzatib borish.",
+             'value': 1}, {'name': "Oʻsimliklar holatini, oʻsishini kuzatish.", "value": 0}],
+        'index': 3
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Materiallarni (yogʻoch, gazlama, metall, plastmassa va h.k.) karta ishlash.", 'value': 1},
+                    {'name': "Mahsulotlarni (is teʼmolchilarga yetkazish, reklama qilish, sotish)", "value": 0}],
+        'index': 4
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Ilmiy — ommabop kitob, maqolalarni muhokama qilish", 'value': 1},
+                    {'name': "Badiiy kitoblarni (yoki pesa, konsert larni muhokama qilish.", "value": 0}],
+        'index': 5
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Biron — bir zotli kichik hayvonni boqish, parvaris", 'value': 1}, {
+            'name': "Oʻrtoqlaringiz (yoki oʻzingizdan kichik bolalarni) biron-bir faoliyat (mehnat, oʻqish, sport)ni   bajarish uchun shugʻullantirish.",
+            "value": 0}],
+        'index': 6
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [
+            {'name': "Rasm, tasvirlardan nusxalar koʻchirish (yoki musiqa asboblarini sozlash, tuzatish)", 'value': 1},
+            {
+                'name': " Biron-bir yuk tashuvchi (koʻtaruvchi) vositalarni (kran, traktor, teplovoz va boshqa) boshqarish",
+                "value": 0}],
+        'index': 7
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{
+            'name': ". Odamlarga (maʼlumot byurolarida, sayohatlarda va boshqa) ularga kerakli maʼlumotlarni berish, tushuntirish.",
+            'value': 1}, {
+            'name': "Koʻrgazmalarni, peshtaxtalarni bezashda (yoki pesa, konsertlarni   tayyorlashda) ishtirok etish.",
+            "value": 0}],
+        'index': 8
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Buyumlar,narsalar (kiyim, texnika)ni, uy — joyni taʼmirlash, tuzatish.", 'value': 1},
+                    {'name': "Jadvallar, tekstlar, rasmlardan xatolarini qidirib topish va tuzatish.", "value": 0}],
+        'index': 9
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Hayvonlarni daʼvolash.", 'value': 1},
+                    {'name': "Hisob — kitob ishlarini bajarish.", "value": 0}],
+        'index': 10
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Oʻsimliklarni yangi navlarini yaratish", 'value': 1}, {
+            'name': "Sanoat mahsulot lari (mashinalar, kiyim lar, uy, oziq-ovqat mahsulotlari va h.) ning yangi turlarini loyihalashtirish,yaratish.",
+            "value": 0}],
+        'index': 11
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [
+            {'name': "Odamlar oʻrtasidagi nizo, janjallarni hal qilish (ishontirish, tushuntirish, ragʻbatlantirish)",
+             'value': 1},
+            {'name': " Chizmalar, sxemalar, jadvallarni   oʻrganish (tekshirish, aniqlash, tartibga keltirish)",
+             "value": 0}],
+        'index': 12
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': " Badiiy havaskorlik  toʻgaraklari ishlarini oʻrganish,   kuzatish.", 'value': 1},
+                    {'name': "Mikroblar hayotini oʻrganish.", "value": 0}],
+        'index': 13
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Meditsina priborlari, yoki apparatlarni ishlatish, ularga xizmat qilish.", 'value': 1},
+                    {'name': "Odamlarga yaralan ganda,  shikastlanganda, kuyganda tibbiy yordam koʻrsatish.",
+                     "value": 0}],
+        'index': 14
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{
+            'name': "Kuzatilayotgan voqealar, yoki hodisalar, oʻlchanayotgan obyektlar va boshqalar haqida aniq hisobotlar yozib borish.",
+            'value': 1},
+            {'name': "Voqealar (kuzatilayotgan yoki ular haqida oʻqigan)ni badiiy ifodalash.", "value": 0}],
+        'index': 15
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Kasalxonada laboratoriya  analizlarini qilish.", 'value': 1}, {
+            'name': "Bemorlarni qabul qilish, ularni tekshirish, ular bilan suhbatlashish va ularni daʼvolashga yoʻllash.",
+            "value": 0}],
+        'index': 16
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{'name': "Xona devorlarini, narsalar yoki sirtini boʻyash va bezash.", 'value': 1},
+                    {'name': "Binolarni taʼmir lash yoki mashina priborlarini yigʻish", "value": 0}],
+        'index': 17
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [{
+            'name': "Tengdoshlaringiz yoki kichik yoshdagi bolalarni (teatr, muzeylarga) madaniy sayohatlarini, ekskursiyalarini) tashkil etish.",
+            'value': 1}, {'name': "Sahnada oʻynash, konsertlarda  ishtirok etish.", "value": 0}],
+        'index': 18
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [
+            {'name': "Chizmalar boʻyicha detallarni buyumlar (mashina, kiyimlar)ni tayyor lash, binolarni qurish.",
+             'value': 1},
+            {'name': " Chizmachilik bilan   shugʻullanish, chizmalar, kartalardan nusxalar koʻchirish.", "value": 0}],
+        'index': 19
+    }, {
+        'question': "Variantlardan birini tanlang",
+        'answers': [
+            {'name': "Oʻsimliklar kasalliklari va bogʻ — oʻrmon zararkunan dalariga qarshi kurashish.", 'value': 1},
+            {'name': " Klavishli mashina larda (kompyuter, teletayp va boshqalar)da ishlash.", "value": 0}],
+        'index': 20
     },
 ]
-

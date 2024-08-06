@@ -55,7 +55,7 @@ def calculate_scores(answers):
     return scores
 
 
-# Natijalarni talqin qilish
+
 def interpret_scores(scores):
     interpretations = {}
     for category, score in scores.items():
