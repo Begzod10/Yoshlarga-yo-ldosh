@@ -33,4 +33,23 @@ def test_filter():
 @app.route('/platform')
 def platform():
     all_test = Test.query.order_by(Test.id).all()
-    return render_template("components/list/list.html", all_test=all_test)
+    test_infos = TestInfo.query.order_by(TestInfo.id).all()
+    return render_template("components/platform/platform.html", all_test=all_test, test_infos=test_infos)
+
+
+@app.route('/get_test_balls', methods=['POST'])
+def get_test_balls():
+    test_id = request.get_json()['test_id']
+    test_answers = TestAnswerOptions.query.filter(TestAnswerOptions.test_info_id == test_id).order_by(
+        TestAnswerOptions.name).all()
+    test_answers_list = []
+    for test in test_answers:
+        info = {
+            "id": test.id,
+            "name": test.name
+        }
+        test_answers_list.append(info)
+    print(test_answers_list)
+    return jsonify({
+        "answer_list": test_answers_list
+    })

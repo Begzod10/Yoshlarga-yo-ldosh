@@ -64,6 +64,7 @@ class Test(db.Model):
     day = Column(DateTime, default=datetime.now())
     user_id = Column(Integer, ForeignKey('user.id'))
     value = Column(Integer)
+    test_answer_options_id = Column(Integer, ForeignKey('TestAnswerOptions.id'))
 
     def add(self):
         db.session.add(self)
