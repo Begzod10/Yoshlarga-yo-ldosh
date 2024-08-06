@@ -461,7 +461,8 @@ def submit():
                                                          TestAnswerOptions.test_info_id == test_info.id).first()
         if score >= 21:
             test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 21, test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == "OʻZGALARGA YORDAM BERISH MOTIVI":
@@ -471,7 +472,8 @@ def submit():
             test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 44, test_info.id).first()
         if score >= 45:
             test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 45, test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
         test.add()
         results.append(test_option.desc)
     return jsonify(score=score, results=results)
@@ -505,7 +507,8 @@ def defeat_submit():
         test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 19, test_info.id).first()
     elif score >= 20:
         test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 20, test_info.id).first()
-    test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+    test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                test_answer_options_id=test_option.id)
     test.add()
     result.append(test_option.desc)
     return jsonify(score=score, result=result)
