@@ -1,4 +1,10 @@
 venv
-.idea
+.idea/
+.idea/psycologicTest.iml
+.idea/psycologicTest.iml/
+.idea/misc.xml
 __pycache__/
 migrations
+.idea
+
+

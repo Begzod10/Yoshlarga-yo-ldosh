@@ -115,7 +115,7 @@
 <body>
 <div class="container">
     <h1>{{ selected_test.name }}</h1>
-    <input type="text" placeholder="Yoshingizni kiriting" name="age" class="age">
+    <input type="text" required placeholder="Yoshingizni kiriting" name="age" class="age">
     <select name="gender" class="gender">
         <option value="Erkak">Erkak</option>
         <option value="Ayol">Ayol</option>
@@ -133,7 +133,7 @@
                 <p>{{ question['index'] }}. {{ question['question'] }}</p>
                 {% for answers in question['answers'] %}
                     <label>
-                        <input type="radio" name="{{ question['index'] }}"
+                        <input type="radio"  name="{{ question['index'] }}"
                                value="{{ answers['value'] }}"> {{ answers['name'] }}
                     </label>
                 {% endfor %}

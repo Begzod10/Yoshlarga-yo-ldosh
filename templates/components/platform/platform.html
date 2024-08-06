@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yoshlarga Yo'ldosh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="../../../static/images/Sergak%20bo'l%201.png">
+    <link rel="stylesheet" href="../../../static/components/list/list.min.css">
+
+</head>
+<body>
+
+<div class="platform">
+    <div class="platform__menu">
+        <div class="platform__wrapper">
+            <div class="user">
+                <div class="user__image">
+                    <img src="../../../static/images/avatar.png" alt="">
+                </div>
+                <div class="user__info">
+                    <h3>Duck UI</h3>
+                    <p>Duckui@demo.com</p>
+                </div>
+            </div>
+            <ul class="menuBar">
+                <li class="menuBar__item">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </li>
+                <li class="menuBar__item">
+                    <i class="fas fa-signal"></i>
+                    Revenue
+                </li>
+                <li class="menuBar__item">
+                    <i class="fas fa-bell"></i>
+                    Notifications
+                </li>
+                <li class="menuBar__item">
+                    <i class="fas fa-chart-pie"></i>
+                    Analytics
+                </li>
+                <li class="menuBar__item">
+                    <i class="fas fa-boxes"></i>
+                    Inventory
+                </li>
+            </ul>
+        </div>
+        <div class="logout">
+            <img src="../../../static/images/Icons.png" alt="">
+            Logout
+        </div>
+    </div>
+    <div class="platform__filter">
+        <label class="filter">
+            <input class="filter__filterInput" type="number" placeholder="Yosh (ot)">
+            <input class="filter__filterInput" type="number" placeholder="Yosh (do)">
+            <select class="filter__filterSelect" id="test_name" name="">
+                {% for test_info in test_infos %}
+                    <option value="{{ test_info.id }}">{{ test_info.name }}</option>
+                {% endfor %}
+            </select>
+            <select class="filter__filterSelect" id="test_ball" name="">
+                <option>Ball</option>
+            </select>
+            <div class="filter__filterCheck" id="men_check">
+                <input type="checkbox">
+                Erkak
+            </div>
+            <div class="filter__filterCheck" id="women_check">
+                <input type="checkbox">
+                Ayol
+            </div>
+        </label>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>No</th>
+                <th>Yosh</th>
+                <th>Jinsi</th>
+                <th>Ball</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for test in all_test %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ test.user.age }}</td>
+                    <td>{{ test.user.gender }}</td>
+                    <td>100</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+<script src="../../../static/components/platform/platform.js"></script>
+
+</body>
+</html>

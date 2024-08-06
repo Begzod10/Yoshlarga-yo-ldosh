@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.independence {
+  width: 100%;
+  display: flex;
+  padding: 50px 20px;
+}
+.independence__container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.independence__container:nth-child(1) {
+  gap: 40px;
+}
+.independence__container .title {
+  font-size: 46px;
+}
+.independence__container .title__inner {
+  color: #CCA852;
+}
+.independence__container .info {
+  color: #757575;
+  font-size: 28px;
+}
+.independence__container iframe {
+  width: 613px;
+  height: 441px;
+}
+
+.independenceSecond {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  padding: 50px 20px;
+}
+.independenceSecond__info {
+  font-size: 40px;
+}
+.independenceSecond .items {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.independenceSecond .items__small {
+  width: 330px;
+  height: 277px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #CCA852;
+}
+.independenceSecond .items__big {
+  width: 542px;
+  height: 422px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #CCA852;
+}
+.independenceSecond .items__info {
+  font-size: 30px;
+  color: white;
+}
+
+.independenceThread {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 20px;
+}
+.independenceThread .none {
+  display: none;
+}
+.independenceThread__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.independenceThread__title {
+  font-size: 40px;
+}
+.independenceThread__btn {
+  padding: 12px 20px;
+  background-color: #CCA852;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+}
+.independenceThread .list {
+  display: grid;
+  grid-template-areas: "ones twos" "threas fours" "fives fives";
+  grid-gap: 30px;
+  padding: 20px 40px;
+  justify-items: center;
+}
+.independenceThread .list__item {
+  width: 655px;
+  height: 237px;
+  border-radius: 20px;
+  background-color: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.independenceThread .list__item:nth-child(1) {
+  grid-area: ones;
+}
+.independenceThread .list__item:nth-child(2) {
+  grid-area: twos;
+}
+.independenceThread .list__item:nth-child(3) {
+  grid-area: threas;
+}
+.independenceThread .list__item:nth-child(4) {
+  grid-area: fours;
+}
+.independenceThread .list__item:nth-child(5) {
+  grid-area: fives;
+  height: 186px;
+}
+.independenceThread .list__title {
+  font-size: 22px;
+}
+.independenceThread .list__info {
+  font-size: 17.5px;
+}
+
+@media (max-width: 430px) {
+  .independence {
+    flex-direction: column-reverse;
+    padding: 0;
+  }
+  .independence__container {
+    width: 100%;
+  }
+  .independence__container:nth-child(1) {
+    padding: 20px 10px;
+  }
+  .independence__container iframe {
+    width: 100%;
+  }
+  .independence__container .title {
+    font-size: 25px;
+  }
+  .independence__container .info {
+    font-size: 21px;
+  }
+  .independenceSecond__info {
+    font-size: 22px;
+  }
+  .independenceSecond .items {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .independenceSecond .items__info {
+    font-size: 22px;
+  }
+  .independenceSecond .items__small, .independenceSecond .items__big {
+    width: 100%;
+  }
+  .independenceThread__btn {
+    display: none;
+  }
+  .independenceThread .none {
+    width: fit-content;
+    display: flex;
+  }
+  .independenceThread__title {
+    font-size: 33px;
+  }
+  .independenceThread .list {
+    grid-template-areas: "ones" "twos" "threas" "fours" "fives";
+    padding: 0;
+  }
+  .independenceThread .list__item {
+    height: fit-content;
+    padding: 30px 20px;
+    width: 100%;
+  }
+  .independenceThread .list__title {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=independence.css.map */

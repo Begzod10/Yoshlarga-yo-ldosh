@@ -1,0 +1,17 @@
+{% extends "motivation_to_achieve_success/layout.html" %}
+
+{% block title %}Psixologik Test{% endblock %}
+
+{% block content %}
+<h1>Psixologik Test</h1>
+<form method="post">
+  {% for i, question in enumerate(questions, start=1) %}
+    <p>{{ i }}. {{ question }}</p>
+    <input type="radio" id="yes{{i}}" name="q{{i}}" value="yes" required>
+    <label for="yes{{i}}">Ha</label><br>
+    <input type="radio" id="no{{i}}" name="q{{i}}" value="no">
+    <label for="no{{i}}">Yo'q</label><br>
+  {% endfor %}
+  <input type="submit" value="Yuborish">
+</form>
+{% endblock %}
