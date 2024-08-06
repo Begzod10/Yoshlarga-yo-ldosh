@@ -127,7 +127,8 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Qat’iyatlilikni baholash testi':
@@ -159,7 +160,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 14),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi':
@@ -200,7 +201,7 @@ def submit():
             ).first()
 
         if test_option:
-            test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+            test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
             test.add()
             results.append(test_option.desc)
 
@@ -218,6 +219,9 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name > 30),
                 TestAnswerOptions.test_info_id == test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
+        test.add()
     if test_info.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
         for i in range(0, len(answers), 10):
             segment_score = calculate_score(answers, i, i + 10)
@@ -264,7 +268,7 @@ def submit():
                 test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
                 if test_option:
                     results.append(test_option.desc)
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
         test.add()
     elif test_info.name == 'Oʻquv faoliyat motivi':
         if 10 >= score > 0:
@@ -275,7 +279,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 20, TestAnswerOptions.name > 10),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Oiladagi psixologik iqlim':
@@ -295,7 +299,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 35, TestAnswerOptions.name > 22),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == "IPM / ijtimoiy – psixologik maslashganlik / so‘rovnomasi":
