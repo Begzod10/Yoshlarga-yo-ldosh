@@ -1,0 +1,393 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  overflow-x: hidden
+
+.header
+  background-color: white
+  padding: 1rem 4rem
+  position: fixed
+  width: 100%
+  top: 0
+  box-shadow:  0 0 18px -6px
+  z-index: 100000
+  .home-hamburger
+    display: none
+  &__main
+    display: flex
+    justify-content: space-between
+    align-items: center
+    img
+      width: 70%
+    &_nav
+      display: flex
+      gap: 2rem
+      align-items: center
+      list-style: none
+      font-weight: bolder
+      justify-content: space-evenly
+      .time
+        display: none
+      li
+        font-size: 1.2rem
+        cursor: pointer
+        button
+          width: 10rem
+          height: 2.3rem
+          border-radius: 15px
+          border: none
+          outline: none
+          background: linear-gradient(#CCA852 , #E8AD56)
+          transition: .4s
+          color: white
+          text-shadow: 0 0 1px #000000
+
+          font-weight: bolder
+          &:active
+            transform: scale(0.8)
+
+
+.basic
+  background: url("../../../static/images/Frame 2973.svg") no-repeat center
+  background-size: cover
+
+  //padding: 3rem
+  width: 100%
+  //background: cadetblue
+  &__wrapper
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100vh
+    flex-direction: column
+    gap: 2rem
+    h2
+      font-size: 5rem
+      color: white
+      font-family: Yeseva One
+    button
+      width: 12rem
+      height: 3.3rem
+      border-radius: 20px
+      border: none
+      color: white
+
+      font-size: 1.3rem
+      outline: none
+      background: linear-gradient(#CCA852 , #E8AD56)
+      &:active
+        transform: scale(0.8)
+.about
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  gap: 5rem
+  padding: 3rem
+  &__header
+    margin-bottom: 30px
+    font-weight: bolder
+    font-size: 2rem
+  &-descr
+    text-align: center
+    width: 60rem
+    font-size: 1.2rem
+  &-card-main
+    padding: 2rem
+    display: flex
+    gap: 5rem
+    justify-content: center
+    flex-wrap: wrap
+  &-card
+    width: 350px
+    display: flex
+    justify-content: center
+    align-items: center
+    box-shadow: 0 16px 32px -8px rgba(12, 12, 13, 0.4)
+    border-radius: 10px
+    flex-direction: column
+    padding: 1rem
+
+    gap: 2rem
+    height: 400px
+    &:nth-child(1)
+      background: #E8AD56
+    &-headerfirst , &-header
+      display: flex
+      flex-direction: column
+      gap: 1rem
+      align-items: center
+      justify-content: center
+      text-transform: uppercase
+      color: white
+      img
+        width: 60px
+        height: 60px
+    &-header
+      color: #6B7280
+
+    &-middle , &-middlefirst
+      border-radius: 5px
+      width: 55%
+      align-self: center
+      height: 2px
+      background: #E8AD56
+    &-middlefirst
+      background: white
+    &-descrfirst , &-descr
+      color: white
+      text-align: center
+    &-descr
+      color: #6B7280
+.download
+  background: url("../../../static/images/Desktop - 314.svg") no-repeat center
+  background-size: cover
+  padding: 5rem 3rem
+  color: #FFFFFF
+  height: 100vh
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  //padding: 2rem 1rem
+  gap: 5rem
+  .header-title
+    font-size: 2rem
+  .header-descr
+    font-size: 1.8rem
+    width: 50rem
+    text-align: center
+  .download-btn
+    width: 10rem
+    height: 2.5rem
+    display: flex
+    justify-content: center
+    align-items: center
+    background: linear-gradient(#CCA852 , #E8AD56)
+    border-radius: 10px
+    cursor: pointer
+    &:active
+      transform: scale(0.8)
+.statistic
+  display: flex
+  align-items: center
+  padding: 2rem
+
+  justify-content: center
+  gap: 5rem
+  flex-wrap: wrap
+  &-header
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    width: fit-content
+    h2
+      font-family: "Inter Semi Bold"
+      width: 50rem
+      color: #423F3F
+      font-weight: bolder
+      font-size: 3.5rem
+      text-transform: uppercase
+    .box
+      padding: 1rem
+      box-shadow:  0 16px 32px -8px rgba(12, 12, 13, 0.4)
+      display: flex
+      //width: 20rem
+      width: fit-content
+      border-radius: 10px
+      gap: 1rem
+      color: #E8AD56
+      flex-direction: column
+      &-title
+        font-size: 1.8rem
+        text-transform: uppercase
+        font-weight: 800
+      &-info
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 1rem
+        width: fit-content
+  &-aside
+    display: flex
+    align-items: center
+    justify-content: center
+    //padding: 3rem 0
+    background: url("../../../static/images/Vector.svg") no-repeat center
+
+    position: relative
+    height: 70vh
+
+    .aside-second
+      align-self: flex-end
+      //left: -10%
+      //bottom: -5rem
+      //position: relative
+
+
+.about
+
+  &-card-footer-main
+    display: flex
+    gap: 5rem
+    padding: 2rem
+    justify-content: center
+    flex-wrap: wrap
+    .footer-card-headerfirst , .footer-card-header
+      display: flex
+      flex-direction: column
+      font-size: 1.6rem
+      text-align: center
+      align-items: center
+      gap: 1rem
+      color: #6B7280!important
+    .footer-card-header
+      justify-content: center
+      color: #FFFFFF!important
+.footer
+  background: #FFFFFF
+  box-shadow:  0 0 18px -6px
+  padding: 2rem
+  &-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 3rem
+    //display: grid
+    flex-wrap: wrap
+    //grid-template-columns: 650px 350px 350px 350px
+  &-about
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    &-descr
+      color: #6B7280
+      width: 32rem
+      font-size: 1.3rem
+  &-nav , &-support , &-social
+    display: flex
+    flex-direction: column
+    gap: 1rem
+    &-title
+      font-size: 1.5rem
+      font-weight: bolder
+      color: #E8AD56
+    ul
+      list-style: none
+      display: flex
+      flex-direction: column
+      gap: 1rem
+      li
+        display: flex
+        align-items: center
+        gap: 1rem
+        cursor: pointer
+
+
+
+
+
+
+@media (max-width: 1698px)
+  .statistic
+    gap: 1rem
+
+@media (max-width: 1631px)
+  .statistic
+    &-aside
+      .aside-first
+        width: 70%
+@media (max-width:  1626px)
+  .statistic
+    padding: 2rem 0
+    gap: 3rem
+    &-aside
+      width: 40%
+      .aside-first
+        width: 100%
+@media (max-width:  1600px)
+  .statistic
+    padding: 2rem 2rem
+    justify-content: flex-start
+
+    &-header
+      h2
+        font-size: 3rem
+    &-aside
+      background: url("../../../static/images/dd23d32d32d.png") no-repeat center
+      width: 40%
+
+      .aside-first
+        width: 65%
+
+      .aside-second
+        width: 50%
+
+
+
+@media (max-width:  1100px)
+  .about
+    &-descr
+      padding: 2rem
+
+
+  .statistic
+    padding: 2rem 2rem
+    justify-content: center
+    &-header
+      align-items: center
+      padding: 2rem
+      h2
+        font-size: 2.8rem
+        text-align: center
+      .box
+        &-title
+          font-size: 1.3rem
+    &-aside
+      background: none
+      width: 70%
+      .aside-first
+        width: 100%
+      .aside-second
+        width: 70%
+
+
+@media (max-width: 990px)
+  .header
+    .home-hamburger
+      display: flex
+      align-self: flex-start
+      font-size: 2rem
+    &__main_img
+      display: none
+    &__main
+      align-items: center
+      justify-content: center
+    &__main_nav
+      position: fixed
+      transition: 1s all
+      left: -100%
+      flex-direction: column
+      width: 100%
+      top: 0
+      justify-content: center
+      height: 100%
+      gap: 8rem
+      background: rgba(107, 114, 128, 0.47)
+      backdrop-filter: blur(5px)
+    .time
+      display: flex
+    .active-menu
+      left: 0
+      color: #FFFFFF
+      transition: 1s all
+      .time
+        padding-left: 3rem
+        align-self: flex-start
+        font-size: 2rem
+  .statistic
+    &-aside
+      width: 100%
+      height: fit-content

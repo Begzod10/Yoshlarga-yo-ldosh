@@ -1,15 +1,12 @@
-
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 
 from backend.functions.infos import *
 from backend.models.models import *
-
 
 app = Flask(__name__)
 app.config.from_object('backend.models.config')
 db = db_setup(app)
 migrate = Migrate(app, db)
-
 
 
 @app.route('/', defaults={"test_id": 0})
@@ -430,7 +427,6 @@ def submit():
             }
         }
 
-
         def calculate_scores(responses, scoring_key):
             scores = {key: 0 for key in scoring_key}
 
@@ -447,19 +443,17 @@ def submit():
             return scores
 
         scores = calculate_scores(answers, scoring_key)
-        results.append( max(scores, key=scores.get))
+        results.append(max(scores, key=scores.get))
         score = scores[results[0]]
     return jsonify(score=score, results=results)
 
 
-
 from backend.test_functions.test2 import *
+from backend.test_functions.components import *
 
-from test2 import *
 from confirm_self_assesment import *
 from motivation_to_achieve_success import *
 from the_motivation_of_helping_others import *
-
 
 if __name__ == '__main__':
     app.run()
