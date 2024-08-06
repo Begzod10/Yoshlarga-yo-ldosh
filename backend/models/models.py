@@ -50,6 +50,7 @@ class TestAnswerOptions(db.Model):
     name = Column(Integer)
     desc = Column(String)
     test_info_id = Column(Integer, ForeignKey('test_info.id'))
+    tests = relationship("Test", backref="answer_option", order_by="Test.id", lazy="select")
 
     def add(self):
         db.session.add(self)
@@ -64,7 +65,7 @@ class Test(db.Model):
     day = Column(DateTime, default=datetime.now())
     user_id = Column(Integer, ForeignKey('user.id'))
     value = Column(Integer)
-    test_answer_options_id = Column(Integer, ForeignKey('TestAnswerOptions.id'))
+    test_answer_options_id = Column(Integer, ForeignKey('test_answer_option.id'))
 
     def add(self):
         db.session.add(self)

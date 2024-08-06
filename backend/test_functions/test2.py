@@ -43,12 +43,19 @@ def get_test_balls():
     test_answers = TestAnswerOptions.query.filter(TestAnswerOptions.test_info_id == test_id).order_by(
         TestAnswerOptions.name).all()
     test_answers_list = []
-    for test in test_answers:
-        info = {
-            "id": test.id,
-            "name": test.name
-        }
-        test_answers_list.append(info)
+    if test_answers:
+        for test in test_answers:
+            info = {
+                "id": test.id,
+                "name": test.name,
+                "relation": True
+            }
+            test_answers_list.append(info)
+    else:
+        # query = session.query(Class.title.distinct().label("title"))
+        # titles = [row.title for row in query.all()]
+        test_answers = Test.query.order_by(Test.test_info_id == test_id).distinct()
+        print(test_answers)
     print(test_answers_list)
     return jsonify({
         "answer_list": test_answers_list
