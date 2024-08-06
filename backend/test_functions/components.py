@@ -41,9 +41,6 @@ def level():
     return render_template("components/level/htrml.html")
 
 
-
-
-
 @app.route('/login')
 def login():
     return render_template("components/login/login.html")
