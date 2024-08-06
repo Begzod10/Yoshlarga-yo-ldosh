@@ -1,0 +1,164 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.independence
+  width: 100%
+  display: flex
+  padding: 50px 20px
+  &__container
+    width: 50%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &:nth-child(1)
+      gap: 40px
+    .title
+      font-size: 46px
+      &__inner
+        color: #CCA852
+    .info
+      color: #757575
+      font-size: 28px
+    iframe
+      width: 613px
+      height: 441px
+
+
+.independenceSecond
+  display: flex
+  flex-direction: column
+  align-items: center
+  text-align: center
+  gap: 40px
+  padding: 50px 20px
+  &__info
+    font-size: 40px
+  .items
+    width: 100%
+    display: flex
+    justify-content: space-around
+    align-items: center
+    &__small
+      width: 330px
+      height: 277px
+      border-radius: 20px
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      background-color: #CCA852
+    &__big
+      width: 542px
+      height: 422px
+      border-radius: 20px
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      background-color: #CCA852
+    &__info
+      font-size: 30px
+      color: white
+
+
+.independenceThread
+  display: flex
+  flex-direction: column
+  gap: 20px
+  padding: 40px 20px
+  .none
+    display: none
+  &__info
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__title
+    font-size: 40px
+  &__btn
+    padding: 12px 20px
+    background-color: #CCA852
+    color: white
+    border: none
+    font-size: 18px
+    border-radius: 10px
+  .list
+    display: grid
+    grid-template-areas: "ones twos" "threas fours" "fives fives"
+    grid-gap: 30px
+    padding: 20px 40px
+    justify-items: center
+    &__item
+      width: 655px
+      height: 237px
+      border-radius: 20px
+      background-color: #E5E5E5
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      &:nth-child(1)
+        grid-area: ones
+      &:nth-child(2)
+        grid-area: twos
+      &:nth-child(3)
+        grid-area: threas
+      &:nth-child(4)
+        grid-area: fours
+      &:nth-child(5)
+        grid-area: fives
+        height: 186px
+    &__title
+      font-size: 22px
+      //align-self: flex-start
+    &__info
+      font-size: 17.5px
+
+
+@media (max-width: 430px)
+  .independence
+    flex-direction: column-reverse
+    padding: 0
+    &__container
+      width: 100%
+      &:nth-child(1)
+        padding: 20px 10px
+      iframe
+        width: 100%
+      .title
+        font-size: 25px
+      .info
+        font-size: 21px
+
+  .independenceSecond
+    &__info
+      font-size: 22px
+    .items
+      flex-direction: column
+      gap: 20px
+      &__info
+        font-size: 22px
+      &__small, &__big
+        width: 100%
+
+  .independenceThread
+    &__btn
+      display: none
+    .none
+      width: fit-content
+      display: flex
+    &__title
+      font-size: 33px
+    .list
+      grid-template-areas: "ones" "twos" "threas" "fours" "fives"
+      padding: 0
+      &__item
+        height: fit-content
+        padding: 30px 20px
+        width: 100%
+      &__title
+        font-size: 20px
+

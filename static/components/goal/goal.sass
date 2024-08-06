@@ -1,0 +1,274 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+
+.goal
+  &-wrapper
+
+    //height: 100vh
+    padding: 2rem
+    gap: 5rem
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: #17304D
+    flex-wrap: wrap
+
+  &-aside
+    display: flex
+    flex-direction: column
+    gap: 4rem
+
+    .aside
+      &-title
+        font-family: Yeseva One
+        text-transform: capitalize
+        color: #FFFFFF
+        font-size: 3.5rem
+
+      &-descr, &-footer-descr
+        width: 30rem
+        color: #B0B0B0
+        text-transform: uppercase
+        font-size: 1rem
+
+      &-footer-descr
+        color: #FFFFFF
+        font-size: 1.3rem
+
+    ul
+      display: flex
+      flex-direction: column
+      gap: 1.5rem
+      list-style: none
+
+      li
+        color: #FFFFFF
+        font-family: Inter
+        font-weight: bold
+        font-size: 16px
+        display: flex
+        gap: 0.5rem
+        text-transform: uppercase
+
+.determine
+  &-wrapper
+    display: flex
+    flex-direction: column
+    gap: 3rem
+    justify-content: center
+    padding: 2rem 0 2rem 5rem
+
+  &-title
+    font-size: 3rem
+    color: #3D3D3D
+    text-transform: capitalize
+    font-weight: bold
+
+    span
+      color: #FEC536
+      text-transform: uppercase
+
+  &-descr
+    font-weight: 700
+    font-size: 1.4rem
+    width: 40rem
+
+  &-bold, &-thin
+    display: flex
+    gap: 10rem
+    //justify-content: center
+    h2, p
+      border-left: 2px solid
+      padding-left: 1rem
+      font-size: 36px
+
+  &-thin
+    gap: 5rem
+
+    p
+      font-size: 1.4rem
+      color: #6B7280
+
+.footer
+
+  padding: 2rem
+  background: linear-gradient(27deg, #E8AD56, transparent)
+
+  &-wrapper
+    display: flex
+    gap: 1rem
+    justify-content: center
+    flex-wrap: wrap
+
+  &-images
+    display: grid
+    grid-template-columns: repeat(2, 300px)
+    justify-content: center
+    //width: 40%
+    //display: flex
+    //align-items: center
+    //flex-wrap: wrap
+
+  &-info
+    display: flex
+    flex-direction: column
+    gap: 3rem
+
+  &-bold
+    font-family: "Inter Semi Bold"
+    font-weight: bolder
+    text-transform: uppercase
+    font-size: 2.3rem
+    width: 55rem
+
+  &-thin
+    font-size: 1.3rem
+    width: 50rem
+
+  &-btn
+    width: 150px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    background: linear-gradient(25deg, rgba(204, 168, 82, 0.27), #E8AD56)
+    border-radius: 10px
+
+    cursor: pointer
+
+    &:active
+      transform: scale(0.8)
+
+
+@media (max-width: 1620px)
+  .goal
+    &-video
+      iframe
+        width: 600px!important
+@media (max-width: 1470px)
+  .goal
+    &-wrapper
+      gap: 3rem
+    &-video
+      iframe
+        width: 500px!important
+        height: 70vh!important
+@media (max-width: 1340px)
+  .goal
+    &-wrapper
+      gap: 1rem
+    &-aside
+      width: 30rem
+      .aside
+        &-title
+          font-size: 3rem
+
+
+@media (max-width: 1100px)
+  .goal
+    &-video
+      iframe
+        width: 400px !important
+    &-aside
+      gap: 1rem
+      .aside
+
+        &-title
+          font-size: 2rem
+        &-descr
+          font-size: 1rem
+        &-footer-descr
+          font-size: 1rem
+
+
+
+@media (max-width: 950px)
+  .goal
+    &-video
+      iframe
+        width: 600px !important
+        height: 50vh!important
+    &-aside
+      width: 100%
+
+  .determine
+    &-descr
+      width: 100%
+    &-bold
+      gap: 1rem
+      h2
+        font-size: 25px
+    &-thin
+      p
+        font-size: 18px
+  .footer
+    &-bold
+      width: 100%
+      font-size: 1.8rem
+    &-thin
+      font-size: 1rem
+      width: 100%
+
+
+@media (max-width: 830px)
+  .footer
+    &-images
+      grid-template-columns: repeat(2 , 150px)
+      width: 100%
+      gap: 2rem
+      img
+        width: 100%
+
+@media (max-width: 630px)
+  .goal
+    &-video
+      iframe
+        width: 450px !important
+        height: 50vh!important
+  .determine
+    &-wrapper
+      padding: 10px
+    &-title
+      font-size: 1.5rem
+    &-bold
+      h2
+        font-size: 18px
+    &-thin
+      p
+        font-size: 10px
+
+
+
+@media (max-width: 530px)
+  .goal
+    &-video
+      iframe
+        width: 350px !important
+        height: 30vh!important
+    &-aside
+      .aside
+        &-descr , &-footer-descr
+          width: 100%
+          font-size: 16px
+      ul
+        li
+          font-size: 14px
+  .determine
+    &-wrapper
+      padding: 10px
+    &-title
+      font-size: 1.5rem
+    &-bold
+      h2
+        font-size: 18px
+    &-thin
+      p
+        font-size: 10px
+  .footer
+    &-bold
+      font-size: 18px
+    &-thin
+      font-size: 14px
