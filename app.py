@@ -148,7 +148,7 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 14),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, )
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Siz qanchalik tashabbuskor va mustaqilsiz':
