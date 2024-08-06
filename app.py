@@ -40,6 +40,8 @@ def index(test_id):
     test = TestInfo.query.filter(TestInfo.id == test_id).first()
     if test.name == 'Maqsadga intiluvchanlik':
         questions = questions_purpose
+    elif test.name == "MUVAFFAQIYATGA ERISHISH MOTIVATSIYASINI TASHXIS QILISH METODIKASI":
+        questions = questions_MAS
     elif test.name == 'Qat’iyatlilikni baholash testi':
         questions = questions_persistence
     elif test.name == 'Siz qanchalik sabrlisiz':
@@ -60,7 +62,8 @@ def index(test_id):
         questions = questions_deviant
     elif test.name == "DIFFERENSIAL DIAGNOSTIK":
         questions = question_job
-
+    elif test.name == "OʻZGALARGA YORDAM BERISH MOTIVI":
+        questions = questions_H
     else:
         questions = []
     return render_template('index.html', questions=questions, selected_test=test,
@@ -97,6 +100,7 @@ def calculate_score(answers, start_index, end_index):
 def submit():
     data = request.get_json()
     answers = data['answers']
+    print(answers)
     age = data['age']
     gender = data['gender']
     test = data['test']
@@ -447,7 +451,74 @@ def submit():
         results.append(max(scores, key=scores.get))
         score = scores[results[0]]
 
+    elif test_info.name == "MUVAFFAQIYATGA ERISHISH MOTIVATSIYASINI TASHXIS QILISH METODIKASI":
+
+        if 2 <= score <= 16:
+            test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 16,
+                                                         TestAnswerOptions.test_info_id == test_info.id).first()
+        if 17 <= score <= 20:
+            test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 20,
+                                                         TestAnswerOptions.test_info_id == test_info.id).first()
+        if score >= 21:
+            test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 21, test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
+        test.add()
+        results.append(test_option.desc)
+    elif test_info.name == "OʻZGALARGA YORDAM BERISH MOTIVI":
+        if score <= 30:
+            test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 30, test_info.id).first()
+        if 30 <= score <= 45:
+            test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 44, test_info.id).first()
+        if score >= 45:
+            test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 45, test_info.id).first()
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
+        test.add()
+        results.append(test_option.desc)
     return jsonify(score=score, results=results)
+
+
+@app.route('/defeat')
+def defeat():
+    return render_template('defeat.html', questions=questions_MAG, tests=[{'id': test.id, 'name': test.name} for test in
+                                                                          TestInfo.query.order_by(TestInfo.id).all()],
+                           selected_test=TestInfo.query.filter(
+                               TestInfo.name == "MAGʻLUBIYATDAN QOCHISH MOTIVATSIYASINI ANIQLASH METODIKASI").first())
+
+
+@app.route('/defeat_submit', methods=['POST'])
+def defeat_submit():
+    answers = request.json.get('answers')
+    age = request.json.get('age')
+    gender = request.json.get('gender')
+    user = User(age=age, gender=gender)
+    user.add()
+    result = []
+
+    score = sum(1 for answer in answers if (answer['question_coun'], answer['key']) in key)
+    test_info = TestInfo.query.filter(
+        TestInfo.name == 'MAGʻLUBIYATDAN QOCHISH MOTIVATSIYASINI ANIQLASH METODIKASI').first()
+    if 2 <= score <= 10:
+        test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 10, test_info.id).first()
+    elif 11 <= score <= 16:
+        test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 16, test_info.id).first()
+    elif 17 <= score <= 20:
+        test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 19, test_info.id).first()
+    elif score >= 20:
+        test_option = TestAnswerOptions.query.filter(TestAnswerOptions.name == 20, test_info.id).first()
+    test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                test_answer_options_id=test_option.id)
+    test.add()
+    result.append(test_option.desc)
+    return jsonify(score=score, result=result)
+
+
+# from backend.test_functions.test2 import *
+
+# from confirm_self_assesment import *
+# from motivation_to_achieve_success import *
+# from the_motivation_of_helping_others import *
 
 
 from backend.test_functions.test2 import *

@@ -122,7 +122,7 @@
     </select>
     <select name="test" class="tests" onchange="redirectToTest()">
         {% for test in tests %}
-            <option value="{{ test.id }}" {% if selected_test and selected_test.id == test.id %}selected{% endif %}>
+            <option class="option" value="{{ test.id }}" {% if selected_test and selected_test.id == test.id %}selected{% endif %}>
                 {{ test.name }}
             </option>
         {% endfor %}
@@ -133,8 +133,9 @@
                 <p>{{ question['index'] }}. {{ question['question'] }}</p>
                 {% for answers in question['answers'] %}
                     <label>
-                        <input type="radio"  name="{{ question['index'] }}"
-                               value="{{ answers['value'] }}"> {{ answers['name'] }}
+                        <input type="radio" name="{{ question['index'] }}"
+                               value="{{ answers['value'] }}"
+                        > {{ answers['name'] }}
                     </label>
                 {% endfor %}
             </div>
@@ -145,8 +146,8 @@
 </div>
 
 <script>
-    // Select the relevant elements
     const test = document.querySelector('.tests');
+    const options = document.querySelectorAll('.option');
     const age = document.querySelector('.age');
     const gender = document.querySelector('.gender');
     const form = document.getElementById('quizForm');
@@ -154,10 +155,18 @@
 
     function redirectToTest() {
         const testId = test.value;
-        window.location.href = '/' + testId;
+        console.log(test.selectedIndex)
+        console.log(options)
+        let selected = options[test.selectedIndex].label
+
+        if (selected === "MAGʻLUBIYATDAN QOCHISH MOTIVATSIYASINI ANIQLASH METODIKASI") {
+            window.location.href = '/defeat'
+        } else {
+            window.location.href = '/' + testId;
+        }
     }
 
-    // Wait for the DOM to fully load
+
     document.addEventListener("DOMContentLoaded", function () {
         if (form) {
             form.addEventListener('submit', async function (event) {
@@ -172,6 +181,7 @@
                     }
                     data.push(info);
                 }
+                console.log(data)
 
                 try {
                     const response = await fetch('/submit', {

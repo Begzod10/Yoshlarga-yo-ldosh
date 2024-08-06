@@ -44,7 +44,7 @@ questions = [
     "Men oʻz yoʻlimning toʻgʻriligiga shubha qilmasam uni amalga oshirish yoʻlida hech narsadan toymayman."
 ]
 
-answers = {
+answers_type = {
     "yes": [2, 3, 4, 5, 7, 8, 9, 10, 14, 15, 16, 17, 21, 22, 25, 26, 27, 28, 29, 30, 32, 37, 41],
     "no": [6, 13, 18, 20, 24, 31, 36, 38, 39]
 }
