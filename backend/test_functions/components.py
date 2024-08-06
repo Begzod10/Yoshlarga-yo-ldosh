@@ -41,19 +41,12 @@ def level():
     return render_template("components/level/htrml.html")
 
 
-@app.route('/list')
-def list():
-    return render_template("components/list/list.html")
+
 
 
 @app.route('/login')
 def login():
     return render_template("components/login/login.html")
-
-
-@app.route('/platform')
-def platform():
-    return render_template("components/platform/platform.html")
 
 
 @app.route('/prinsipic')

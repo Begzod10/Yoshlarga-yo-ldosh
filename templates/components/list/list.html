@@ -82,79 +82,20 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>Erkak</td>
-                <td>100</td>
-            </tr>
+            {% for test in all_test %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ test.user.age }}</td>
+                    <td>{{ test.user.gender }}</td>
+                    <td>100</td>
+                </tr>
+            {% endfor %}
             </tbody>
         </table>
 
     </div>
 
 </div>
-
 
 
 </body>
