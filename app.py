@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, jsonify, redirect
-
+from flask import Flask, render_template, request, jsonify, session, redirect
 from backend.functions.infos import *
 from backend.models.models import *
 
@@ -144,7 +143,8 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 11),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, )
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Siz qanchalik sabrlisiz':
@@ -160,7 +160,9 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 18, TestAnswerOptions.name > 14),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
+
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Muloqotchilikning umumiy darajasini aniqlash soʻrovnomasi':
@@ -201,7 +203,8 @@ def submit():
             ).first()
 
         if test_option:
-            test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
+            test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                        test_answer_options_id=test_option.id)
             test.add()
             results.append(test_option.desc)
 
@@ -222,6 +225,9 @@ def submit():
         test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
                     test_answer_options_id=test_option.id)
         test.add()
+
+        results.append(test_option.desc)
+
     if test_info.name == 'SHAXS EMOTSIONAL INTELLEKTINING SIFATLARINING PSIXOLOGIK TASHXISI':
         for i in range(0, len(answers), 10):
             segment_score = calculate_score(answers, i, i + 10)
@@ -268,7 +274,8 @@ def submit():
                 test_option = get_test_option(test_info_id=test_info.id, score=segment_score, desc=desc)
                 if test_option:
                     results.append(test_option.desc)
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
         test.add()
     elif test_info.name == 'Oʻquv faoliyat motivi':
         if 10 >= score > 0:
@@ -279,7 +286,12 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 20, TestAnswerOptions.name > 10),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
+
+
+
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
+
         test.add()
         results.append(test_option.desc)
     elif test_info.name == 'Oiladagi psixologik iqlim':
@@ -299,7 +311,10 @@ def submit():
             test_option = TestAnswerOptions.query.filter(
                 and_(TestAnswerOptions.name <= 35, TestAnswerOptions.name > 22),
                 TestAnswerOptions.test_info_id == test_info.id).first()
-        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,test_answer_options_id=test_option.id)
+
+        test = Test(test_info_id=test_info.id, answer=test_option.desc, user_id=user.id, value=score,
+                    test_answer_options_id=test_option.id)
+
         test.add()
         results.append(test_option.desc)
     elif test_info.name == "IPM / ijtimoiy – psixologik maslashganlik / so‘rovnomasi":
@@ -325,33 +340,76 @@ def submit():
         scores = calculate_section_scores(answers, sections)
         if 68 < scores['Moslashganlik'] <= 170:
             results.append(f"Moslashganlik - {scores['Moslashganlik']} ball")
+            test = Test(test_info_id=test_info.id, answer='Moslashganlik', user_id=user.id,
+                        value=scores['Moslashganlik'])
+            test.add()
         if 68 < scores['Moslashmaganlik'] <= 170:
             results.append(f"Moslashmaganlik - {scores['Moslashmaganlik']} ball")
+            test = Test(test_info_id=test_info.id, answer='Moslashmaganlik', user_id=user.id,
+                        value=scores['Moslashmaganlik'])
+            test.add()
         if 22 < scores['O‘z-o‘zini qabul qilish'] <= 52:
             results.append(f"O‘z-o‘zini qabul qilish - {scores['O‘z-o‘zini qabul qilish']} ball")
+            test = Test(test_info_id=test_info.id, answer='O‘z-o‘zini qabul qilish', user_id=user.id,
+                        value=scores['O‘z-o‘zini qabul qilish'])
+            test.add()
         if 14 < scores['O‘z-o‘zini qabul qilmaslik'] <= 35:
             results.append(f"O‘z-o‘zini qabul qilmaslik - {scores['O‘z-o‘zini qabul qilmaslik']} ball")
+            test = Test(test_info_id=test_info.id, answer='O‘z-o‘zini qabul qilmaslik', user_id=user.id,
+                        value=scores['O‘z-o‘zini qabul qilmaslik'])
+            test.add()
         if 12 < scores['Boshqalarni qabul qilish'] <= 30:
             results.append(f"Boshqalarni qabul qilish - {scores['Boshqalarni qabul qilish']} ball")
+            test = Test(test_info_id=test_info.id, answer='Boshqalarni qabul qilish', user_id=user.id,
+                        value=scores['Boshqalarni qabul qilish'])
+            test.add()
         if 14 < scores['Boshqalarni qabul qilmaslik'] <= 35:
             results.append(f"Boshqalarni qabul qilmaslik - {scores['Boshqalarni qabul qilmaslik']} ball")
+            test = Test(test_info_id=test_info.id, answer='Boshqalarni qabul qilmaslik', user_id=user.id,
+                        value=scores['Boshqalarni qabul qilmaslik'])
+            test.add()
         if 14 < scores['Hissiy qulaylik'] <= 35:
             results.append(f"Hissiy qulaylik - {scores['Hissiy qulaylik']} ball")
+            test = Test(test_info_id=test_info.id, answer='Hissiy qulaylik', user_id=user.id,
+                        value=scores['Hissiy qulaylik'])
+            test.add()
         if 14 < scores['Hissiy noqulaylik'] <= 35:
             results.append(f"Hissiy noqulaylik - {scores['Hissiy noqulaylik']} ball")
+            test = Test(test_info_id=test_info.id, answer='Hissiy noqulaylik', user_id=user.id,
+                        value=scores['Hissiy noqulaylik'])
+            test.add()
         if 26 < scores['Ichki nazorat'] <= 65:
             results.append(f"Ichki nazorat - {scores['Ichki nazorat']} ball")
+            test = Test(test_info_id=test_info.id, answer='Ichki nazorat', user_id=user.id,
+                        value=scores['Ichki nazorat'])
+            test.add()
         if 18 < scores['Tashqi nazorat'] <= 45:
             results.append(f"Tashqi nazorat - {scores['Tashqi nazorat']} ball")
+            test = Test(test_info_id=test_info.id, answer='Tashqi nazorat', user_id=user.id,
+                        value=scores['Tashqi nazorat'])
+            test.add()
         if 6 < scores['Ustuvorlik'] <= 15:
             results.append(f"Ustuvorlik - {scores['Ustuvorlik']} ball")
+            test = Test(test_info_id=test_info.id, answer='Ustuvorlik', user_id=user.id,
+                        value=scores['Ustuvorlik'])
+            test.add()
         if 12 < scores['Ergashuvchanlik'] <= 30:
             results.append(f"Ergashuvchanlik - {scores['Ergashuvchanlik']} ball")
+            test = Test(test_info_id=test_info.id, answer='Ergashuvchanlik', user_id=user.id,
+                        value=scores['Ergashuvchanlik'])
+            test.add()
         if 10 < scores['Eskalizm'] <= 25:
             results.append(f"Eskalizm - {scores['Eskalizm']} ball")
+            test = Test(test_info_id=test_info.id, answer='Eskalizm', user_id=user.id,
+                        value=scores['Eskalizm'])
+            test.add()
         sohtalik = scores['Сохталик +'] - scores['Сохталик -']
         if 18 < sohtalik <= 45:
             results.append(f"Sohtalik - {sohtalik} ball")
+            test = Test(test_info_id=test_info.id, answer='Sohtalik', user_id=user.id,
+                        value=sohtalik)
+            test.add()
+
     elif test_info.name == 'Deviant xulq-atvor tashhisi metodikasi':
         scoring_key = {
             "ijtimoiy_xohishga_yo'nalganlik": {
@@ -385,7 +443,6 @@ def submit():
         }
 
         scores = {scale: 0 for scale in scoring_key}
-        results = []
 
         for answer in answers:
             question_number = int(answer['question'])
@@ -411,6 +468,7 @@ def submit():
                 results.append("Hissiy reaksiyalarni ixtiyoriy nazorat qilish")
             elif scale == "delinkvent_axloqqa_moyillik" and score == 20:
                 results.append("Delinkvent axloqqa moyillik")
+
 
     elif test_info.name == "DIFFERENSIAL DIAGNOSTIK":
         scoring_key = {
@@ -526,11 +584,9 @@ def defeat_submit():
 
 
 from backend.test_functions.test2 import *
-from backend.test_functions.components import *
 
 from confirm_self_assesment import *
 from motivation_to_achieve_success import *
-from the_motivation_of_helping_others import *
 
 if __name__ == '__main__':
     app.run()

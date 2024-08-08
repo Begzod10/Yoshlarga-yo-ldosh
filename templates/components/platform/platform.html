@@ -29,22 +29,7 @@
                     <i class="fas fa-home"></i>
                     Dashboard
                 </li>
-                <li class="menuBar__item">
-                    <i class="fas fa-signal"></i>
-                    Revenue
-                </li>
-                <li class="menuBar__item">
-                    <i class="fas fa-bell"></i>
-                    Notifications
-                </li>
-                <li class="menuBar__item">
-                    <i class="fas fa-chart-pie"></i>
-                    Analytics
-                </li>
-                <li class="menuBar__item">
-                    <i class="fas fa-boxes"></i>
-                    Inventory
-                </li>
+
             </ul>
         </div>
         <div class="logout">
@@ -54,15 +39,18 @@
     </div>
     <div class="platform__filter">
         <label class="filter">
-            <input class="filter__filterInput" type="number" placeholder="Yosh (ot)">
-            <input class="filter__filterInput" type="number" placeholder="Yosh (do)">
+            <input class="filter__filterInput" id="ot_input" type="number" placeholder="Yosh (ot)">
+            <input class="filter__filterInput" id="do_input" type="number" placeholder="Yosh (do)">
             <select class="filter__filterSelect" id="test_name" name="">
                 {% for test_info in test_infos %}
                     <option value="{{ test_info.id }}">{{ test_info.name }}</option>
                 {% endfor %}
             </select>
             <select class="filter__filterSelect" id="test_ball" name="">
-                <option>Ball</option>
+                <option value="">Hammasi</option>
+                {% for option in test_answer_options %}
+                    <option value="{{ option.id }}">{{ option.name }}</option>
+                {% endfor %}
             </select>
             <div class="filter__filterCheck" id="men_check">
                 <input type="checkbox">
@@ -72,28 +60,41 @@
                 <input type="checkbox">
                 Ayol
             </div>
+            <div>
+                <input type="date" id="ot_date">
+            </div>
+            <div>
+                <input type="date" id="do_date">
+            </div>
+            <div>
+                <button class="filter_btn">Filter</button>
+            </div>
         </label>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>No</th>
-                <th>Yosh</th>
-                <th>Jinsi</th>
-                <th>Ball</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for test in all_test %}
+        <div class="table__main">
+            <table class="table">
+                <thead>
                 <tr>
-                    <td>{{ loop.index }}</td>
-                    <td>{{ test.user.age }}</td>
-                    <td>{{ test.user.gender }}</td>
-                    <td>100</td>
+                    <th>No</th>
+                    <th>Yosh</th>
+                    <th>Jinsi</th>
+                    <th>Ball</th>
+                    <th>Sana</th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="table_body">
+                {% for test in all_test %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ test.user.age }}</td>
+                        <td>{{ test.user.gender }}</td>
+                        <td>{{ test.value }}</td>
+                        <td>{{ test.day.strftime("%Y-%m-%d") }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
     </div>
 
