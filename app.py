@@ -585,8 +585,6 @@ def defeat_submit():
 
 from backend.test_functions.test2 import *
 
-from confirm_self_assesment import *
-from motivation_to_achieve_success import *
 from backend.test_functions.components import *
 
 if __name__ == '__main__':
