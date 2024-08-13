@@ -40,7 +40,7 @@
         </button>
     </div>
 </section>
-<section class="about">
+<section class="about" id="first">
     <div class="about__header">
         <h2>Nega ushbu ilova ? </h2>
     </div>
@@ -77,14 +77,14 @@
             </div>
         </div>
         <div class="about-card">
-            <div class="about-card-header">
+            <div class="about-card-headerfirst">
                 <img src="../../../static/images/Lightning.svg" alt="">
                 <span>
                     Yoqimli interfeys
                 </span>
-                <div class="about-card-middle"></div>
+                <div class="about-card-middlefirst"></div>
             </div>
-            <div class="about-card-descr">
+            <div class="about-card-descrfirst">
                 Foydalanuvchi va ilovalar o'rtasida dizayn qoidalariga to'liq amal qilingan holatda dizayn yaratilgan.
             </div>
         </div>
@@ -103,21 +103,21 @@
     </div>
 
 </section>
-<section class="download">
-    <div class="header-title">
-        <h2>Ilovalarimizning to'liq versiyasidan foydalanib ko'ring!</h2>
-    </div>
-    <div class="header-descr">
-        Yoshlarga yo’ldosh mobile ilovalarimizni yuklab olib olib ularni sinab ko'rishingiz mumkin.
-    </div>
-    <div class="download-btn">
-        Yuklab olish
-    </div>
-</section>
+{#<section class="download">#}
+{#    <div class="header-title">#}
+{#        <h2>Ilovalarimizning to'liq versiyasidan foydalanib ko'ring!</h2>#}
+{#    </div>#}
+{#    <div class="header-descr">#}
+{#        Yoshlarga yo’ldosh mobile ilovalarimizni yuklab olib olib ularni sinab ko'rishingiz mumkin.#}
+{#    </div>#}
+{#    <div class="download-btn">#}
+{#        Yuklab olish#}
+{#    </div>#}
+{#</section>#}
 <section class="statistic">
     <div class="statistic-header">
         <h2>
-            Ilovamizning yuklanish statistikasi
+            Ilovamizdan foydalanish statistikasi
         </h2>
         <div class="box">
             <div class="box-title">
@@ -125,7 +125,7 @@
             </div>
             <div class="box-info">
                 <img src="../../../static/images/UsersThree.png" alt="">
-                <span>2 043 ta foydalanuvchilar soni</span>
+                <span> {% if users  > 150 %}{{ users }} {% else %} 2046 {% endif %} ta foydalanuvchilar soni</span>
             </div>
         </div>
     </div>
@@ -134,23 +134,23 @@
         <img class="aside-second" src="../../../static/images/Vector-2.svg" alt="">
     </div>
 </section>
-<section class="about">
+<section class="about" id="second">
 
     <div class="about-card-footer-main">
         <div class="about-card">
-            <div class="footer-card-header , footer-card-headerfirst">
+            <div class="footer-card-headerfirst">
                 <img class="footer-card-img" src="../../../static/images/Rectangle%201%20(1).png" alt="">
                 <span>
-Motivatsiya - faol hayot garovi
+                    Motivatsiya - faol hayot garovi
                 </span>
-                <div class="about-card-middlefirst"></div>
+                <div class="about-card-middle"></div>
             </div>
         </div>
         <div class="about-card">
             <div class="footer-card-headerfirst">
                 <img src="../../../static/images/Rectangle%201%20(1000.png" alt="">
                 <span>
-Hayot mazmuni
+                    Hayot mazmuni
                 </span>
                 <div class="about-card-middle"></div>
             </div>

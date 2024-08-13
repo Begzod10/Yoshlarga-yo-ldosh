@@ -82,6 +82,7 @@
   color: white;
   font-size: 1.3rem;
   outline: none;
+  cursor: pointer;
   background: linear-gradient(#CCA852, #E8AD56);
 }
 .basic__wrapper button:active {
@@ -124,8 +125,13 @@
   padding: 1rem;
   gap: 2rem;
   height: 400px;
+  cursor: pointer;
+  transition: .5s;
 }
-.about-card:nth-child(1) {
+.about-card:active{
+  transform: scale(0.9);
+}
+#first .about-card:nth-child(1), #first .about-card:nth-child(3) {
   background: #E8AD56;
 }
 .about-card-headerfirst, .about-card-header {

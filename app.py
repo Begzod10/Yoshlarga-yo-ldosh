@@ -8,8 +8,8 @@ db = db_setup(app)
 migrate = Migrate(app, db)
 
 
-@app.route('/', defaults={"test_id": 0})
-@app.route('/<int:test_id>')
+@app.route('/test/', defaults={"test_id": 0})
+@app.route('/test/<int:test_id>')
 def index(test_id):
     if test_id == 0:
         test_id = TestInfo.query.order_by(TestInfo.id).first().id
@@ -587,6 +587,7 @@ from backend.test_functions.test2 import *
 
 from confirm_self_assesment import *
 from motivation_to_achieve_success import *
+from backend.test_functions.components import *
 
 if __name__ == '__main__':
     app.run()

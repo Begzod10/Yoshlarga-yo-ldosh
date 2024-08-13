@@ -1,4 +1,5 @@
 from app import app, render_template, request, redirect
+from backend.models.models import User
 
 
 @app.route('/about')
@@ -6,9 +7,10 @@ def about():
     return render_template('components/about/about.html')
 
 
-@app.route('/home')
+@app.route('/')
 def home():
-    return render_template('components/home/home.html')
+    users = User.query.count()
+    return render_template('components/home/home.html', users=users)
 
 
 @app.route('/brave')
